@@ -1,0 +1,47 @@
+@import "../../global/style";
+
+
+.description{
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  &__size{
+    &_s{
+      font-size: 12px;
+    }
+    &_m{
+      font-size: 16px;
+    }
+    &_l{
+      font-size: 25px;
+    }
+  }
+  &__color{
+    &_default{
+      color: $black-color;
+    }
+    &_grey{
+      color: $light-color;
+    }
+    &_white{
+      color: $white-color;
+    }
+    &_dark{
+      color: $dark-color;
+    }
+  }
+  &__position{
+    &_left{
+      text-align: left;
+    }
+    &_center{
+      text-align: center;
+      width: 100%;
+    }
+    &_right{
+      text-align: right;
+      width: 100%;
+    }
+  }
+}

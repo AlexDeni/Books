@@ -1,0 +1,84 @@
+@import "../../global/style";
+
+
+.listBooks {
+  margin-top: 50px;
+  .book {
+    width: 360px;
+    height: 360px;
+    background-color: $white-color;
+    margin: 0px 15px 30px;
+    .listImage{
+      width: 100%;
+      height: 240px;
+    }
+    .bookIndent {
+      padding: 10px 30px;
+      .bookTitle {
+        text-align: center;
+      }
+      .bookAuthor{
+        margin-top: 15px;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+
+
+.rating-area {
+  overflow: hidden;
+  width: 155px;
+  margin-top: 10px;
+  label {
+    width: 22px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 25px;
+    line-height: 20px;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbb;
+    &:before {
+      content: '★';
+    }
+  }
+  .active-label {
+    color: gold;
+  }
+}
+
+.addBook{
+  input[type=range] {
+    -webkit-appearance: none;
+    width: 150px;
+    margin: 13.8px 0;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+
+    background: #d9d9d9;
+    border-radius: 5px;
+    border: 0.2px solid #010101;
+  }
+  input[type=range]::-webkit-slider-thumb {
+
+    border: 1px solid #9e9e0b;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    background: gold;;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -3px;
+  }
+
+
+
+
+}

@@ -1,0 +1,66 @@
+@import "../../global/style";
+
+.slide{
+  position: relative;
+
+  span {
+    position: absolute;
+    z-index: 100;
+    margin: 0 30px;
+    border: solid $dark-color;
+    border-width: 0 4px 4px 0;
+    padding: 15px;
+    top: 46%;
+    cursor: pointer;
+    &[data-direct='prev'] {
+      left: 0;
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+      &:hover{
+        border: solid $yellow-color;
+        border-width: 0 4px 4px 0;
+        transition: .5s ease-out;
+      }
+    }
+    &[data-direct='next'] {
+      right: 0;
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      &:hover{
+        border: solid $yellow-color;
+        border-width: 0 4px 4px 0;
+        transition: .5s ease-out;
+      }
+    }
+  }
+
+  &__size{
+    &_s{
+      width: 200px;
+      height: 100px;
+    }
+    &_m{
+      width: 500px;
+      height: 200px;
+    }
+    &_l{
+      width: 800px;
+      height: 500px;
+    }
+    &_allWidth{
+      width: 100%;
+      height: 450px;
+    }
+  }
+
+  input[type="radio"] {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background: #aaa;
+    cursor: pointer;
+  }
+}
+
+
