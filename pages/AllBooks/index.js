@@ -14,6 +14,7 @@ function AllBooks ({books, setBookFunction}){
                     <Filter books={books} setBooks={setBookFunction} />
                     <ListBooks books={books}  />
                     <AddBook books={books} setBooks={setBookFunction} />
+                    Добавим
                 </Layout>
             </Layout>
         </React.Fragment>
