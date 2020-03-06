@@ -1,5 +1,5 @@
 import React from "react";
-import books from '../../modules/ListBooks/books.json';
+import books from '../../public/books';
 import {Layout} from "../../ui/Layout";
 import {Description} from "../../ui/Description";
 import {ListBooks} from "../../modules/ListBooks";

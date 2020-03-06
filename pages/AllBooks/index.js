@@ -1,26 +1,28 @@
-import React  from "react";
+import React, {Component}  from "react";
 import { connect } from "react-redux"
 import {Layout} from "../../ui/Layout";
-import actionFilterBooks from "../../store/actions/actionFilterBooks";
-import {ListBooks} from "../../modules/ListBooks";
-import {AddBook} from "./AddBook";
-import {Filter} from "../../widgets/Filters/Filter";
+import { bindActionCreators } from 'redux';
+import { getAllLibrary } from '../../store/actions/getAllLibrary'
 
-function AllBooks ({books, setBookFunction}){
-    return(
-        <React.Fragment>
-            <Layout extraClass='container'>
-                <Layout wrap='wrap' direction='row' justify='spaceBetween' extraClass='listBooks'>
-                    <Filter books={books} setBooks={setBookFunction} />
-                    <ListBooks books={books}  />
-                    <AddBook books={books} setBooks={setBookFunction} />
-                    Добавим
+
+class AllBooks extends Component {
+   componentDidMount() {
+        this.props.getAllLibrary()
+    }
+    render() {
+        console.log(this.props.books)
+        return (
+            <React.Fragment>
+                <Layout extraClass='container'>
+                    <Layout wrap='wrap' direction='row' justify='spaceBetween' extraClass='listBooks'>
+
+                        Добавим
+                    </Layout>
                 </Layout>
-            </Layout>
-        </React.Fragment>
-    )
+            </React.Fragment>
+        )
+    }
 }
-
 
 function mapStateToProps(state) {
     return {
@@ -29,13 +31,14 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
     return {
-        setBookFunction: books => {
-            dispatch(actionFilterBooks(books))
-        }
+        getAllLibrary: bindActionCreators(getAllLibrary, dispatch)
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(AllBooks)
+export default connect(mapStateToProps, mapDispatchToProps)(AllBooks)
+
+
+
 
 
 
