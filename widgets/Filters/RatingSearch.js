@@ -6,7 +6,7 @@ function RatingSearch({book, setBooks}) {
         e.preventDefault();
         let result = book.sort((prev, next) => next.rating - prev.rating)
         setBooks(result)
-        console.log()
+        console.log(result)
     };
 
     return(

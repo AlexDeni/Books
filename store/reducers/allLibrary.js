@@ -2,12 +2,12 @@ const initialState = {
     books: []
 };
 
-export default function bookInfo (state = initialState, action) {
+export default function allLibrary (state = initialState, action) {
     switch (action.type) {
-        case "SET_LIBRARY_FULL":
+        case "GET_ALL_LIBRARY":
             return {...state, books: action.payload}
         default:
-            return 'state'
+            return state
     }
 }
 

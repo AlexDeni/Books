@@ -1,5 +1,5 @@
 import React from "react";
-import books from '../../public/books';
+import { connect } from "react-redux"
 import {Layout} from "../../ui/Layout";
 import {Description} from "../../ui/Description";
 import {ListBooks} from "../../modules/ListBooks";
@@ -12,7 +12,7 @@ const images = [
     'https://images.unsplash.com/photo-1534161308652-fdfcf10f62c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2174&q=80'
 ];
 
-function Home(){
+function Home({books}){
     return(
         <Layout extraClass='container'>
             {
@@ -26,4 +26,10 @@ function Home(){
     )
 }
 
-export default Home
+function mapStateToProps(state) {
+    return {
+        books: state.allLibrary.books
+    }
+}
+
+export default connect(mapStateToProps)(Home)

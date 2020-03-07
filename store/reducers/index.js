@@ -1,8 +1,10 @@
 import {combineReducers } from 'redux'
-import bookInfo from './bookInfo'
+import allLibrary from './allLibrary'
+import searchBooks from "./searchBooks";
 
 const rootReducer  = combineReducers({
-    bookInfo,
+    allLibrary: allLibrary,
+    searchBooks: searchBooks
 });
 
 export default rootReducer
