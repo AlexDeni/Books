@@ -1,18 +1,18 @@
 import axios from 'axios';
-export const SET_LIBRARY_FULL = "SET_LIBRARY_FULL";
+export const GET_ALL_LIBRARY = "GET_ALL_LIBRARY";
 
 export const getAllLibrary = () => {
     return (dispatch)=>{
         axios.get('./books.json')
             .then(books => {
                 dispatch({
-                    type: SET_LIBRARY_FULL,
+                    type: GET_ALL_LIBRARY,
                     payload: books.data
 
                 })
             })
             .catch(err => {
-                dispatch('fdfg');
+                dispatch('error');
             });
     }
 }
