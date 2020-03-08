@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import {Description} from "../../ui/Description";
 import {Rating} from "./Rating";
 
-function Book({title, author, image, rating }) {
-
+const Book = ({title, author, image, rating }) => {
     return(
         <Layout extraClass='book'>
             <img src={image} alt={image} className='listImage'/>

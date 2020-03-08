@@ -5,26 +5,30 @@ import {getImage} from '../../global/image'
 import PropTypes from "prop-types"
 
 function ListBooks({books, num}) {
+
+}
     return(
         <Layout extraClass='container'>
             <Layout wrap='wrap' direction='row' extraClass='listBooks'>
-                {books.map((book)=>{
-                    const {id, title, author, image, price, rating } = book;
-                    return (
-                        <div key={id}>
-                            {book.rating > num ?
-                                <div>{
-                                    <Book key={id}
-                                          title={title}
-                                          author={author}
-                                          image={getImage(image)}
-                                          price={price}
-                                          rating={rating}/>
-                                }</div>
-                            : ''}
-                        </div>
-                    )
-                })}
+                {books.filter(book => {
+                    if(book.rating > num) {
+                        const {id, title, author, image, price, rating } = book;
+                        return (
+                            <div key={id}>
+                                {book.rating > num ?
+                                    <div>{
+                                        <Book key={id}
+                                              title={title}
+                                              author={author}
+                                              image={getImage(image)}
+                                              price={price}
+                                              rating={rating}/>
+                                    }</div>
+                                    : ''}
+                            </div>
+                        )
+                    }
+                )}
             </Layout>
         </Layout>
     )
