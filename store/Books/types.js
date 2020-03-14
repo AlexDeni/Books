@@ -1,0 +1,4 @@
+export const GET_ALL_BOOKS = "GET_ALL_BOOKS";
+export const SEARCH_NEED_BOOK = "SEARCH_NEED_BOOK";
+export const SET_RATING_BOOK = "SET_RATING_BOOK";
+export const CLEAN_SEARCH_BOOK = "CLEAN_SEARCH_BOOK";

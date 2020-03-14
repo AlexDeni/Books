@@ -5,14 +5,13 @@
   margin-top: 50px;
   .book {
     width: 360px;
-    height: 360px;
     background-color: $white-color;
     margin: 0px 15px 30px;
     .listImage{
       width: 100%;
       height: 240px;
     }
-    .bookIndent {
+    .bookCard {
       padding: 10px 30px;
       .bookTitle {
         text-align: center;
@@ -20,6 +19,18 @@
       .bookAuthor{
         margin-top: 15px;
         font-style: italic;
+      }
+      button{
+        width: 100px;
+        font-size: 16px;
+        height: 40px;
+        border: none;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 3px;
+        &:hover{
+          background-color: $grey-color;
+        }
       }
     }
   }

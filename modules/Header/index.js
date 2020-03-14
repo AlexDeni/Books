@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {Layout} from "../../ui/Layout";
 import {Description} from "../../ui/Description";
 import {Button} from "../../ui/Button";
-import {Basket} from "../../widgets/Basket.js/Basket";
+import ShoppingCart from "../../widgets/ShoppingCart.js";
 
 function Header({onButtonClick}) {
     return(
@@ -19,7 +19,7 @@ function Header({onButtonClick}) {
                             </ul>
                         </nav>
                     <Button onClick={() => onButtonClick(true)}>Ввойти</Button>
-                    <Basket/>
+                    <ShoppingCart/>
                 </Layout>
             </Layout>
         </Layout>

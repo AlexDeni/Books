@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import {Layout} from "../../ui/Layout";
 import {Description} from "../../ui/Description";
 import {ListBooks} from "../../modules/ListBooks";
-import {Slider} from "../../widgets/Slider/Slider";
+import {Slider} from "../../widgets/Slider";
 
 const images = [
     'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80',
@@ -28,7 +28,7 @@ function Home({books}){
 
 function mapStateToProps(state) {
     return {
-        books: state.allLibrary.books
+        books: state.getBooks.books
     }
 }
 

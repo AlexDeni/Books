@@ -1,5 +1,5 @@
-import none from '../images/none.jpg'
-import book_1 from '../images/book_1.jpg'
+import none from '../static/none.jpg'
+import book_1 from '../static/book_1.jpg'
 
 const IMAGES = {
     none: none,

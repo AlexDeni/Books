@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import './App.scss';
 import {Header} from "./modules/Header";
-import {Modal} from './widgets/Modal/Modal'
+import {Modal} from './widgets/Modal'
 import {BrowserRouter, Route, Switch } from 'react-router-dom';
 import routes from './routes';
 import { Provider } from 'react-redux'

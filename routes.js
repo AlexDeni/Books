@@ -1,6 +1,6 @@
 import Home from './pages/Home'
 import Login from './pages/Login'
-import AllBooks from './pages/AllBooks'
+import AllBooks from './pages/Books'
 import News from './pages/News'
 
 
