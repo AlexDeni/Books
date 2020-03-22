@@ -4,7 +4,7 @@ import {Layout} from "../../ui/Layout";
 class Login extends Component{
     render(){
         return(
-            <Layout extraClass='container'>
+            <Layout>
 
             </Layout>
         )

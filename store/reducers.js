@@ -1,6 +1,6 @@
 import {combineReducers } from 'redux'
-import reducerGetBooks from './Books/reducer'
-import reducerOrderBooks from './ShoppingCart/reducer'
+import reducerGetBooks from './Books'
+import reducerOrderBooks from './ShoppingCart'
 
 const rootReducer  = combineReducers({
     getBooks: reducerGetBooks,

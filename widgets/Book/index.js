@@ -5,26 +5,32 @@ import {Description} from "../../ui/Description";
 import {Rating} from "./Rating";
 import {Price} from "../../ui/Price"
 import { connect } from "react-redux"
-import {actionSetCart} from "../../store/ShoppingCart/actionSetCart";
+import {actionSetCart} from "../../store/ShoppingCart/actionCart";
+import {actionBookProperties} from "../../store/Books/actionBooks";
 import { bindActionCreators } from 'redux';
+import {Link} from "react-router-dom";
 
-const Book = ({title, author, image, rating, addInShoppingCart, curr, price }) => {
+const Book = ({title, author, image, rating, addInShoppingCart, openBookProperties, curr, price, id }) => {
     const handleChange =(e)=>{
         e.preventDefault();
-        addInShoppingCart(title, price)
+        addInShoppingCart(id)
+    };
+    const handleOpen =()=>{
+        openBookProperties(id)
     };
     return(
         <Layout extraClass='book'>
             <img src={image} alt={image} className='listImage'/>
-            <Layout extraClass='bookCard'>
-                <Description size='l' color='dark' extraClass='bookTitle'>{title}</Description>
+            <div className='bookCard'>
+                <Description size='l' color='dark'>{title}</Description>
                 <Rating rating={rating} />
                 <Description extraClass='bookAuthor'>{`Автор: ${author}`}</Description>
-                <Layout>
-                    <Price currency={curr} price={price} />
+                <Price currency={curr} price={price} />
+                <Layout  justify='spaceBetween' direction='row'>
                     <button onClick={handleChange}>В корзину</button>
+                    <Link  to={`/all/${id}`} onClick={handleOpen}><button>Открыть</button></Link>
                 </Layout>
-            </Layout>
+            </div>
         </Layout>
     )
 };
@@ -45,6 +51,7 @@ Book.defaulttypes = {
 function mapDispatchToProps(dispatch) {
     return {
         addInShoppingCart: bindActionCreators(actionSetCart, dispatch),
+        openBookProperties: bindActionCreators(actionBookProperties, dispatch)
     }
 }
 

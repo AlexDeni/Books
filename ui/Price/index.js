@@ -10,7 +10,7 @@ const eur = 27.5
 function getCurrencySymbol(currency) {
     switch (currency) {
         case('UA'):
-            return <span>&#8372;</span>
+            return <span>грн.</span>
         case('USD'):
             return <span>&#36;</span>
         case('EUR'):

@@ -81,7 +81,7 @@ class Slider extends Component{
                     <SlideImg image={images} size={size} index={currentImage}/>
                     <span data-direct='next' onClick={this.makeSlide} />
                 </Layout>
-                <Dots quantityDots={images}  updateDots={this.setImageDot} displayDot={displayDot} />
+                <Dots quantityDots={images} currentImage={currentImage}  updateDots={this.setImageDot} displayDot={displayDot} />
             </Layout>
         )
     }

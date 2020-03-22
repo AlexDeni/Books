@@ -22,16 +22,18 @@ class App extends Component{
                 <div className="App">
                     <BrowserRouter>
                         <Header onButtonClick={this.onButtonClick}/>
-                        <Switch>
-                            {routes.map(router =>
-                                <Route
-                                    path={router.path}
-                                    component={router.component}
-                                    exact={router.exact}
-                                    key={router.path}
-                                />
-                            )}
-                        </Switch>
+                        <div className="container">
+                            <Switch>
+                                {routes.map(router =>
+                                    <Route
+                                        path={router.path}
+                                        component={router.component}
+                                        exact={router.exact}
+                                        key={router.path}
+                                    />
+                                )}
+                            </Switch>
+                        </div>
                     </BrowserRouter>
                     <Modal isModalOpen={isModalOpen} onButtonClick={this.onButtonClick}>test modal</Modal>
                 </div>

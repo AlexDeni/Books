@@ -1,9 +1,10 @@
 import React from "react";
 
+
 function News() {
     return(
         <React.Fragment>
-            ghfghfg
+            dfgdfg
         </React.Fragment>
     )
 }

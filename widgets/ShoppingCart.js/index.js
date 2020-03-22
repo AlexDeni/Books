@@ -1,32 +1,42 @@
 import React,{useState} from 'react'
-import { connect } from "react-redux"
+import {connect } from "react-redux"
 import {Description} from "../../ui/Description";
 import {Layout} from "../../ui/Layout";
 import { bindActionCreators } from 'redux';
-import {actionRemoveBook} from '../../store/ShoppingCart/actionRemoveBook'
+import {actionRemoveBook} from '../../store/ShoppingCart/actionCart'
 import shoppingCart from '../../static/busket.png'
 import './style.scss'
 
-function ShoppingCart({title, count, removeShoppingCart, price}) {
-    const[cartActive, chooseCart] = useState(false);
-
-    const removeBooks = e =>{
-        title.splice(e.target.value, 1)
-        removeShoppingCart(title)
+function ShoppingCart({id, books, count, removeShoppingCart}) {
+    const[activeCart, openShoppingCart] = useState(false);
+    const removeBooks = e => {
+        id.splice(e.target.value, 1)
+        removeShoppingCart(id)
     }
-    let resultTitle = title.map((title, key)=>{
+    let getCard= books.filter(item => id.includes(item.id))
+    let cardTitle = [];
+    let cardPrice = [];
+    for (let id in getCard) {
+        cardTitle.push(getCard[id].title)
+        cardPrice.push(getCard[id].price)
+    }
+    let showCardTitle = cardTitle.map((title, key)=>{
         return <li key={key}>{title}<span onClick={removeBooks}>&#215;</span></li>
     });
+    let showCardPrice = cardPrice.reduce(function(result, num) {
+        return result + num;
+    }, 0);
+
     return(
         <Layout extraClass='shoppingCart'>
             <Layout>
-                <img src={shoppingCart} width='80px' alt='busket' onClick={() => chooseCart(!cartActive)} />
+                <img src={shoppingCart} width='80px' alt='busket' onClick={() => openShoppingCart(!activeCart)} />
                 <Description extraClass='countCart'>{count}</Description>
             </Layout>
-            {cartActive &&
+            {activeCart &&
                 <Layout extraClass='chooseCart'>
-                    {resultTitle}
-                    <Description>{price}</Description>
+                    {showCardTitle}
+                    <Description size='m' extraClass='cardPrice'>Итого: {showCardPrice}</Description>
                 </Layout>
             }
         </Layout>
@@ -35,8 +45,8 @@ function ShoppingCart({title, count, removeShoppingCart, price}) {
 
 function mapStateToProps(state) {
     return {
-        title: state.orderBooks.title,
-        price: state.orderBooks.price,
+        id: state.orderBooks.id,
+        books: state.getBooks.books,
         count: state.orderBooks.count,
     }
 }

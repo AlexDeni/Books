@@ -3,6 +3,7 @@
 .shoppingCart{
   position: relative;
   width: 85px;
+  cursor: pointer;
   .countCart{
     font-size: 40px;
     position: absolute;
@@ -31,6 +32,10 @@
         font-size: 25px;
         cursor: pointer;
       }
+    }
+    .cardPrice{
+      color: #ff7d00;
+      margin: 10px;
     }
   }
 }

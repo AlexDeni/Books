@@ -14,7 +14,7 @@ const images = [
 
 function Home({books}){
     return(
-        <Layout extraClass='container'>
+        <Layout>
             {
                 <Layout wrap='wrap' direction='row' justify='spaceBetween' extraClass='listBooks'>
                     <Slider images={images} size='allWidth' displayDot slideShow/>

@@ -23,7 +23,6 @@ Layout.propTypes = {
 Layout.defaultProps = {
     direction: 'column',
     justify: 'start',
-    align: 'start',
     wrap: 'nowrap',
     extraClass: ''
 };

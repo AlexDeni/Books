@@ -10,19 +10,18 @@ function SearchBooks({book, setBooks}) {
             const results = book.filter(books =>
                 books.title.toLowerCase().includes(search)
             );
-            console.log('resp', results)
-            setBooks(results)
+            console.log(results)
         }
     }
 
     return(
         <React.Fragment>
             <input value={search}
-                   onKeyPress={handleClick}
                    onChange={handleChange}
                    placeholder='Введите запрос...'
                    className='setSearch'
             />
+            <button onClick={handleClick}>Поиск</button>
         </React.Fragment>
     )
 }

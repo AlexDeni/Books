@@ -7,9 +7,8 @@ function Dots({quantityDots, updateDots, displayDot}) {
     let dot = [];
     if (displayDot) {
         for (let i = 0; i < quantityDots.length; i++) {
-            dot.push(<input type="radio" key={i} onClick={() => {
-                updateDots(i)
-            }} className='dot'/>)
+            dot.push(<input name='slider' type="radio" key={i} onClick={() => {
+                updateDots(i)}} className='dot' />)
         }
     }
     return (
