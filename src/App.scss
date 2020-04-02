@@ -1,0 +1,18 @@
+@import 'ui/Layout/style';
+@import 'ui/Description/style';
+@import 'ui/Button/style';
+@import "./modules/Header/style";
+@import "./widgets/Book/style";
+@import 'pages/Books/style';
+@import "./widgets/Filters/style";
+
+section{
+  padding: 50px 0;
+}
+.container{
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}

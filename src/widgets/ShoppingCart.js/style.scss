@@ -1,0 +1,41 @@
+@import "../../global/style";
+
+.shoppingCart{
+  position: relative;
+  width: 85px;
+  cursor: pointer;
+  .countCart{
+    font-size: 40px;
+    position: absolute;
+    color: #ff7d00;
+    right: 0;
+    bottom: 0;
+  }
+  .chooseCart{
+    position: absolute;
+    width: 260px;
+    top: 80px;
+    left: -175px;
+    background-color: #5d5c5c;
+    color: #ff7d00;
+    font-size: 20px;
+    border-radius: 5px;
+    li{
+      width: 95%;
+      margin: 5px;
+      min-height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 3px solid #ff7d00;
+      span{
+        font-size: 25px;
+        cursor: pointer;
+      }
+    }
+    .cardPrice{
+      color: #ff7d00;
+      margin: 10px;
+    }
+  }
+}

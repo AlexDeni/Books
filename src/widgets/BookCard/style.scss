@@ -1,0 +1,39 @@
+@import "../../global/style";
+
+.book-property-title{
+  font-size: 45px;
+}
+.book-property{
+  margin: 40px 0;
+  img{
+    width: 330px;
+    height: 450px;
+  }
+  .book-added-info{
+    max-width: 800px;
+    .additional-item {
+      min-height: 80px;
+      .additional-info {
+        font-size: 25px;
+        width: 160px;
+        color: $grey-color;
+      }
+      .extra-info{
+        width: 60%;
+        text-align: justify;
+        margin: 10px 0 50px;
+      }
+    }
+  }
+}
+.property-goBack{
+  text-decoration: none;
+  font-size: 25px;
+  color: $dark-color;
+  &:hover{
+    color: $yellow-color
+  }
+}
+.addBookBtn{
+  background-color: $grey-color;
+}
