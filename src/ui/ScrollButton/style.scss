@@ -1,0 +1,11 @@
+@import "./../../global/style";
+
+.scrollToTop{
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
+  transform: rotate(270deg);
+  font-size: 40px;
+  color: $dark-blue;
+  cursor: pointer;
+}
