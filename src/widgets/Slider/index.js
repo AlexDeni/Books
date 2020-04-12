@@ -49,7 +49,7 @@ class Slider extends Component{
         if(this.props.slideShow) {
             this.timerID = setInterval(
                 () => this.updateImg(),
-                3500
+                5500
             );
         }
     }
@@ -77,9 +77,9 @@ class Slider extends Component{
         return(
             <Layout extraClass='slide'>
                 <Layout justify='center' direction='row' >
-                    <span data-direct='prev' onClick={this.makeSlide} />
+                    <span className="arrows" data-direct='prev' onClick={this.makeSlide} />
                     <SlideImg image={images} size={size} index={currentImage}/>
-                    <span data-direct='next' onClick={this.makeSlide} />
+                    <span className="arrows"  data-direct='next' onClick={this.makeSlide} />
                 </Layout>
                 <Dots quantityDots={images} currentImage={currentImage}  updateDots={this.setImageDot} displayDot={displayDot} />
             </Layout>

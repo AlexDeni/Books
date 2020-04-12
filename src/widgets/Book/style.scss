@@ -1,42 +1,33 @@
 @import "../../global/style";
 
-
 .listBooks {
-  margin-top: 50px;
+  margin-top: 30px;
   .book {
-    width: 315px;
-    background-color: $white-color;
-    margin: 0 15px 30px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 275px;
+    margin: 0 8px 30px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    &:hover{
+      box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    }
     .listImage{
-      height: 360px;
+      height: 310px;
+      width: 230px;
+      margin: 5px auto 0;
     }
     .bookCard {
-      padding: 10px 30px;
+      padding: 10px;
       .bookAuthor{
-        margin-top: 15px;
+        margin: 10px 0;
         font-style: italic;
       }
-      button{
-        width: 100px;
-        font-size: 16px;
-        height: 40px;
-        border: none;
-        margin-top: 10px;
-        cursor: pointer;
-        border-radius: 3px;
-        &:hover{
-          background-color: $grey-color;
-        }
+      .book-btn{
+        margin-top: 15px;
       }
     }
   }
 }
 
-
-
 .rating-area {
-  margin-top: 10px;
   label {
     font-size: 25px;
     color: lightgrey;
@@ -46,7 +37,7 @@
     }
   }
   .active-label {
-    color: gold;
+    color: $yellow-color;
   }
 }
 

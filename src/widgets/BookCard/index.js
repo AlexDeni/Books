@@ -23,7 +23,7 @@ function BookProperties({id, books, addInShoppingCart}) {
         addInShoppingCart(id)
     };
     return (
-        <React.Fragment>
+        <Layout extraClass="container">
             {id ? <Layout>
                     <Description extraClass='book-property-title'>{bookInfo.title}</Description>
                     <Layout extraClass="book-property" justify="space-between" wrap="wrap" direction="row">
@@ -41,13 +41,13 @@ function BookProperties({id, books, addInShoppingCart}) {
                                 <span className="additional-info">Все о книге:</span>
                                 <Description extraClass="extra-info" size="m">{bookInfo.info}</Description>
                             </Layout>
-                            <Button onClick={handleChange} size='m' extraClass='addBookBtn'>В корзину</Button>
+                            <Button onClick={handleChange} bStyle="main" size='l' >В корзину</Button>
                         </Layout>
                     </Layout>
                 </Layout>
                 : <div>Sorry, but the book was not found</div>}
             <Link to='/all' className="property-goBack"><span>&#8592;</span>Back</Link>
-        </React.Fragment>
+        </Layout>
     )
 }
 

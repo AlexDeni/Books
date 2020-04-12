@@ -4,6 +4,8 @@ import {Layout} from "../../ui/Layout";
 import {Description} from "../../ui/Description";
 import {ListBooks} from "../../modules/ListBooks";
 import {Slider} from "../../widgets/Slider";
+import './style.scss'
+import {Title} from "../../ui/Title";
 
 const images = [
     'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80',
@@ -14,10 +16,12 @@ const images = [
 
 function Home({books}){
     return(
-        <Layout justify='space-between' extraClass='listBooks'>
+        <Layout justify='space-between'>
             <Slider images={images} size='allWidth' displayDot slideShow/>
-            <Description size='l' position='center'>Самые популярные</Description>
-            <ListBooks books={books} num={4}/>
+            <Layout extraClass="container">
+                <Title tagName="h1" position="center" color="blue">Популярные товары</Title>
+                <ListBooks books={books} num={4}/>
+            </Layout>
         </Layout>
     )
 }

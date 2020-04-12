@@ -1,6 +1,26 @@
 @import "../../global/style";
 
+.setSearch{
+  margin-left: 8px;
+  font-size: 1.1em;
+  padding: .8em;
+  height: 15px;
+  border-radius: .3rem;
+  max-width: 200px;
+  line-height: 1.2em;
+  background: $white;
+  border: 1px solid rgba(34,36,38,.15);
+  color: rgba(0,0,0,.87);
+}
+
 .search_btn{
-  background-color: $grey-color;
-  color: $yellow-color
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+}
+.rating_btn{
+  width: 200px;
+  height: 45px;
+  margin: 0 30px;
+  font-size: 20px;
 }

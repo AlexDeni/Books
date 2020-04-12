@@ -6,6 +6,8 @@ import {Modal} from './widgets/Modal'
 import './App.scss';
 import {Header} from "./modules/Header";
 import {actionGetBooks} from './store/Books/actionBooks'
+import FormikForm from "./widgets/Formik/index";
+import {ScrollButton} from "./ui/ScrollButton"
 import Store from "./store";
 
 let store = Store();
@@ -13,33 +15,37 @@ store.dispatch(actionGetBooks());
 
 class App extends Component{
     state = {
-        isModalOpen: false
+        isHomeOpen: false,
+        isShopOpen: false
     };
-    onButtonClick = isModalOpen => {
-        this.setState({ isModalOpen });
+    onHomeClick = isHomeOpen => {
+        this.setState({ isHomeOpen });
     };
+    onShopClick = isShopOpen => {
+        this.setState({ isShopOpen });
+    }
 
     render() {
-        const {isModalOpen} = this.state;
+        const {isHomeOpen, isShopOpen} = this.state;
         return (
             <Provider store={store}>
                 <BrowserRouter>
-                    <Header onButtonClick={this.onButtonClick}/>
+                    <Header onHomeClick={this.onHomeClick} onShopClick={this.onShopClick}/>
                     <section>
-                        <div className="container">
-                            <Switch>
-                                {routes.map(router =>
-                                     <Route
-                                        path={router.path}
-                                        component={router.component}
-                                        exact={router.exact}
-                                        key={router.path}
-                                     />)}
-                            </Switch>
-                        </div>
+                        <Switch>
+                            {routes.map(router =>
+                                <Route
+                                    path={router.path}
+                                    component={router.component}
+                                    exact={router.exact}
+                                    key={router.path}
+                                />)}
+                        </Switch>
+                        <Modal isModalOpen={isHomeOpen} onButtonClick={this.onHomeClick}><FormikForm authType="signIn"/></Modal>
+                        <Modal isModalOpen={isShopOpen} onButtonClick={this.onShopClick}>Hello</Modal>
                     </section>
+                    <ScrollButton scrollPoint={250} />
                 </BrowserRouter>
-                <Modal isModalOpen={isModalOpen} onButtonClick={this.onButtonClick}>test modal</Modal>
             </Provider>
         );
     }

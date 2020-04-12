@@ -4,8 +4,8 @@ import {Description} from "../../ui/Description";
 import {Layout} from "../../ui/Layout";
 import { bindActionCreators } from 'redux';
 import {actionRemoveBook} from '../../store/ShoppingCart/actionCart'
-import {ShowCardPrice} from "./ShowCardPrice";
-import {ShowTitleCount} from "./ShowTitleCount";
+import {ShowCardPrice} from "./ShoppingOrder/ShowCardPrice";
+import {ShowTitleCount} from "./ShoppingOrder/ShowTitleCount";
 import shoppingCart from '../../static/busket.png'
 import './style.scss'
 

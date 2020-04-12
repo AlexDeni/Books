@@ -36,7 +36,10 @@ function getCurrencyPrice(currency, price) {
 function Price({currency, price}) {
     return(
         <React.Fragment>
-            <Description size='l'>{getCurrencyPrice(currency, price)}{getCurrencySymbol(currency)}</Description>
+            <Description size='l' position="center">
+                {getCurrencyPrice(currency, price)}
+                {getCurrencySymbol(currency)}
+            </Description>
         </React.Fragment>
     )
 }

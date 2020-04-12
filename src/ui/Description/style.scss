@@ -2,7 +2,6 @@
 
 
 .description{
-  font-family: Arial;
   text-align: left;
   &__size{
     &_s{
@@ -20,10 +19,10 @@
       color: $black-color;
     }
     &_grey{
-      color: $light-color;
+      color: $light-grey;
     }
     &_white{
-      color: $white-color;
+      color: $white;
     }
     &_dark{
       color: $dark-color;

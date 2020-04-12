@@ -1,24 +1,14 @@
 @import "../../global/style";
 
 header{
-  background-color: #132439;
   min-height: 60px;
-  padding: 20px 0;
-  .logo{
-    font-size: 40px;
-    font-weight: 800;
-    font-style: italic;
-    text-decoration: none;
-    a {
-      text-decoration: none;
-      color: $yellow-color;
-    }
-  }
+  padding: 5px 0;
+  border-bottom: 2.4px solid $dark-blue;
   .nav_header {
     display: flex;
     a {
       text-decoration: none;
-      color: $white-color;
+      color: $dark-blue;
       font-size: 30px;
       margin: 0 15px;
       &:hover{
@@ -31,20 +21,89 @@ header{
       color: $yellow-color;
     }
   }
-  .comeIn{
-    width: 100px;
-    height: 50px;
-    background-color: $light-color;
-    font-size: 25px;
-    color: $dark-color;
-    border: none;
-    border-radius: 6px;
-    &:hover{
-      background-color: $grey-color;
-      color: $white-color;
-      transition: .2s ease-out;
-      transition-delay: 0.2s;
-      cursor: pointer;
+  .header_btn{
+    display: flex;
+    align-items: center;
+    width: 140px;
+    justify-content: space-between;
+    img{
+      width: 50px;
     }
   }
 }
+
+
+
+
+@media only screen
+and (min-width : 900px) {
+  input[type=checkbox]#toggle,
+  label[for=toggle] {
+    display: none;
+  }
+}
+@media only screen
+and (max-width : 900px) {
+  input[type=checkbox]#toggle {
+    position: absolute;
+    color: red;
+    z-index: -99999;
+  }
+  header a, header img, header p{
+    display: none;
+  }
+  header{
+    min-height: 40px;
+    background-color: #000;
+    transition: all .5s ease;
+  }
+  input[type=checkbox]#toggle:checked ~ .header, .nav_header, .nav__trigger {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .nav_header a{
+      display: block;
+    }
+    .header_btn img{
+      display: block;
+    }
+  }
+
+}
+
+
+
+$bar-length: 28px;
+$bar-thickness: 4px;
+$nav-item-delay: 0.05s;
+$nav-width: 3.75rem;
+.bars {
+  position: relative;
+  margin: $bar-thickness*4;
+  &,
+  &:before,
+  &:after {
+    width: $bar-length;
+    height: $bar-thickness;
+    background-color: red;
+    border-radius: $bar-thickness;
+    transition: 0.2s ease-in-out;
+  }
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+  }
+  &:before {
+    transform: translateY(-($bar-thickness*2));
+  }
+  &:after {
+    transform: translateY(($bar-thickness*2));
+  }
+}
+
+

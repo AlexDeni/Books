@@ -13,9 +13,9 @@ import PropTypes from 'prop-types'
  */
 
 function Button({children, bStyle, size, type, disable, onClick, extraClass}) {
-    const className = cx('button',
-        `button__style_${bStyle}`,
-        `button__size_${size}`, extraClass
+    const className = cx('btn',
+        `btn__bStyle_${bStyle}`,
+        `btn__size_${size}`, extraClass
     );
     return(
         <button className={className} type={type} disabled={disable} onClick={onClick}>{children}</button>
@@ -26,13 +26,13 @@ Button.propTypes ={
     children: PropTypes.node.isRequired,
     type: PropTypes.oneOf(['button', 'submit']),
     onClick: PropTypes.func,
-    style: PropTypes.oneOf(['green', 'red']),
+    bStyle: PropTypes.oneOf(['default', 'main', ]),
     size: PropTypes.oneOf(['s','m','l']),
     disabled: PropTypes.bool
 };
 
 Button.defaultProps = {
-    bStyle: 'green',
+    bStyle: 'default',
     size: 'm',
     type: 'button',
     disable: false,

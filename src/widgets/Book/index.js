@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 import { bindActionCreators } from 'redux';
 import {Layout} from "../../ui/Layout";
+import {Button} from "../../ui/Button";
 import {Description} from "../../ui/Description";
 import {Rating} from "./Rating";
 import {Price} from "../../ui/Price"
@@ -11,8 +12,7 @@ import {actionSetCart} from "../../store/ShoppingCart/actionCart";
 import {actionBookProperties} from "../../store/Books/actionBooks";
 
 const Book = ({title, author, image, rating, addInShoppingCart, openBookProperties, curr, price, id }) => {
-    const addInShop =(e)=>{
-        e.preventDefault();
+    const addInShop =()=>{
         addInShoppingCart(id)
     };
     const openShop =()=>{
@@ -22,13 +22,13 @@ const Book = ({title, author, image, rating, addInShoppingCart, openBookProperti
         <Layout extraClass='book'>
             <img src={image} alt={image} className='listImage'/>
             <div className='bookCard'>
-                <Description size='l' color='dark'>{title}</Description>
+                <Description size='l' color='dark' position="center">{title}</Description>
                 <Rating rating={rating} />
-                <Description extraClass='bookAuthor'>{`Автор: ${author}`}</Description>
+                <Description extraClass='bookAuthor' position="center">{`Автор: ${author}`}</Description>
                 <Price currency={curr} price={price} />
-                <Layout  justify='space-between' direction='row'>
-                    <button onClick={addInShop}>В корзину</button>
-                    <Link  to={`/all/${id}`} onClick={openShop}><button>Открыть</button></Link>
+                <Layout  justify='space-between' direction='row' extraClass="book-btn">
+                    <Button onClick={addInShop} bStyle="main" size="m" >В корзину</Button>
+                    <Link  to={`/all/${id}`} onClick={openShop}><Button bStyle="main">Открыть</Button></Link>
                 </Layout>
             </div>
         </Layout>

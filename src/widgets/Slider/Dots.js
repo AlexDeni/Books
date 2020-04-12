@@ -3,20 +3,32 @@ import PropTypes from 'prop-types';
 import './slider.scss';
 import {Layout} from "../../ui/Layout";
 
-function Dots({quantityDots, updateDots, displayDot}) {
-    let dot = [];
-    if (displayDot) {
-        for (let i = 0; i < quantityDots.length; i++) {
-            dot.push(<input name='slider' type="radio" key={i} onClick={() => {
-                updateDots(i)}} className='dot' />)
-        }
-    }
+const Dot = ({ active, updateDots, number }) => (
+    <span onClick={() => {updateDots(number)}}
+            style={{
+                background: `${active ? '#f57904' : '' }`
+            }}
+    />
+);
+
+const Dots =({quantityDots, updateDots, displayDot, currentImage}) => {
     return (
-        <Layout direction='row' justify='center' >
-            {dot}
-        </Layout>
+        <React.Fragment>
+            {displayDot ?
+                <Layout direction='row' justify='center' extraClass='dots' >
+                    {quantityDots.map((slide, i) => (
+                        <Dot key={i}
+                             active={currentImage === i}
+                             number={i}
+                             updateDots={updateDots}
+                        />))
+                    }
+                </Layout>
+            : ''}
+        </React.Fragment>
     )
 }
+
 Dots.propTypes = {
     displayDot: PropTypes.bool
 };

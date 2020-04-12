@@ -3,11 +3,11 @@ import {Layout} from "../../ui/Layout";
 import {RatingSearch} from "./RatingSearch";
 import {FilterSearch} from './FilterSearch'
 
-const Filter = ({books, setBooks, setRatingBooks}) => {
+const Filter = ({books,setBooks, updateBooks, setRatingBooks}) => {
     return(
         <Layout direction='row'>
-            <FilterSearch book={books} setBooks={setBooks} />
-            <RatingSearch  book={books} setRatingBooks={setRatingBooks} />
+            <FilterSearch books={books} updateBooks={updateBooks} />
+            <RatingSearch  setBooks={setBooks} setRatingBooks={setRatingBooks} />
         </Layout>
     )
 }

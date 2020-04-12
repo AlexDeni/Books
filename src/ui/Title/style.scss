@@ -1,0 +1,33 @@
+@import "../../global/style";
+
+.block_t{
+  h1{
+    font-size: 30px;
+  }
+  h2{
+    font-size: 20px;
+  }
+
+  .title {
+    &__color {
+      &_default {
+        color: $black-color;
+      }
+      &_blue {
+        color: $dark-blue;
+      }
+    }
+    &__position {
+      &_left {
+        text-align: left;
+      }
+      &_center {
+        text-align: center;
+      }
+
+      &_right {
+        text-align: right;
+      }
+    }
+  }
+}

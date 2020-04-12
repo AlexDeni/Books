@@ -1,7 +1,6 @@
 import React,{Component} from 'react'
 import PropTypes from "prop-types"
 import "./style.scss"
-import {Logo} from "../../ui/Logo";
 
 class ScrollButton extends Component{
     state = {

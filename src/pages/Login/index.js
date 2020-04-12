@@ -5,7 +5,7 @@ import FormikForm from "../../widgets/Formik";
 class Login extends Component{
     render(){
         return(
-            <Layout>
+            <Layout extraClass="container">
                 <FormikForm authType="signUp"/>
             </Layout>
         )

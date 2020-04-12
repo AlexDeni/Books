@@ -1,47 +1,70 @@
 @import "../../global/style";
 
-.button{
-  border-radius: 5px;
-  width: 100px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 25px;
-  border: none;
-  outline: none;
-  color: $dark-color;
+.btn {
+  line-height: 1.5715;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 2px 0 rgba(0,0,0,.015);
   cursor: pointer;
-  &__style {
-    &_defaulte{
-      background-color: $grey-color;
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+  touch-action: manipulation;
+  padding: 4px 15px;
+  border-radius: 2px;
+  color: rgba(0,0,0,.65);
+  background-color: $white;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $dark-blue;
+    border-color: $dark-blue;
+    outline: none;
+  }
+
+  &__bStyle {
+    &_default{
+      background-color: $white;
     }
-    &_light{
-      background-color: $light-color;
+    &_main{
+      color: $white;
+      background-color: $light-blue;
+      border-color: $light-blue;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, .12);
+      box-shadow: 0 2px 0 rgba(0, 0, 0, .045);
+      &:hover,
+      &:focus {
+        color: $white;
+        background-color: $dark-blue;
+        border-color:  $dark-blue;
+      }
     }
   }
   &__size{
     &_s{
-      width: 50px;
+      width: 80px;
       height: 30px;
+      font-size: 14px;
+      padding: 2px 2px;
+      border-radius: 2px;
     }
     &_m{
-      width: 130px;
-      height: 55px;
+      width: 100px;
+      height: 35px;
+      font-size: 16px;
+      padding: 4px 8px;
+      border-radius: 4px;
     }
     &_l{
-      width: 150px;
-      height: 80px;
+      width: 130px;
+      height: 55px;
+      font-size: 22px;
+      padding: 4px 8px;
+      border-radius: 5px;
     }
   }
   &:disabled{
     background-color: $grey-color;
-  }
-  &:hover{
-    opacity: .8;
-    transition: .2s ease-in;
-  }
-  &:active {
-    opacity: .9;
   }
 }

@@ -3,77 +3,49 @@ import { connect } from "react-redux"
 import {Layout} from "../../ui/Layout";
 import {ListBooks} from "../../modules/ListBooks";
 import {Loader} from "../../widgets/Loader";
-import {Button} from "../../ui/Button";
-import FormikForm from "../../widgets/Formik";
+import {Filter} from "../../widgets/Filters";
 
 class AllBooks extends Component {
     constructor() {
         super();
         this.state = {
-            search: '',
-            needBooks: '',
-            filterStatus: '',
-            isToggleRating: false
+            filterStatus: false,
+            setResult: ''
         };
-        this.searchChange = this.searchChange.bind(this);
-        this.handleSearchClick = this.handleSearchClick.bind(this);
-        this.handleRatingClick = this.handleRatingClick.bind(this);
     }
-    searchChange(e){
-        this.setState({search: e.target.value})
-    }
-    handleSearchClick(){
+    handleSearchClick = (value) => {
         this.setState({
-            needBooks: this.state.search,
-            filterStatus: 'search',
-            search: ''
+            setResult: value,
+            filterStatus: true,
         })
-    }
-    handleRatingClick(){
+    };
+    setRatingBooks = (value) =>{
         this.setState({
-            filterStatus: 'rating',
-            isToggleRating: !this.state.isToggleRating
-        })}
-
+            setResult: value,
+        })
+    };
     render() {
         const {books, loader} = this.props;
-        const {needBooks, filterStatus, isToggleRating, search} = this.state;
         if(!books){
             return null
         }
         let results = books;
-        if(filterStatus === "search") {
-            results = books.filter(books =>
-                books.title.toLowerCase().includes(needBooks)
-            );
+        if(this.state.filterStatus) {
+            results = this.state.setResult
         }
-        if(filterStatus === "rating") {
-            if(isToggleRating) {
-                results = books.filter(books =>
-                    books.title.toLowerCase().includes(needBooks)).sort((prev, next) => next.rating - prev.rating)
-            }
-            if(!isToggleRating) {
-                results = results.sort((prev, next) => prev.rating - next.rating)
-            }
-        }
-
         return (
-            <React.Fragment>
-                <FormikForm authType="signIn"/>
+            <Layout extraClass="container">
                 {loader ? <Loader/> :
                     <Layout wrap='wrap' direction='row'  extraClass='listBooks'>
-                        <input value={search}
-                               onChange={this.searchChange}
-                               placeholder='Введите запрос...'
-                               className='setSearch'
+                        <Filter books={books}
+                                updateBooks={this.handleSearchClick}
+                                setBooks={results}
+                                setRatingBooks={this.setRatingBooks}
                         />
-                        {/* eslint-disable-next-line jsx-a11y/accessible-emoji */}
-                        <Button extraClass='search_btn' onClick={this.handleSearchClick}>&#128269;</Button>
-                        <Button extraClass='rating_btn' onClick={this.handleRatingClick}>По рейтингу {isToggleRating ? <span>&#11015;</span> : <span>&#11014;</span>} </Button>
                         <ListBooks books={results} />
                     </Layout>
                 }
-            </React.Fragment>
+            </Layout>
         )
     }
 }

@@ -30,27 +30,3 @@
     }
   }
 }
-
-.setSearch{
-  margin-left: 30px;
-  font-size: 1.1em;
-  padding: .8em;
-  border-radius: .3rem;
-  max-width: 250px;
-  line-height: 1.2em;
-  background: #fff;
-  border: 1px solid rgba(34,36,38,.15);
-  color: rgba(0,0,0,.87);
-}
-
-.search_btn{
-  width: 60px;
-  background-color: $grey-color;
-  color: $yellow-color
-}
-.rating_btn{
-  width: 250px;
-  background-color: $grey-color;
-  margin: 0 30px;
-  color: $yellow-color
-}
