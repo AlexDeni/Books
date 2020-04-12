@@ -2,14 +2,14 @@
 
 .shoppingCart{
   position: relative;
-  width: 85px;
+  width: 60px;
   cursor: pointer;
   .countCart{
-    font-size: 40px;
+    font-size: 30px;
     position: absolute;
+    left: 45px;
     color: #ff7d00;
-    right: 0;
-    bottom: 0;
+    bottom: -9px;
   }
   .chooseCart{
     position: absolute;
