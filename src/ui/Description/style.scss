@@ -1,6 +1,5 @@
 @import "../../global/style";
 
-
 .description{
   text-align: left;
   &__size{
@@ -11,7 +10,18 @@
       font-size: 16px;
     }
     &_l{
-      font-size: 25px;
+      font-size: 22px;
+    }
+  }
+  &__weight{
+    &_500{
+      font-weight: 500;
+    }
+    &_600{
+      font-weight: 600;
+    }
+    &_900{
+      font-weight: 900;
     }
   }
   &__color{
@@ -25,7 +35,10 @@
       color: $white;
     }
     &_dark{
-      color: $dark-color;
+      color: $dark-blue;
+    }
+    &_yellow {
+      color: $yellow-color
     }
   }
   &__position{
@@ -34,11 +47,9 @@
     }
     &_center{
       text-align: center;
-      width: 100%;
     }
     &_right{
       text-align: right;
-      width: 100%;
     }
   }
 }

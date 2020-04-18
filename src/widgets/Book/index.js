@@ -18,11 +18,12 @@ const Book = ({title, author, image, rating, addInShoppingCart, openBookProperti
     const openShop =()=>{
         openBookProperties(id)
     };
+    console.log("price")
     return(
         <Layout extraClass='book'>
             <img src={image} alt={image} className='listImage'/>
             <div className='bookCard'>
-                <Description size='l' color='dark' position="center">{title}</Description>
+                <Description size='l' position="center">{title}</Description>
                 <Rating rating={rating} />
                 <Description extraClass='bookAuthor' position="center">{`Автор: ${author}`}</Description>
                 <Price currency={curr} price={price} />

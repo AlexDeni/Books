@@ -3,6 +3,7 @@ import './slider.scss'
 import {SlideImg} from "./SlideImg";
 import {Layout} from "../../ui/Layout";
 import {Dots} from "./Dots";
+import {Description} from "../../ui/Description";
 
 class Slider extends Component{
     constructor(props) {
@@ -31,7 +32,7 @@ class Slider extends Component{
     }
     makeSlide(e){
         e.preventDefault();
-        let allImg = this.props.images.length-1;
+        let allImg = this.props.slidesInfo.length-1;
         let currentNum = this.state.currentImage;
         let setDirection = e.currentTarget.dataset.direct;
         if(setDirection === 'prev'){
@@ -72,18 +73,38 @@ class Slider extends Component{
     }
 
     render() {
-        const{images,size, displayDot} = this.props;
+
+
+        const{slidesInfo,size, displayDot} = this.props;
         const{currentImage} = this.state;
         return(
-            <Layout extraClass='slide'>
-                <Layout justify='center' direction='row' >
+            <Layout extraClass='slide' justify='center' direction='row'>
+                <React.Fragment>
                     <span className="arrows" data-direct='prev' onClick={this.makeSlide} />
-                    <SlideImg image={images} size={size} index={currentImage}/>
+                    <SlideImg image={slidesInfo} size={size} index={currentImage}/>
                     <span className="arrows"  data-direct='next' onClick={this.makeSlide} />
-                </Layout>
-                <Dots quantityDots={images} currentImage={currentImage}  updateDots={this.setImageDot} displayDot={displayDot} />
+                    <Layout extraClass="slide_text">
+                        <Description size="l" color="white" position="center">{slidesInfo[currentImage].content}</Description>
+                    </Layout>
+                    <Dots quantityDots={slidesInfo} currentImage={currentImage}  updateDots={this.setImageDot} displayDot={displayDot} />
+                </React.Fragment>
             </Layout>
         )
     }
 }
 export {Slider}
+
+/*
+* {slidesInfo.map(slide => {
+                    return(
+                        <React.Fragment>
+                            <span className="arrows" data-direct='prev' onClick={this.makeSlide} />
+                            <SlideImg image={slide.image} size={size} index={currentImage}/>
+                            <span className="arrows"  data-direct='next' onClick={this.makeSlide} />
+                            <Layout extraClass="slide_text">
+                                <Description size="l" color="white" position="center">The Library preserves and provides access to a rich, diverse and enduring source of knowledge to inform, inspire and engage you in your intellectual and creative endeavors.</Description>
+                            </Layout>
+                            <Dots quantityDots={slide.image} currentImage={currentImage}  updateDots={this.setImageDot} displayDot={displayDot} />
+                        </React.Fragment>
+                    )
+                })}*/

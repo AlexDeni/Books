@@ -21,7 +21,7 @@ function FilterSearch({books, updateBooks}) {
                    placeholder='Введите запрос...'
                    className='setSearch'
             />
-            <Button extraClass='search_btn' bStyle="main" onClick={handleSearchClick}>&#128269;</Button>
+            <Button extraClass='search_btn' bStyle="main" onClick={handleSearchClick}><span aria-label="" role="img">&#128269;</span></Button>
         </React.Fragment>
     )
 }

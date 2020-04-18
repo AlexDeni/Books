@@ -12,23 +12,24 @@ import PropTypes from 'prop-types'
  * @param extraClass - className
  */
 
-function Button({children, bStyle, size, type, disable, onClick, extraClass}) {
+function Button({children, value, bStyle, size, type, disable, onClick, extraClass}) {
     const className = cx('btn',
         `btn__bStyle_${bStyle}`,
         `btn__size_${size}`, extraClass
     );
     return(
-        <button className={className} type={type} disabled={disable} onClick={onClick}>{children}</button>
+        <button value={value} className={className} type={type} disabled={disable} onClick={onClick}>{children}</button>
     )
 }
 
 Button.propTypes ={
-    children: PropTypes.node.isRequired,
+    children: PropTypes.any,
     type: PropTypes.oneOf(['button', 'submit']),
     onClick: PropTypes.func,
-    bStyle: PropTypes.oneOf(['default', 'main', ]),
+    bStyle: PropTypes.oneOf(['default', 'main', 'none']),
     size: PropTypes.oneOf(['s','m','l']),
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    value: PropTypes.any,
 };
 
 Button.defaultProps = {

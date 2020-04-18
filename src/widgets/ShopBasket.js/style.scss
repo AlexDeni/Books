@@ -1,0 +1,68 @@
+@import "../../global/style";
+
+.shop_basket_section{
+  width: 100%;
+}
+.shopCart_footer{
+  margin-top: 20px;
+}
+.shopCart{
+  border: 1px solid $light-grey;
+  padding: 10px;
+  min-height: 80px;
+}
+
+.shop_emblem{
+  position: relative;
+  p{
+    position: absolute;
+    bottom: -6px;
+    left: 45px;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.cart_item{
+  width: 100%;
+  vertical-align: middle;
+  border-collapse: separate;
+  border-spacing: 0;
+  tr:first-child td:first-child {
+    border-top-left-radius: 4px;
+  }
+  tbody td:first-child {
+    border-left: 1px solid #d7d7d7;
+    padding-left: 10px;
+  }
+  tbody tr:first-child td {
+    border-top-style: solid;
+  }
+  tbody td {
+    padding: 5px 0;
+    border-top: 1px dotted #d7d7d7;
+  }
+  tr:first-child td:last-child {
+    border-top-right-radius: 4px;
+  }
+  tbody td:last-child {
+    border-right: 1px solid #d7d7d7;
+    padding-right: 10px;
+  }
+  tr:last-child .basket_card {
+    border-bottom: 1px solid #d7d7d7;
+  }
+  .basket_cart_image{
+    width: 20%;
+    img{
+      width: 60px;
+    }
+  }
+  .basket_cart_info{width: 250px;}
+  .basket_cart_count{
+    button:hover{
+      color: $yellow-color;
+    }
+  }
+}

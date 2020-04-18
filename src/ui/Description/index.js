@@ -10,10 +10,11 @@ import cx from 'classnames'
  * @param extraClass - className
  */
 
-function Description({children,size, color,extraClass,position}) {
+function Description({children,size, color,extraClass,position, weight}) {
     let classes = cx('description',
         `description__size_${size}`,
         `description__color_${color}`,
+        `description__weight_${weight}`,
         `description__position_${position}`,
         extraClass
     );
@@ -24,14 +25,17 @@ function Description({children,size, color,extraClass,position}) {
 Description.propTypes = {
     children: PropTypes.node.isRequired,
     size: PropTypes.oneOf(['s','m','l']),
-    color: PropTypes.oneOf(['default', 'grey', 'white', 'dark']),
+    color: PropTypes.oneOf(['default', 'grey', 'white', 'dark', "yellow"]),
     position: PropTypes.oneOf(['left', 'center', 'right']),
+    weight: PropTypes.oneOf(['500', '600', '900']),
     extraClass: PropTypes.string
 };
 Description.defaultProps = {
+    size: 'm',
     color: 'default',
     className: '',
-    position: 'left'
+    position: 'left',
+    weight: "500"
 };
 
 export {Description}

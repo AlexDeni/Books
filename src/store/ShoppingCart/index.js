@@ -1,4 +1,4 @@
-import {SET_SHOPPING_CART, REMOVE_SHOPPING_CART} from "./types";
+import {ADD_SHOP_CART, REMOVE_SHOP_CART, SET_SHOP_CART} from "./types";
 
 const initialState = {
     id: [],
@@ -7,18 +7,25 @@ const initialState = {
 
 export default function reducerOrderBooks (state = initialState, action) {
     switch (action.type) {
-        case SET_SHOPPING_CART:
+        case SET_SHOP_CART:
             return {
                 ...state,
                 id: [...state.id, action.payload],
                 count: state.count + 1
             };
-        case REMOVE_SHOPPING_CART:
+        case ADD_SHOP_CART:
             return {
                 ...state,
                 id: action.payload,
-                count: state.count - 1
+                count: state.count + 1
             };
+        case REMOVE_SHOP_CART:
+            return {
+                ...state,
+                id: action.payload,
+                count: action.payload.length
+            };
+
         default:
             return state
     }

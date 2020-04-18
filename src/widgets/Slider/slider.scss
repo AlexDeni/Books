@@ -1,7 +1,8 @@
 @import "../../global/style";
 
-.slide{
+.slide {
   position: relative;
+
   .arrows {
     position: absolute;
     z-index: 100;
@@ -11,21 +12,25 @@
     padding: 15px;
     top: 46%;
     cursor: pointer;
+
     &[data-direct='prev'] {
       left: 0;
       transform: rotate(135deg);
       -webkit-transform: rotate(135deg);
-      &:hover{
+
+      &:hover {
         border: solid $yellow-color;
         border-width: 0 4px 4px 0;
         transition: .5s ease-out;
       }
     }
+
     &[data-direct='next'] {
       right: 0;
       transform: rotate(-45deg);
       -webkit-transform: rotate(-45deg);
-      &:hover{
+
+      &:hover {
         border: solid $yellow-color;
         border-width: 0 4px 4px 0;
         transition: .5s ease-out;
@@ -33,27 +38,45 @@
     }
   }
 
-  &__size{
-    &_s{
+  &__size {
+    &_s {
       width: 200px;
       height: 100px;
     }
-    &_m{
+
+    &_m {
       width: 500px;
       height: 200px;
     }
-    &_l{
+
+    &_l {
       width: 800px;
       height: 500px;
     }
-    &_allWidth{
+
+    &_allWidth {
       width: 100%;
       height: 450px;
     }
   }
+
+  .slide_text{
+    position: absolute;
+    right: 20%;
+    left: 20%;
+    background-color: rgba(14, 14, 14, 0.6);
+    padding: 15px 30px;
+    line-height: 40px;
+    top: 35%;
+    bottom: auto;
+    height: auto;
+    border-radius: 20px;
+  }
   .dots {
     position: absolute;
     bottom: 15px;
+    left: 0;
+    right: 0;
     z-index: 10;
     span {
       width: 12px;
@@ -66,7 +89,6 @@
       transition: all 0.15s;
     }
   }
-
 }
 
 

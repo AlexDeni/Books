@@ -5,7 +5,7 @@ import cx from 'classnames'
 function SlideImg({image, size, extraClass, index}) {
     let className = cx('slide', `slide__size_${size}`, extraClass);
     return(
-            <img src={image[index]} alt="" className={className}/>
+            <img src={image[index].image} alt="" className={className}/>
     )
 }
 

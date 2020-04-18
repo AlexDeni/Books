@@ -8,6 +8,7 @@ import {Header} from "./modules/Header";
 import {actionGetBooks} from './store/Books/actionBooks'
 import FormikForm from "./widgets/Formik/index";
 import {ScrollButton} from "./ui/ScrollButton"
+import ShopOrder from "./widgets/ShopBasket.js/ShopOrder"
 import Store from "./store";
 
 let store = Store();
@@ -41,8 +42,12 @@ class App extends Component{
                                     key={router.path}
                                 />)}
                         </Switch>
-                        <Modal isModalOpen={isHomeOpen} onButtonClick={this.onHomeClick}><FormikForm authType="signIn"/></Modal>
-                        <Modal isModalOpen={isShopOpen} onButtonClick={this.onShopClick}>Hello</Modal>
+                        <Modal title="Войти" isModalOpen={isHomeOpen} onButtonClick={this.onHomeClick}>
+                            <FormikForm authType="signIn"/>
+                        </Modal>
+                        <Modal title="Корзина" isModalOpen={isShopOpen} onButtonClick={this.onShopClick}>
+                            <ShopOrder onButtonClick={this.onShopClick} />
+                        </Modal>
                     </section>
                     <ScrollButton scrollPoint={250} />
                 </BrowserRouter>

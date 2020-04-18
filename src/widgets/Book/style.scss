@@ -10,18 +10,18 @@
       box-shadow: 0 0 12px rgba(0,0,0,0.5);
     }
     .listImage{
-      height: 310px;
-      width: 230px;
+      height: 270px;
+      width: 210px;
       margin: 5px auto 0;
     }
     .bookCard {
       padding: 10px;
       .bookAuthor{
-        margin: 10px 0;
+        margin: 6px 0;
         font-style: italic;
       }
       .book-btn{
-        margin-top: 15px;
+        margin-top: 10px;
       }
     }
   }
@@ -68,8 +68,4 @@
     -webkit-appearance: none;
     margin-top: -3px;
   }
-
-
-
-
 }

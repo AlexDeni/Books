@@ -2,8 +2,8 @@ import React from 'react'
 import {NavLink} from "react-router-dom";
 import {Layout} from "../../ui/Layout";
 import {Logo} from "../../ui/Logo";
-import ShoppingCart from "../../widgets/ShoppingBusket.js";
 import home from '../../static/home.png'
+import ShopEmblem from "../../widgets/ShopBasket.js/ShopEmblem";
 
 function Header({onHomeClick, onShopClick}) {
     return(
@@ -18,8 +18,7 @@ function Header({onHomeClick, onShopClick}) {
                 </nav>
                 <div className="header_btn">
                     <img src={home} onClick={() => onHomeClick(true)}  alt='home'/>
-                    <ShoppingCart onShopClick={onShopClick}/>
-                    <p>fdg</p>
+                    <ShopEmblem onShopClick={onShopClick} />
                 </div>
             </Layout>
         </header>
