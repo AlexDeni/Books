@@ -2,19 +2,35 @@
 
 .modal{
   position: fixed;
+  overflow: auto;
   bottom: 0;
-  width: 100%;
+  right: 0;
+  left: 0;
   top: 0;
-  background-color: rgba(0,0,0,.4);
+  display: flex;
+  justify-content: center;
+  background: rgba(0,0,0,.35);
+  z-index: 999;
 }
 .modal_body{
-  position: fixed;
-  top: 30%;
-  min-width: 450px;
-  z-index: 100;
-  min-height: 240px;
   background-color: $white;
-  transition: 3s;
+  margin-top: 100px;
+  z-index: 1000;
+  position: absolute;
+  &__size {
+    &_s {
+      width: 420px;
+      padding: 2px 0;
+    }
+    &_m {
+      width: 700px;
+      padding: 4px 0;
+      @media only screen and (max-width: 750px) {
+        width: 95%;
+        margin-top: 20px;
+      }
+    }
+  }
   .modal_header{
     padding: 10px 20px;
     border-bottom: 1px solid #f0f0f0;
@@ -26,12 +42,14 @@
     height: 18px;
     opacity: 0.3;
     cursor: pointer;
+    top: 18px;
     &:hover {
       opacity: 1;
     }
     &:before, &:after {
       position: absolute;
-      left: 15px;
+      left: 10px;
+      top: 0;
       content: ' ';
       height: 20px;
       width: 2px;

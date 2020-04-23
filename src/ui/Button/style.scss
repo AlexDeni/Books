@@ -21,6 +21,29 @@
     border-color: $dark-blue;
     outline: none;
   }
+  &__size{
+    &_s{
+      width: 80px;
+      height: 30px;
+      font-size: 14px;
+      padding: 2px 0;
+      border-radius: 2px;
+    }
+    &_m{
+      width: 100px;
+      height: 35px;
+      font-size: 16px;
+      padding: 4px 0;
+      border-radius: 4px;
+    }
+    &_l{
+      width: 130px;
+      height: 45px;
+      font-size: 22px;
+      padding: 8px 0;
+      border-radius: 5px;
+    }
+  }
   &__bStyle {
     &_default{
       background-color: $white;
@@ -39,34 +62,23 @@
       }
     }
     &_none{
-      width: inherit !important;
-      height: inherit !important;
+      width: inherit;
+      height: inherit;
       border: 0;
       line-height: 1;
       padding: 0;
+      box-shadow: none;
     }
-  }
-  &__size{
-    &_s{
-      width: 80px;
-      height: 30px;
-      font-size: 14px;
-      padding: 2px 2px;
-      border-radius: 2px;
-    }
-    &_m{
-      width: 100px;
-      height: 35px;
-      font-size: 16px;
-      padding: 4px 8px;
-      border-radius: 4px;
-    }
-    &_l{
-      width: 130px;
-      height: 55px;
-      font-size: 22px;
-      padding: 4px 8px;
-      border-radius: 5px;
+    &_remove{
+      width: inherit;
+      height: inherit;
+      border: 0;
+      padding: 0;
+      color: $red-color;
+      box-shadow: none;
+      &:hover{
+        color: $light-blue
+      }
     }
   }
   &:disabled{

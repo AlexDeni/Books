@@ -5,18 +5,20 @@ import './style.scss'
 //Курс долара
 const dol = 25;
 //Курс евро
-const eur = 27.5
+const eur = 27.5;
+//Валюта
+const currency = 'UA';
 
 function getCurrencySymbol(currency) {
     switch (currency) {
         case('UA'):
-            return <span>грн.</span>
+            return <span className="price_indent">грн</span>
         case('USD'):
-            return <span>&#36;</span>
+            return <span className="price_indent">&#36;</span>
         case('EUR'):
-            return <span>&#8364;</span>
+            return <span className="price_indent">&#8364;</span>
         default:
-            return <span>&#8372;</span>
+            return <span className="price_indent">грн</span>
     }
 }
 
@@ -32,15 +34,12 @@ function getCurrencyPrice(currency, price) {
     }
 }
 
-
-function Price({currency, price}) {
+function Price({color, price, size, position, extraClass, weight}) {
     return(
-        <React.Fragment>
-            <Description size='l' position="center">
-                {getCurrencyPrice(currency, price)}
-                {getCurrencySymbol(currency)}
-            </Description>
-        </React.Fragment>
+        <Description weight={weight} extraClass={extraClass} color={color} size={size} position={position}>
+            {getCurrencyPrice(currency, price)}
+            {getCurrencySymbol(currency)}
+        </Description>
     )
 }
 

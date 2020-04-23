@@ -11,14 +11,13 @@ import {Price} from "../../ui/Price"
 import {actionSetCart} from "../../store/ShoppingCart/actionCart";
 import {actionBookProperties} from "../../store/Books/actionBooks";
 
-const Book = ({title, author, image, rating, addInShoppingCart, openBookProperties, curr, price, id }) => {
+const Book = ({title, author, image, rating, addInShopCart, openBookProperties, price, id }) => {
     const addInShop =()=>{
-        addInShoppingCart(id)
+        addInShopCart(id)
     };
-    const openShop =()=>{
+    const openBook =()=>{
         openBookProperties(id)
     };
-    console.log("price")
     return(
         <Layout extraClass='book'>
             <img src={image} alt={image} className='listImage'/>
@@ -26,10 +25,10 @@ const Book = ({title, author, image, rating, addInShoppingCart, openBookProperti
                 <Description size='l' position="center">{title}</Description>
                 <Rating rating={rating} />
                 <Description extraClass='bookAuthor' position="center">{`Автор: ${author}`}</Description>
-                <Price currency={curr} price={price} />
+                <Price position="center" size="l" price={price} />
                 <Layout  justify='space-between' direction='row' extraClass="book-btn">
                     <Button onClick={addInShop} bStyle="main" size="m" >В корзину</Button>
-                    <Link  to={`/all/${id}`} onClick={openShop}><Button bStyle="main">Открыть</Button></Link>
+                    <Link  to={`/all/${id}`} onClick={openBook}><Button bStyle="main">Открыть</Button></Link>
                 </Layout>
             </div>
         </Layout>
@@ -42,18 +41,16 @@ Book.propTypes = {
     price: PropTypes.number,
     author: PropTypes.string,
     rating: PropTypes.number,
-    curr: PropTypes.oneOf(['UA', '$', '€'])
 };
 Book.defaulttypes = {
     author: "Автор",
     rating: 0,
-    curr: 'UA',
     price: 0
 };
 
 function mapDispatchToProps(dispatch) {
     return {
-        addInShoppingCart: bindActionCreators(actionSetCart, dispatch),
+        addInShopCart: bindActionCreators(actionSetCart, dispatch),
         openBookProperties: bindActionCreators(actionBookProperties, dispatch)
     }
 }

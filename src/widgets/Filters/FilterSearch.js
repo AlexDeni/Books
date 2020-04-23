@@ -18,7 +18,7 @@ function FilterSearch({books, updateBooks}) {
         <React.Fragment>
             <input value={search}
                    onChange={handleChange}
-                   placeholder='Введите запрос...'
+                   placeholder='Введите название...'
                    className='setSearch'
             />
             <Button extraClass='search_btn' bStyle="main" onClick={handleSearchClick}><span aria-label="" role="img">&#128269;</span></Button>

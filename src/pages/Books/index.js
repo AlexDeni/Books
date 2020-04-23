@@ -36,7 +36,7 @@ class AllBooks extends Component {
         return (
             <Layout extraClass="container">
                 {loader ? <Loader/> :
-                    <Layout wrap='wrap' direction='row'  extraClass='listBooks'>
+                    <Layout extraClass='listBooks'>
                         <Filter books={books}
                                 updateBooks={this.handleSearchClick}
                                 setBooks={results}

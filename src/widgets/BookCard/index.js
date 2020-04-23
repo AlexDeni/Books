@@ -7,46 +7,49 @@ import {actionSetCart} from "../../store/ShoppingCart/actionCart";
 import {Button} from "../../ui/Button";
 import "./style.scss"
 import {Description} from "../../ui/Description";
+import {Price} from "../../ui/Price";
+import {Title} from "../../ui/Title";
 
 function BookProperties({id, books, addInShoppingCart}) {
-    let openBook= books.filter(item => item.id === id);
-    let bookInfo = {};
-    for (let id in openBook) {
-        bookInfo['title'] = openBook[id].title;
-        bookInfo['price'] = openBook[id].price;
-        bookInfo['author'] = openBook[id].author;
-        bookInfo['image'] = openBook[id].image;
-        bookInfo['info'] = openBook[id].info;
-    }
+    let bookInfo= books.find(item => item.id === id);
     const handleChange =(e)=>{
         e.preventDefault();
         addInShoppingCart(id)
     };
+
     return (
-        <Layout extraClass="container">
-            {id ? <Layout>
-                    <Description extraClass='book-property-title'>{bookInfo.title}</Description>
-                    <Layout extraClass="book-property" justify="space-between" wrap="wrap" direction="row">
+        <Layout extraClass="container book-info listBooks">
+            {bookInfo ? <Layout wrap="wrap" direction="row">
+                    <Layout>
                         <img src={bookInfo.image} alt={bookInfo.title}/>
-                        <Layout extraClass="book-added-info">
-                            <Layout direction='row' extraClass="additional-item">
-                                <span className="additional-info">Автор:</span>
-                                <Description size="l">{bookInfo.author}</Description>
+                        <Link to='/all' className="property-goBack"><span>&#8592;</span>Back</Link>
+                    </Layout>
+                    <Layout extraClass="book-extra-info">
+                        <Title tagName="h1" color="blue">{bookInfo.title}</Title>
+                            <Price size="l" price={bookInfo.price} />
+                            <Button extraClass="btn_order_info" onClick={handleChange} bStyle="main" size='m' >В корзину</Button>
+                        <Layout extraClass="book_info-item">
+                            <Layout extraClass="title_line">
+                                <Description size="l">Информация</Description>
                             </Layout>
-                            <Layout direction='row' extraClass="additional-item" align="center">
-                                <span className="additional-info">Цена:</span>
-                                <Description size="l">{bookInfo.price}</Description>
+                            <Layout direction="row">
+                                <span>Автор</span>
+                                <Description weight="600">{bookInfo.author}</Description>
                             </Layout>
-                            <Layout direction='row' extraClass="additional-item">
-                                <span className="additional-info">Все о книге:</span>
-                                <Description extraClass="extra-info" size="m">{bookInfo.info}</Description>
+                            <Layout direction="row">
+                                <span>Рейтинг</span>
+                                <Description weight="600">{bookInfo.rating}</Description>
                             </Layout>
-                            <Button onClick={handleChange} bStyle="main" size='l' >В корзину</Button>
+                        </Layout>
+                        <Layout extraClass="book_info-item">
+                            <Layout extraClass="title_line">
+                                <Description size="l" className="additional-info">Описание</Description>
+                            </Layout>
+                            <Description extraClass="extra-info" size="m">{bookInfo.info}</Description>
                         </Layout>
                     </Layout>
                 </Layout>
-                : <div>Sorry, but the book was not found</div>}
-            <Link to='/all' className="property-goBack"><span>&#8592;</span>Back</Link>
+                : <Description size="l">Sorry, but the book was not found</Description>}
         </Layout>
     )
 }

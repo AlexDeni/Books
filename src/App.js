@@ -6,6 +6,7 @@ import {Modal} from './widgets/Modal'
 import './App.scss';
 import {Header} from "./modules/Header";
 import {actionGetBooks} from './store/Books/actionBooks'
+import {actionGetNews} from './store/News/actionNews'
 import FormikForm from "./widgets/Formik/index";
 import {ScrollButton} from "./ui/ScrollButton"
 import ShopOrder from "./widgets/ShopBasket.js/ShopOrder"
@@ -13,6 +14,7 @@ import Store from "./store";
 
 let store = Store();
 store.dispatch(actionGetBooks());
+store.dispatch(actionGetNews());
 
 class App extends Component{
     state = {
@@ -24,7 +26,7 @@ class App extends Component{
     };
     onShopClick = isShopOpen => {
         this.setState({ isShopOpen });
-    }
+    };
 
     render() {
         const {isHomeOpen, isShopOpen} = this.state;
@@ -45,7 +47,7 @@ class App extends Component{
                         <Modal title="Войти" isModalOpen={isHomeOpen} onButtonClick={this.onHomeClick}>
                             <FormikForm authType="signIn"/>
                         </Modal>
-                        <Modal title="Корзина" isModalOpen={isShopOpen} onButtonClick={this.onShopClick}>
+                        <Modal size="m" title="Корзина" isModalOpen={isShopOpen} onButtonClick={this.onShopClick}>
                             <ShopOrder onButtonClick={this.onShopClick} />
                         </Modal>
                     </section>

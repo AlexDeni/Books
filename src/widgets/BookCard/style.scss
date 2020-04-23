@@ -1,27 +1,30 @@
 @import "../../global/style";
 
-.book-property-title{
-  font-size: 45px;
-}
-.book-property{
-  margin: 40px 0;
+.book-info{
   img{
-    width: 330px;
-    height: 450px;
+    width: 300px;
+    height: 420px;
+    margin: 0 80px 15px 0;
   }
-  .book-added-info{
+  .book-extra-info{
     max-width: 800px;
-    .additional-item {
-      min-height: 80px;
-      .additional-info {
-        font-size: 25px;
-        width: 160px;
-        color: $grey-color;
+    min-width: 400px;
+    .btn_order_info{
+      margin: 25px 0;
+    }
+    .book_info-item{
+      span{
+        margin-right: 50px;
+        margin-bottom: 30px;
+      }
+      .title_line{
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #d7d7d7;
       }
       .extra-info{
-        width: 60%;
+        line-height: 1.7;
         text-align: justify;
-        margin: 10px 0 50px;
       }
     }
   }
@@ -30,6 +33,7 @@
   text-decoration: none;
   font-size: 25px;
   color: $dark-color;
+  margin-top: 30px;
   &:hover{
     color: $yellow-color
   }

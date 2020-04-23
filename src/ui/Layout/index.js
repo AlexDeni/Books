@@ -24,7 +24,7 @@ function Layout({children, direction, justify, align, wrap, extraClass}){
 Layout.propTypes = {
     children: PropTypes.node,
     direction: PropTypes.oneOf(['row', 'column']),
-    justify: PropTypes.oneOf(['flex-start', 'center', 'flex-end', 'space-around', 'space-between']),
+    justify: PropTypes.oneOf(['flex-start', 'center', 'flex-end', 'space-around', 'space-evenly', 'space-between']),
     align: PropTypes.oneOf(['flex-start', 'center', 'baseline', 'flex-end']),
     extraClass: PropTypes.string,
     wrap: PropTypes.string,

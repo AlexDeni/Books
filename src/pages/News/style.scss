@@ -1,5 +1,37 @@
 @import "./../../global/style";
 
 .news-item{
-  width: 50%;
+  width: 45%;
+  box-shadow: 0 0 3px rgba(0,0,0,0.5);
+  margin: 0 8px 30px;
+  padding: 20px;
+  &:hover{
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+  }
+  a p:hover{
+    color: $yellow-color;
+  }
+}
+.news-content{
+  margin-top: 20px;
+  line-height: 1.5;
+  text-align: justify;
+}
+.news_item_content{
+  width: 70%;
+  box-shadow: 0 0 3px rgba(0,0,0,0.5);
+  margin: 0 8px 30px;
+  padding: 20px;
+}
+@media only screen and (max-width: 1200px) {
+  .news-item{
+    width: 40%;
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .news-item{
+    width: 95%;
+    margin-top: 20px;
+  }
 }

@@ -19,7 +19,6 @@ function ListBooks({books, num}) {
                               image={getImage(image)}
                               price={price}
                               rating={rating}
-                              curr = 'UA'
                         />
                     )}
             })}

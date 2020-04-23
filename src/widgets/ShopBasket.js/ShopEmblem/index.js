@@ -2,13 +2,14 @@ import React from 'react'
 import {connect } from "react-redux"
 import {Description} from "../../../ui/Description";
 import {Layout} from "../../../ui/Layout";
-import shopEmblem from '../../../static/busket.png'
+import {faShoppingBasket} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
 function ShopEmblem({count, onShopClick}) {
     return(
         <Layout extraClass="shop_emblem">
-            <img src={shopEmblem} alt='basket' onClick={() => onShopClick(true)} />
+            <FontAwesomeIcon size="3x"  color="#113d54"  onClick={() => onShopClick(true)} icon={faShoppingBasket} />
             <Description size="l" color="dark" extraClass="countCart">{count}</Description>
         </Layout>
     )

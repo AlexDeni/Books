@@ -37,7 +37,7 @@ const slidesInfo = [
 function Home({books}){
     return(
         <React.Fragment>
-            <Slider slidesInfo={slidesInfo} size='allWidth' displayDot />
+            <Slider slidesInfo={slidesInfo} size='allWidth' displayDot slideShow />
             <Layout extraClass="container">
                 <Title tagName="h1" position="center" color="blue">Популярные товары</Title>
                 <ListBooks books={books} num={4}/>

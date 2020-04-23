@@ -1,1 +1,2 @@
 export const GET_ALL_NEWS = "GET_ALL_NEWS";
+export const OPEN_NEWS_PROPERTIES = "OPEN_NEWS_PROPERTIES"

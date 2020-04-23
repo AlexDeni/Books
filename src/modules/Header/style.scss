@@ -6,6 +6,7 @@ header{
   border-bottom: 2.4px solid $dark-blue;
   .nav_header {
     display: flex;
+    .mainLink{display: none}
     a {
       text-decoration: none;
       color: $dark-blue;
@@ -31,75 +32,40 @@ header{
     }
   }
 }
-
-@media only screen
-and (min-width : 900px) {
-  input[type=checkbox]#toggle,
-  label[for=toggle] {
-    display: none;
-  }
+input[type=checkbox]#toggle, .fa-bars{
+  display: none;
 }
-@media only screen
-and (max-width : 900px) {
+@media only screen and (max-width : 1300px) {
   input[type=checkbox]#toggle {
     position: absolute;
-    color: red;
     z-index: -99999;
   }
-  header a, header img, header p{
+  .fa-bars{
+    display: block;
+    color: $white;
+    cursor: pointer;
+  }
+  .header, header a, header img, header p{
     display: none;
   }
   header{
-    min-height: 40px;
-    background-color: #000;
-    transition: all .5s ease;
+    min-height: 30px;
+    padding-left: 10px;
+    background-color: $dark-blue;
   }
-  input[type=checkbox]#toggle:checked ~ .header, .nav_header, .nav__trigger {
+  input[type=checkbox]#toggle:checked ~ .header, .nav_header{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    .nav_header a{
+    .nav_header a, .header_btn svg, .mainLink{
       display: block;
+      color: $white;
+      margin: 5px 0;
     }
-    .header_btn img{
-      display: block;
-    }
   }
+  input[type=checkbox]#toggle:checked ~ .nav_header a{
+    display: none;
 
-}
-
-
-
-$bar-length: 28px;
-$bar-thickness: 4px;
-$nav-item-delay: 0.05s;
-$nav-width: 3.75rem;
-.bars {
-  position: relative;
-  margin: $bar-thickness*4;
-  &,
-  &:before,
-  &:after {
-    width: $bar-length;
-    height: $bar-thickness;
-    background-color: red;
-    border-radius: $bar-thickness;
-    transition: 0.2s ease-in-out;
-  }
-  &:before,
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    will-change: transform;
-  }
-  &:before {
-    transform: translateY(-($bar-thickness*2));
-  }
-  &:after {
-    transform: translateY(($bar-thickness*2));
   }
 }
 

@@ -1,36 +1,40 @@
-import React,{Component} from "react";
+import React from "react";
 import { connect } from "react-redux";
 import {bindActionCreators} from "redux";
 import {Layout} from "../../ui/Layout";
 import {Description} from "../../ui/Description";
-import {actionGetNews} from "../../store/News/actionNews";
+import {actionOpenNews} from "../../store/News/actionNews";
 import {Loader} from "../../widgets/Loader";
 import './style.scss'
+import {Link} from "react-router-dom";
 
-class News extends Component{
+const clipText = (text, count) => {
+    text = text.trim();
+    if(text.length < count) return text;
+    text = text.slice(0, count);
+    return text.trim() + "...";
+};
 
-    componentDidMount() {
-        this.props.getAllNews()
-    }
-    render() {
-        const {loader, news} = this.props;
-        return(
-            <React.Fragment>
-                <Layout>
-                {loader ? <Loader/> :
-                    <Layout direction="row" wrap="wrap">
-                        {news.data.map(post => (
-                            <div key={post.id} className="news-item">
-                                <Description size="l">{post.title}</Description>
-                                <Description extraClass="news-item-text">{post.text}</Description>
-                            </div>
-                        ))}
-                    </Layout>
-                }
+const News = ({loader, news, openNewsContent}) => {
+    const openNews =(post)=>{
+        openNewsContent(post)
+    };
+    return(
+        <Layout extraClass="container listBooks">
+            {loader ? <Loader/> :
+                 <Layout direction="row" wrap="wrap" justify="space-evenly">
+                     {news.data.map(post => (
+                         <Layout key={post.id} extraClass="news-item">
+                             <Link  to={`/news/${post.id}`} onClick={()=> openNews(post)}>
+                                <Description color="dark" position="center" size="l">{post.title}</Description>
+                             </Link>
+                            <Description extraClass="news-content">{clipText(post.text, 150)}</Description>
+                        </Layout>
+                    ))}
                 </Layout>
-            </React.Fragment>
-        )
-    }
+            }
+        </Layout>
+    )
 }
 
 function mapStateToProps(state) {
@@ -41,7 +45,7 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
     return {
-        getAllNews: bindActionCreators(actionGetNews, dispatch),
+        openNewsContent: bindActionCreators(actionOpenNews, dispatch)
     }
 }
 

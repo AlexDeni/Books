@@ -26,7 +26,7 @@ Button.propTypes ={
     children: PropTypes.any,
     type: PropTypes.oneOf(['button', 'submit']),
     onClick: PropTypes.func,
-    bStyle: PropTypes.oneOf(['default', 'main', 'none']),
+    bStyle: PropTypes.oneOf(['default', 'main', 'none', 'remove']),
     size: PropTypes.oneOf(['s','m','l']),
     disabled: PropTypes.bool,
     value: PropTypes.any,

@@ -21,8 +21,8 @@ function ShopOrder({id, books ,count, removeShopCart, addShopCart, onButtonClick
         id.push(Number(e.target.value))
         addShopCart(id)
     };
-    const removeBooks = e => {
-        let removedPart = id.filter(number => number !== Number(e.target.value))
+    const removeBooks = book => {
+        let removedPart = id.filter(number => number !== Number(book.item.id.id))
         removeShopCart(removedPart)
     };
     let selectedBooks = [];
@@ -43,7 +43,7 @@ function ShopOrder({id, books ,count, removeShopCart, addShopCart, onButtonClick
                         </Layout>
                     </Layout>
                 </Layout>
-                : <Description color="dark" size="l">Корзина пуста)</Description>}
+                : <Description color="dark" size="l">Корзина пуста</Description>}
         </React.Fragment>
     )
 }
