@@ -1,5 +1,4 @@
 import React from "react";
-import {Description} from "../../../ui/Description";
 import {Price} from "../../../ui/Price";
 
 export const ShowCardPrice = ({selectedBooks}) => {

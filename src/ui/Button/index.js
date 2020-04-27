@@ -27,7 +27,7 @@ Button.propTypes ={
     type: PropTypes.oneOf(['button', 'submit']),
     onClick: PropTypes.func,
     bStyle: PropTypes.oneOf(['default', 'main', 'none', 'remove']),
-    size: PropTypes.oneOf(['s','m','l']),
+    size: PropTypes.oneOf(['s','m','l', 'all']),
     disabled: PropTypes.bool,
     value: PropTypes.any,
 };

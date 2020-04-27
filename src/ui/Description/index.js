@@ -23,7 +23,7 @@ function Description({children,size, color,extraClass,position, weight}) {
     )
 }
 Description.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
     size: PropTypes.oneOf(['s','m','l']),
     color: PropTypes.oneOf(['default', 'grey', 'white', 'dark', "yellow"]),
     position: PropTypes.oneOf(['left', 'center', 'right']),

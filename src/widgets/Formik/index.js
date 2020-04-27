@@ -4,6 +4,10 @@ import Error from "./error";
 import config from './config';
 import {SignInSchema, SignUpSchema} from './validationSchema';
 import {useHistory} from "react-router-dom";
+import {Button} from "../../ui/Button";
+import "./style.scss"
+import {Layout} from "../../ui/Layout";
+import {Description} from "../../ui/Description";
 
 function getButtonText(authType) {
     const textBtn = ['Войти', 'Зарегистрироваться'];
@@ -13,15 +17,13 @@ function getButtonText(authType) {
     return textBtn
 }
 
-export default function FormikForm({authType}) {
-
+export default function FormikForm({authType, formTitle}) {
     let history = useHistory();
     const handleGetType = authType => {
         if(authType==='signIn'){
             history.push("/login");
         }
     };
-
     return (
         <React.Fragment>
             {config[authType].map((data, i) =>
@@ -43,7 +45,8 @@ export default function FormikForm({authType}) {
                           handleSubmit,
                           isSubmitting
                       })=>(
-                        <form onSubmit={handleSubmit}>
+                        <form className="login_form" onSubmit={handleSubmit}>
+                            <Description color="dark" position="center" size="l">{formTitle}</Description>
                             <div className='inputForm'>
                                 {data.fields.map((item, key) => {
                                     const {type, placeholder, name} = item;
@@ -63,8 +66,12 @@ export default function FormikForm({authType}) {
                                 })
                                 }
                             </div>
-                            <button type='submit'  onClick={handleChange} >{getButtonText(authType)[0]}</button>
-                            <button type='submit'  onClick={() => handleGetType(authType)} disabled={isSubmitting}>{getButtonText(authType)[1]}</button>
+                            <Layout justify="center" align='center'>
+                                <Button size="all" type='submit'  onClick={handleChange} >{getButtonText(authType)[0]}</Button>
+                                <Button size="all" type='submit'  onClick={() => handleGetType(authType)} disabled={isSubmitting}>
+                                    {getButtonText(authType)[1]}
+                                </Button>
+                            </Layout>
                         </form>
                     )}
                 </Formik>

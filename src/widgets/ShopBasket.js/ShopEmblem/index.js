@@ -6,11 +6,11 @@ import {faShoppingBasket} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
-function ShopEmblem({count, onShopClick}) {
+function ShopEmblem({count, onShopClick, color, size, colorCount}) {
     return(
-        <Layout extraClass="shop_emblem">
-            <FontAwesomeIcon size="3x"  color="#113d54"  onClick={() => onShopClick(true)} icon={faShoppingBasket} />
-            <Description size="l" color="dark" extraClass="countCart">{count}</Description>
+        <Layout extraClass="shop_emblem" align='center'>
+            <FontAwesomeIcon size={size}  color={color}  onClick={() => onShopClick(true)} icon={faShoppingBasket} />
+            <Description size="l" color={colorCount} extraClass="countCart">{count}</Description>
         </Layout>
     )
 }

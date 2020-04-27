@@ -19,7 +19,7 @@
   position: absolute;
   &__size {
     &_s {
-      width: 420px;
+      width: 380px;
       padding: 2px 0;
     }
     &_m {
@@ -64,6 +64,7 @@
   }
   .modal_item{
     padding: 20px;
+    form{width: 75%;}
   }
 }
 

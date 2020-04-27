@@ -6,7 +6,7 @@ class Login extends Component{
     render(){
         return(
             <Layout extraClass="container">
-                <FormikForm authType="signUp"/>
+                <FormikForm authType="signUp" formTitle="Форма регистрации"/>
             </Layout>
         )
     }
