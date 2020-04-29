@@ -50,7 +50,7 @@ class Slider extends Component{
         if(this.props.slideShow) {
             this.timerID = setInterval(
                 () => this.updateImg(),
-                5500
+                7000
             );
         }
     }

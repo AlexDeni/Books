@@ -12,13 +12,13 @@ import PropTypes from 'prop-types'
  * @param extraClass - className
  */
 
-function Button({children, value, bStyle, size, type, disable, onClick, extraClass}) {
+function Button({children, value, bStyle, size, type, disabled, onClick, extraClass}) {
     const className = cx('btn',
         `btn__bStyle_${bStyle}`,
         `btn__size_${size}`, extraClass
     );
     return(
-        <button value={value} className={className} type={type} disabled={disable} onClick={onClick}>{children}</button>
+        <button value={value} className={className} type={type} disabled={disabled} onClick={onClick}>{children}</button>
     )
 }
 
@@ -36,7 +36,7 @@ Button.defaultProps = {
     bStyle: 'default',
     size: 'm',
     type: 'button',
-    disable: false,
+    disabled: false,
 };
 
 export {Button}

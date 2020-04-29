@@ -3,8 +3,9 @@ import {NavLink} from "react-router-dom";
 import {Layout} from "../../ui/Layout";
 import {Logo} from "../../ui/Logo";
 import ShopEmblem from "../../widgets/ShopBasket.js/ShopEmblem";
-import { faHome, faBars, faTimes, faBookOpen, faNewspaper, faUserAlt } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faBars, faTimes, faBookOpen, faNewspaper, faUserAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Description} from "../../ui/Description";
 
 class Header extends Component{
     constructor() {
@@ -41,7 +42,6 @@ class Header extends Component{
                     </nav>
                     : ''
                 }
-
                 {/*menu global*/}
                 <Layout extraClass='container header' direction='row' justify='space-around' align="center">
                     <NavLink to='/'><Logo/> </NavLink>
@@ -49,15 +49,18 @@ class Header extends Component{
                         <NavLink to='/all'>Все Книги</NavLink>
                         <NavLink to='/news'>Новости</NavLink>
                     </nav>
-                    <Layout direction='row' className="header_btn">
-                        <FontAwesomeIcon size="3x"  color="#113d54"  onClick={() => onHomeClick(true)} icon={faUserAlt} />
-                        <ShopEmblem color="#113d54" colorCount="dark" size="3x" onShopClick={onShopClick} />
+                    <Layout extraClass="header_phone">
+                        <Description color='dark' size='m'><FontAwesomeIcon size="1x" color="#f57904" icon={faPhoneAlt}/> 380634576844</Description>
+                        <Description color='dark' size='m'><FontAwesomeIcon size="1x" color="#f57904" icon={faPhoneAlt}/> 380634576844</Description>
+                    </Layout>
+                    <Layout direction='row' extraClass="header_btn">
+                        <FontAwesomeIcon size="2x"  color="#113d54"  onClick={() => onHomeClick(true)} icon={faUserAlt} />
+                        <ShopEmblem color="#113d54" colorCount="dark" size="2x" onShopClick={onShopClick} />
                     </Layout>
                 </Layout>
             </header>
         )
     }
 }
-
 
 export {Header}

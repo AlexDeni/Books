@@ -22,10 +22,17 @@ header{
       color: $yellow-color;
     }
   }
+  .header_phone p{
+    font-size: 18px;
+    margin: 5px;
+  }
   .header_btn{
-    width: 140px;
-    img{
-      width: 50px;
+    .fa-user-alt{
+      margin-right: 20px;
+    }
+    .fa-user-alt:hover, .shop_emblem:hover *{
+      color: $yellow-color;
+      cursor: pointer;
     }
   }
 }
