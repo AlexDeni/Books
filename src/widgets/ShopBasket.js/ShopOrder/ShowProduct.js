@@ -10,7 +10,7 @@ import {Price} from "../../../ui/Price";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import {Layout} from "../../../ui/Layout";
 
-const ShowProduct= ({selectedBooks, removeBook, addBook, removeBooks, openBookProperties, onButtonClick}) =>{
+const ShowProduct= ({selectedBooks, removeBook, addBook, removeBooks, openBookProperties, onModalClick}) =>{
     let idTitle = {};
     selectedBooks.map( a =>(idTitle[a.title] = idTitle[a.title] + 1 || 1));
     let sumSelectedBooks = Object.keys(idTitle).map(function (id) {
@@ -21,7 +21,7 @@ const ShowProduct= ({selectedBooks, removeBook, addBook, removeBooks, openBookPr
     });
     const openBookInfo =(e)=>{
         openBookProperties(Number(e.target.value))
-        onButtonClick(false)
+        onModalClick(false)
     };
 
     return(
@@ -50,7 +50,7 @@ const ShowProduct= ({selectedBooks, removeBook, addBook, removeBooks, openBookPr
                             <Button size="l" bStyle="none" value={item.id.id} onClick={addBook}>+</Button>
                          </Layout>
                      </td>
-                     <td><Price position="center" weight="600" price={item.price} /></td>
+                     <td><Price position="center" weight="600" price={item.price}/></td>
                      <td>
                          <FontAwesomeIcon color="darkred"  onClick={() => removeBooks({item})} icon={faTrashAlt} />
                      </td>

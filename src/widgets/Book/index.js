@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {connect} from "react-redux"
 import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
@@ -33,7 +33,7 @@ const Book = ({title, author, image, rating, addInShopCart, openBookProperties, 
                 <Description extraClass='bookAuthor' position="center">{`Автор: ${author}`}</Description>
                 <Price position="center" size="l" price={price} />
                 <Layout  justify='space-between' direction='row' extraClass="book-btn">
-                    <Button bStyle="main" disabled={result} className={{'selected': result}} onClick={addInShop} >
+                    <Button bStyle="main" disabled={result}  onClick={addInShop} >
                         {result ? 'В корзине' : 'В корзину'}
                     </Button>
                     <Link  to={`/all/${id}`} onClick={openBook}><Button bStyle="main">Открыть</Button></Link>

@@ -6,7 +6,7 @@ import {Description} from "../../ui/Description";
 import {Button} from "../../ui/Button";
 import cx from "classnames";
 
-function Modal({children, title, isModalOpen, onButtonClick, size, extraClass}) {
+function Modal({children, title, isModalOpen, onModalClick, size, extraClass}) {
     if(!isModalOpen){
         return null
     }
@@ -19,7 +19,7 @@ function Modal({children, title, isModalOpen, onButtonClick, size, extraClass}) 
                 <div className={className}>
                     <Layout extraClass="modal_header" direction="row">
                         <Description color="dark" size="l">{title}</Description>
-                        <Button bStyle="none" onClick={()=> onButtonClick(false)} extraClass="modal_close_icon"/>
+                        <Button bStyle="none" onClick={()=> onModalClick(false)} extraClass="modal_close_icon"/>
                     </Layout>
                     <Layout extraClass='modal_item' align='center' justify="center">
                         {children}

@@ -44,11 +44,11 @@ class App extends Component{
                                     key={router.path}
                                 />)}
                         </Switch>
-                        <Modal title="Войти" isModalOpen={isHomeOpen} onButtonClick={this.onHomeClick}>
+                        <Modal title="Войти" isModalOpen={isHomeOpen} onModalClick={this.onHomeClick}>
                             <FormikForm authType="signIn"/>
                         </Modal>
-                        <Modal size="m" title="Корзина" isModalOpen={isShopOpen} onButtonClick={this.onShopClick}>
-                            <ShopOrder onButtonClick={this.onShopClick} />
+                        <Modal size="m" title="Корзина" isModalOpen={isShopOpen} onModalClick={this.onShopClick}>
+                            <ShopOrder onModalClick={this.onShopClick} />
                         </Modal>
                     </section>
                     <ScrollButton scrollPoint={250} />

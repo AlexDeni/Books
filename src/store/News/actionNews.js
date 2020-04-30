@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {GET_ALL_NEWS, OPEN_NEWS_PROPERTIES} from "./types";
+import {GET_ALL_NEWS, OPEN_NEWS_PROPERTIES, ERROR_GET_NEWS} from "./types";
 
 const API_NEWS_URL = 'https://mysterious-reef-29460.herokuapp.com/api/v1/news';
 
@@ -13,8 +13,12 @@ export const actionGetNews = () => {
                     loader: false
                 })
             })
-            .catch(err => {
-                dispatch('error');
+            .catch(error => {
+                dispatch({
+                    type: ERROR_GET_NEWS,
+                    payload: error.message,
+                    loader: false
+                })
             });
     }
 }

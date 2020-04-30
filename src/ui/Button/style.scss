@@ -55,6 +55,12 @@
   &__bStyle {
     &_default{
       background-color: $white;
+      color: $dark-blue;
+      border-color: $dark-blue;
+      margin-bottom: 10px;
+      &:hover{
+        color: $yellow-color;
+      }
     }
     &_main{
       color: $white;

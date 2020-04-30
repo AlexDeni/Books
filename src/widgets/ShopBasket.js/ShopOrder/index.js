@@ -9,7 +9,7 @@ import {Description} from "../../../ui/Description";
 import {Button} from "../../../ui/Button";
 import './../style.scss'
 
-function ShopOrder({id, books ,count, removeShopCart, addShopCart, onButtonClick}) {
+function ShopOrder({id, books ,count, removeShopCart, addShopCart, onModalClick}) {
     const removeBook = e => {
         let i = id.indexOf(Number(e.target.value));
         if(i >= 0) {
@@ -34,11 +34,11 @@ function ShopOrder({id, books ,count, removeShopCart, addShopCart, onButtonClick
         <React.Fragment>
             {count>0 ?
                 <Layout extraClass="shop_basket_section">
-                    <ShowProduct onButtonClick={onButtonClick} selectedBooks={selectedBooks} removeBooks={removeBooks}  addBook={addBook} removeBook={removeBook} id={id}/>
+                    <ShowProduct onModalClick={onModalClick} selectedBooks={selectedBooks} removeBooks={removeBooks}  addBook={addBook} removeBook={removeBook} id={id}/>
                     <Layout extraClass="shopCart shopCart_footer" direction="row" align="center" justify="space-between">
-                        <Layout direction="row"><span>&#8592;</span>Вернуться к покупкам</Layout>
+                        <Button bStyle='none'  direction="row" onClick={()=> onModalClick(false)}><span>&#8592;</span>Вернуться к покупкам</Button>
                         <Layout >
-                            <Layout direction="row" >Итого: <ShowCardPrice selectedBooks={selectedBooks} /></Layout>
+                            <Layout direction="row" extraClass="basket_amount_price">Итого: <ShowCardPrice selectedBooks={selectedBooks} /></Layout>
                             <Button>Оформить</Button>
                         </Layout>
                     </Layout>

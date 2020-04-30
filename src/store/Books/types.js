@@ -1,2 +1,3 @@
 export const GET_ALL_BOOKS = "GET_ALL_BOOKS";
 export const OPEN_BOOK_PROPERTIES = "OPEN_BOOK_PROPERTIES";
+export const ERROR_GET_BOOK = "ERROR_GET_BOOK";

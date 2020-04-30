@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {GET_ALL_BOOKS, OPEN_BOOK_PROPERTIES} from "./types";
+import {GET_ALL_BOOKS, OPEN_BOOK_PROPERTIES, ERROR_GET_BOOK} from "./types";
 
 export const actionGetBooks = () => {
     return (dispatch)=>{
@@ -11,8 +11,12 @@ export const actionGetBooks = () => {
                     loader: false
                 })
             })
-            .catch(err => {
-                console.log('error');
+            .catch(error => {
+                dispatch({
+                    type: ERROR_GET_BOOK,
+                    payload: error.message,
+                    loader: false
+                })
             });
     }
 }

@@ -2,8 +2,9 @@ import React, {Component}  from "react";
 import { connect } from "react-redux"
 import {Layout} from "../../ui/Layout";
 import {ListBooks} from "../../modules/ListBooks";
-import {Loader} from "../../widgets/Loader";
+import {Loader} from "../../widgets/LoaderError";
 import {Filter} from "../../widgets/Filters";
+import ErrorText from "../../widgets/LoaderError/Error"
 
 class AllBooks extends Component {
     constructor() {
@@ -42,6 +43,7 @@ class AllBooks extends Component {
                                 setBooks={results}
                                 setRatingBooks={this.setRatingBooks}
                         />
+                        <ErrorText errorText={this.props.error} />
                         <ListBooks books={results} />
                     </Layout>
                 }
@@ -53,7 +55,8 @@ class AllBooks extends Component {
 function mapStateToProps(state) {
     return {
         books: state.getBooks.books,
-        loader: state.getBooks.loader
+        loader: state.getBooks.loader,
+        error: state.getBooks.error
     }
 }
 

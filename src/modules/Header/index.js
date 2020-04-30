@@ -35,6 +35,10 @@ class Header extends Component{
                         <NavLink exact  onClick={this.changeStatusMenu} to='/'><FontAwesomeIcon color="white" icon={faHome} />Главная</NavLink>
                         <NavLink onClick={this.changeStatusMenu} to='/all'><FontAwesomeIcon color="white" icon={faBookOpen} />Все Книги</NavLink>
                         <NavLink onClick={this.changeStatusMenu} to='/news'><FontAwesomeIcon color="white" icon={faNewspaper} />Новости</NavLink>
+                        <Layout extraClass="header_phone">
+                            <Description color='dark' size='m'><FontAwesomeIcon size="1x" color="#f57904" icon={faPhoneAlt}/> 380634576844</Description>
+                            <Description color='dark' size='m'><FontAwesomeIcon size="1x" color="#f57904" icon={faPhoneAlt}/> 380634576844</Description>
+                        </Layout>
                         <div className="hidden-menu_btn">
                             <FontAwesomeIcon size="2x" color="white" onClick={() => onHomeClick(true)} icon={faUserAlt}/>
                             <ShopEmblem size="2x" color="white" colorCount="white" onShopClick={onShopClick}/>

@@ -13,6 +13,7 @@
 }
 .shop_basket_section{
   width: 100%;
+  .basket_amount_price{margin: 10px 0}
 }
 .shopCart_footer{
   margin-top: 20px;
@@ -45,6 +46,7 @@
           width: 70px;
         }
       }
+      svg{cursor: pointer}
       &:not(:first-child){
         min-width: 100px;
         text-align: center;

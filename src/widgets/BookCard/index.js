@@ -10,13 +10,18 @@ import {Description} from "../../ui/Description";
 import {Price} from "../../ui/Price";
 import {Title} from "../../ui/Title";
 
-function BookProperties({id, books, addInShoppingCart}) {
+function BookProperties({id, books, addInShopCart, idChoose}) {
     let bookInfo= books.find(item => item.id === id);
-    const handleChange =(e)=>{
+    const addInShop =(e)=>{
         e.preventDefault();
-        addInShoppingCart(id)
+        addInShopCart(id)
     };
-
+    let result = false
+    for(let i in idChoose){
+        if(idChoose[i]===id){
+            result = true
+        }
+    }
     return (
         <Layout extraClass="container book-info listBooks">
             {bookInfo ? <Layout wrap="wrap" direction="row">
@@ -27,7 +32,9 @@ function BookProperties({id, books, addInShoppingCart}) {
                     <Layout extraClass="book-extra-info">
                         <Title tagName="h1" color="blue">{bookInfo.title}</Title>
                             <Price size="l" price={bookInfo.price} />
-                            <Button extraClass="btn_order_info" onClick={handleChange} bStyle="main" size='m' >В корзину</Button>
+                            <Button disabled={result} extraClass="btn_order_info" onClick={addInShop} bStyle="main" size='m' >
+                                {result ? 'В корзине' : 'В корзину'}
+                            </Button>
                         <Layout extraClass="book_info-item">
                             <Layout extraClass="title_line">
                                 <Description size="l">Информация</Description>
@@ -56,13 +63,14 @@ function BookProperties({id, books, addInShoppingCart}) {
 
 function mapStateToProps(state) {
     return {
+        idChoose: state.orderBooks.id,
         id: state.getBooks.id,
         books: state.getBooks.books
     }
 }
 function mapDispatchToProps(dispatch) {
     return {
-        addInShoppingCart: bindActionCreators(actionSetCart, dispatch)
+        addInShopCart: bindActionCreators(actionSetCart, dispatch)
     }
 }
 
