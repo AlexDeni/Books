@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './slider.scss';
 import {Layout} from "../../ui/Layout";
 
-const Dot = ({ active, updateDots, number }) => (
+const Dot = ({active, updateDots, number}) => (
     <span onClick={() => {updateDots(number)}}
             style={{
                 background: `${active ? '#f57904' : '' }`

@@ -4,7 +4,6 @@ import {Layout} from "../../ui/Layout";
 import {Description} from "../../ui/Description";
 
 const NewsContent = ({news}) => {
-
     return(
         <Layout extraClass="container listBooks">
             <Layout direction="row" wrap="wrap" justify="space-evenly">

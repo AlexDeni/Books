@@ -17,7 +17,8 @@ Title.propTypes = {
     children: PropTypes.node.isRequired,
     position: PropTypes.oneOf(['left', 'right', 'center']),
     tagName: PropTypes.oneOf(['h1', 'h2']),
-    color: PropTypes.oneOf(['default', 'blue'])
+    color: PropTypes.oneOf(['default', 'blue']),
+    extraClass: PropTypes.string
 };
 Title.defaultProps = {
     position: 'left',

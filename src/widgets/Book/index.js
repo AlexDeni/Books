@@ -11,7 +11,7 @@ import {Price} from "../../ui/Price"
 import {actionSetCart} from "../../store/ShoppingCart/actionCart";
 import {actionBookProperties} from "../../store/Books/actionBooks";
 
-const Book = ({title, author, image, rating, addInShopCart, openBookProperties, price, id, idChoose }) => {
+const Book = ({title, author, image, rating, addInShopCart, openBookProperties, price, id, idChoose}) => {
     const addInShop =()=>{
         addInShopCart(id)
     };

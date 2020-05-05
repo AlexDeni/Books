@@ -37,6 +37,7 @@ Modal.propTypes ={
     isModalOpen: PropTypes.bool,
     size: PropTypes.oneOf(["s","m"]),
     title: PropTypes.node.isRequired,
+    extraClass: PropTypes.string,
 };
 
 Modal.defaultProps = {

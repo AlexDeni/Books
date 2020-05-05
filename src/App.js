@@ -27,7 +27,6 @@ class App extends Component{
     onShopClick = isShopOpen => {
         this.setState({ isShopOpen });
     };
-
     render() {
         const {isHomeOpen, isShopOpen} = this.state;
         return (

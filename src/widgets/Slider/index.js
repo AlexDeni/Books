@@ -44,8 +44,7 @@ class Slider extends Component{
     }
     setImageDot = (value) => {
         this.setState({ currentImage: value})
-    };
-
+    }
     componentDidMount() {
         if(this.props.slideShow) {
             this.timerID = setInterval(
@@ -72,7 +71,7 @@ class Slider extends Component{
         clearInterval(this.timerID);
     }
     render() {
-        const{slidesInfo,size, displayDot} = this.props;
+        const{slidesInfo, size, displayDot} = this.props;
         const{currentImage} = this.state;
         return(
             <Layout extraClass='slide' justify='center' direction='row'>

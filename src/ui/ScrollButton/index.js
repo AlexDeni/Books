@@ -3,9 +3,12 @@ import PropTypes from "prop-types"
 import "./style.scss"
 
 class ScrollButton extends Component{
-    state = {
-        isVisible: false,
-    };
+    constructor() {
+        super();
+        this.state = {
+            isVisible: false,
+        }
+    }
     componentDidMount(){
         document.addEventListener("scroll", ()=>{this.toScroll()})
     }

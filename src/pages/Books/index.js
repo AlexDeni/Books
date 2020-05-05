@@ -14,17 +14,17 @@ class AllBooks extends Component {
             setResult: ''
         };
     }
-    handleSearchClick = (value) => {
+    handleSearchClick = value => {
         this.setState({
             setResult: value,
             filterStatus: true,
         })
-    };
-    setRatingBooks = (value) =>{
+    }
+    setRatingBooks = value => {
         this.setState({
             setResult: value,
         })
-    };
+    }
     render() {
         const {books, loader} = this.props;
         if(!books){
