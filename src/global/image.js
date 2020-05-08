@@ -1,8 +1,8 @@
-import none from '../static/nobook.jpg'
+import none from '../static/nobook.jpg';
 
 export function getImage(image) {
-    if(image){
-        return image
-    }
-    return none
+  if (image) {
+    return image;
+  }
+  return none;
 }

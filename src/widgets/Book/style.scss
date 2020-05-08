@@ -5,22 +5,22 @@
   .book {
     width: 275px;
     margin: 0 8px 30px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.5);
-    &:hover{
-      box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    &:hover {
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
     }
-    .listImage{
+    .listImage {
       height: 270px;
       width: 210px;
       margin: 5px auto 0;
     }
     .bookCard {
       padding: 10px;
-      .bookAuthor{
+      .bookAuthor {
         margin: 6px 0;
         font-style: italic;
       }
-      .book-btn{
+      .book-btn {
         margin-top: 10px;
       }
       .rating-area {
@@ -29,7 +29,7 @@
           color: lightgrey;
           text-shadow: 1px 1px #bbb;
           &:before {
-            content: '★';
+            content: "★";
           }
         }
         .active-label {
@@ -44,5 +44,3 @@
     justify-content: space-evenly;
   }
 }
-
-

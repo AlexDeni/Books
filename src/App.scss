@@ -1,9 +1,9 @@
-@import 'ui/Layout/style';
-@import 'ui/Description/style';
-@import 'ui/Button/style';
+@import "ui/Layout/style";
+@import "ui/Description/style";
+@import "ui/Button/style";
 @import "./modules/Header/style";
 @import "./widgets/Book/style";
-@import 'pages/Books/style';
+@import "pages/Books/style";
 @import "./widgets/Filters/style";
 
 @font-face {
@@ -13,7 +13,7 @@
   font-weight: normal;
 }
 
-.container{
+.container {
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto;

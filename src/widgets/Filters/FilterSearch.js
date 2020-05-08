@@ -1,30 +1,27 @@
-import React, {useState } from 'react'
-import {Button} from "../../ui/Button";
+import React, { useState } from 'react';
+import { Button } from '../../ui/Button';
 
-function FilterSearch({books, updateBooks}) {
-    const [search, setSearch] = useState('');
-    const handleChange =(e)=>{
-        setSearch(e.target.value)
-    };
-    const handleSearchClick = () => {
-        const results = books.filter(books =>
-            books.title.toLowerCase().includes(search)
-        );
-        updateBooks(results);
-        setSearch("")
-    };
+function FilterSearch({ books, updateBooks }) {
+  const [search, setSearch] = useState('');
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+  const handleSearchClick = () => {
+    const results = books.filter((books) => books.title.toLowerCase().includes(search));
+    updateBooks(results);
+    setSearch('');
+  };
 
-    return(
-        <React.Fragment>
-            <input value={search}
-                   onChange={handleChange}
-                   placeholder='Введите название...'
-                   className='setSearch'
-            />
-            <Button extraClass='search_btn' bStyle="main" onClick={handleSearchClick}><span aria-label="" role="img">&#128269;</span></Button>
-        </React.Fragment>
-    )
+  return (
+    <React.Fragment>
+      <input value={search} onChange={handleChange} placeholder="Введите название..." className="setSearch" />
+      <Button extraClass="search_btn" bStyle="main" onClick={handleSearchClick}>
+        <span aria-label="" role="img">
+          &#128269;
+        </span>
+      </Button>
+    </React.Fragment>
+  );
 }
 
-export {FilterSearch}
-
+export { FilterSearch };

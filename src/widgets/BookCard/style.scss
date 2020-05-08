@@ -1,40 +1,40 @@
 @import "../../global/style";
 
-.book-info{
-  img{
+.book-info {
+  img {
     width: 300px;
     height: 420px;
     margin: 0 80px 15px 0;
   }
-  .book-extra-info{
+  .book-extra-info {
     max-width: 800px;
     min-width: 400px;
-    .btn_order_info{
+    .btn_order_info {
       margin: 25px 0;
     }
-    .book_info-item{
-      span{
+    .book_info-item {
+      span {
         margin-right: 50px;
         margin-bottom: 30px;
       }
-      .title_line{
+      .title_line {
         margin-bottom: 20px;
         padding-bottom: 10px;
         border-bottom: 1px solid #d7d7d7;
       }
-      .extra-info{
+      .extra-info {
         line-height: 1.7;
         text-align: justify;
       }
     }
   }
 }
-.property-goBack{
+.property-goBack {
   text-decoration: none;
   font-size: 25px;
   color: $dark-color;
   margin-top: 30px;
-  &:hover{
-    color: $yellow-color
+  &:hover {
+    color: $yellow-color;
   }
 }

@@ -1,39 +1,41 @@
 @import "../../global/style";
 
-.shop_emblem{
+.shop_emblem {
   position: relative;
-  p{
+  p {
     position: absolute;
     bottom: -5px;
     left: 35px;
   }
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 }
-.shop_basket_section{
+.shop_basket_section {
   width: 100%;
-  .basket_amount_price{margin: 10px 0}
+  .basket_amount_price {
+    margin: 10px 0;
+  }
 }
-.shopCart_footer{
+.shopCart_footer {
   margin-top: 20px;
 }
-.shopCart{
+.shopCart {
   border: 1px solid $light-grey;
   padding: 10px;
   min-height: 80px;
 }
-.cart_item{
+.cart_item {
   width: 100%;
   vertical-align: middle;
   border-collapse: separate;
   border-spacing: 0;
-  thead{
-       td{
-         text-align: center;
-         font-size: 12px;
-       }
-     }
+  thead {
+    td {
+      text-align: center;
+      font-size: 12px;
+    }
+  }
   tbody {
     td {
       padding: 5px 0;
@@ -42,12 +44,14 @@
         border-left: 1px solid #d7d7d7;
         padding-left: 10px;
         width: 15%;
-        img{
+        img {
           width: 70px;
         }
       }
-      svg{cursor: pointer}
-      &:not(:first-child){
+      svg {
+        cursor: pointer;
+      }
+      &:not(:first-child) {
         min-width: 100px;
         text-align: center;
       }
@@ -70,17 +74,17 @@
       border-bottom: 1px solid #d7d7d7;
     }
   }
-  .basket_card_info{
+  .basket_card_info {
     width: 250px;
     text-align: left !important;
-    button{
+    button {
       margin-bottom: 10px;
     }
   }
-  .basket_cart_count button{
+  .basket_cart_count button {
     margin: 10px;
     font-size: 20px;
-    &:hover{
+    &:hover {
       color: $yellow-color;
     }
   }
@@ -89,11 +93,11 @@
 @media only screen and (max-width: 700px) {
   .basket_card_info {
     width: 160px !important;
-    button{
-      font-size: 17px ;
+    button {
+      font-size: 17px;
     }
   }
-  tbody td:not(:first-child){
+  tbody td:not(:first-child) {
     min-width: 50px !important;
     text-align: center;
   }

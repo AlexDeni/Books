@@ -1,29 +1,30 @@
 import axios from 'axios';
-import {GET_ALL_BOOKS, OPEN_BOOK_PROPERTIES, ERROR_GET_BOOK} from "./types";
+import { GET_ALL_BOOKS, OPEN_BOOK_PROPERTIES, ERROR_GET_BOOK } from './types';
 
 export const actionGetBooks = () => {
-    return (dispatch)=>{
-        axios.get('./books.json')
-            .then(books => {
-                dispatch({
-                    type: GET_ALL_BOOKS,
-                    payload: books.data,
-                    loader: false
-                })
-            })
-            .catch(error => {
-                dispatch({
-                    type: ERROR_GET_BOOK,
-                    payload: error.message,
-                    loader: false
-                })
-            });
-    }
-}
+  return (dispatch) => {
+    axios
+      .get('./books.json')
+      .then((books) => {
+        dispatch({
+          type: GET_ALL_BOOKS,
+          payload: books.data,
+          loader: false,
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: ERROR_GET_BOOK,
+          payload: error.message,
+          loader: false,
+        });
+      });
+  };
+};
 
 export const actionBookProperties = (id) => {
-    return {
-        type: OPEN_BOOK_PROPERTIES,
-        payload: id
-    }
+  return {
+    type: OPEN_BOOK_PROPERTIES,
+    payload: id,
+  };
 };

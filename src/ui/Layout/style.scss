@@ -1,54 +1,54 @@
-.layout{
-    display: flex;
-    flex-direction: column;
-    &__orientation{
-        &_row{
-            flex-direction: row;
-        }
-        &_column{
-            flex-direction: column;
-        }
+.layout {
+  display: flex;
+  flex-direction: column;
+  &__orientation {
+    &_row {
+      flex-direction: row;
     }
-    &__justify{
-        &_center{
-            justify-content: center;
-        }
-        &_space-between{
-            justify-content: space-between;
-        }
-        &_space-around{
-            justify-content: space-around;
-        }
-        &_flex-start{
-            justify-content: flex-start;
-        }
-        &_flex-end{
-            justify-content: flex-end;
-        }
-        &_space-evenly{
-            justify-content: space-evenly;
-        }
+    &_column {
+      flex-direction: column;
     }
-    &__align{
-        &_flex-start{
-            align-items: flex-start;
-        }
-        &_flex-end{
-            align-items: flex-end;
-        }
-        &_center{
-            align-items: center ;
-        }
-        &_baseline{
-            align-items: baseline ;
-        }
+  }
+  &__justify {
+    &_center {
+      justify-content: center;
     }
-    &__wrap{
-        &_wrap{
-            flex-wrap: wrap;
-        }
-        &_reverse{
-            flex-wrap: wrap-reverse;
-        }
+    &_space-between {
+      justify-content: space-between;
     }
+    &_space-around {
+      justify-content: space-around;
+    }
+    &_flex-start {
+      justify-content: flex-start;
+    }
+    &_flex-end {
+      justify-content: flex-end;
+    }
+    &_space-evenly {
+      justify-content: space-evenly;
+    }
+  }
+  &__align {
+    &_flex-start {
+      align-items: flex-start;
+    }
+    &_flex-end {
+      align-items: flex-end;
+    }
+    &_center {
+      align-items: center;
+    }
+    &_baseline {
+      align-items: baseline;
+    }
+  }
+  &__wrap {
+    &_wrap {
+      flex-wrap: wrap;
+    }
+    &_reverse {
+      flex-wrap: wrap-reverse;
+    }
+  }
 }

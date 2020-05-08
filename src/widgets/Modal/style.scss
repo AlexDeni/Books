@@ -1,6 +1,6 @@
 @import "../../global/style";
 
-.modal{
+.modal {
   position: fixed;
   overflow: auto;
   bottom: 0;
@@ -9,10 +9,10 @@
   top: 0;
   display: flex;
   justify-content: center;
-  background: rgba(0,0,0,.35);
+  background: rgba(0, 0, 0, 0.35);
   z-index: 999;
 }
-.modal_body{
+.modal_body {
   background-color: $white;
   margin-top: 100px;
   z-index: 1000;
@@ -31,11 +31,11 @@
       }
     }
   }
-  .modal_header{
+  .modal_header {
     padding: 10px 20px;
     border-bottom: 1px solid #f0f0f0;
   }
-  .modal_close_icon{
+  .modal_close_icon {
     position: absolute;
     right: 20px;
     width: 24px;
@@ -46,11 +46,12 @@
     &:hover {
       opacity: 1;
     }
-    &:before, &:after {
+    &:before,
+    &:after {
       position: absolute;
       left: 10px;
       top: 0;
-      content: ' ';
+      content: " ";
       height: 20px;
       width: 2px;
       background-color: $grey-color;
@@ -62,9 +63,10 @@
       transform: rotate(-45deg);
     }
   }
-  .modal_item{
+  .modal_item {
     padding: 20px;
-    form{width: 75%;}
+    form {
+      width: 75%;
+    }
   }
 }
-

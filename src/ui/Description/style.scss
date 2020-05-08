@@ -1,54 +1,54 @@
 @import "../../global/style";
 
-.description{
+.description {
   text-align: left;
-  &__size{
-    &_s{
+  &__size {
+    &_s {
       font-size: 12px;
     }
-    &_m{
+    &_m {
       font-size: 16px;
     }
-    &_l{
+    &_l {
       font-size: 22px;
     }
   }
-  &__weight{
-    &_500{
+  &__weight {
+    &_500 {
       font-weight: 500;
     }
-    &_600{
+    &_600 {
       font-weight: 600;
     }
-    &_900{
+    &_900 {
       font-weight: 900;
     }
   }
-  &__color{
-    &_default{
+  &__color {
+    &_default {
       color: $black-color;
     }
-    &_grey{
+    &_grey {
       color: $light-grey;
     }
-    &_white{
+    &_white {
       color: $white;
     }
-    &_dark{
+    &_dark {
       color: $dark-blue;
     }
     &_yellow {
-      color: $yellow-color
+      color: $yellow-color;
     }
   }
-  &__position{
-    &_left{
+  &__position {
+    &_left {
       text-align: left;
     }
-    &_center{
+    &_center {
       text-align: center;
     }
-    &_right{
+    &_right {
       text-align: right;
     }
   }

@@ -1,11 +1,13 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "node": true,
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "prettier"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -19,9 +21,17 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "prettier"
     ],
     "rules": {
-        "react/prop-types": 0
+        "react/prop-types": 0,
+        "linebreak-style": 0,
+        "prettier/prettier": ["error", {
+            "singleQuote": true,
+            "printWidth": 120,
+            "trailingComma": "es5",
+            "jsxBracketSameLine": false
+        }]
     }
 };
