@@ -15,19 +15,15 @@ const Dot = ({ active, updateDots, number }) => (
 );
 
 const Dots = ({ quantityDots, updateDots, displayDot, currentImage }) => {
-  return (
-    <React.Fragment>
-      {displayDot ? (
-        <Layout direction="row" justify="center" extraClass="dots">
-          {quantityDots.map((slide, i) => (
-            <Dot key={i} active={currentImage === i} number={i} updateDots={updateDots} />
-          ))}
-        </Layout>
-      ) : (
-        ''
-      )}
-    </React.Fragment>
-  );
+  if (displayDot) {
+    return (
+      <Layout direction="row" justify="center" extraClass="dots">
+        {quantityDots.map((slide, i) => (
+          <Dot key={i} active={currentImage === i} number={i} updateDots={updateDots} />
+        ))}
+      </Layout>
+    );
+  }
 };
 
 Dots.propTypes = {

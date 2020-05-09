@@ -29,37 +29,35 @@ const ShopOrder = ({ id, books, count, removeShopCart, addShopCart, onModalClick
   for (let i in id) {
     selectedBooks.push(books.find((items) => items.id === id[i]));
   }
-
-  return (
-    <React.Fragment>
-      {count > 0 ? (
-        <Layout extraClass="shop_basket_section">
-          <ShowProduct
-            onModalClick={onModalClick}
-            selectedBooks={selectedBooks}
-            removeBooks={removeBooks}
-            addBook={addBook}
-            removeBook={removeBook}
-            id={id}
-          />
-          <Layout extraClass="shopCart shopCart_footer" direction="row" align="center" justify="space-between">
-            <Button bStyle="none" direction="row" onClick={() => onModalClick(false)}>
-              <span>&#8592;</span>Вернуться к покупкам
-            </Button>
-            <Layout>
-              <Layout direction="row" extraClass="basket_amount_price">
-                Итого: <ShowCardPrice selectedBooks={selectedBooks} />
-              </Layout>
-              <Button>Оформить</Button>
+  if (count > 0) {
+    return (
+      <Layout extraClass="shop_basket_section">
+        <ShowProduct
+          onModalClick={onModalClick}
+          selectedBooks={selectedBooks}
+          removeBooks={removeBooks}
+          addBook={addBook}
+          removeBook={removeBook}
+          id={id}
+        />
+        <Layout extraClass="shopCart shopCart_footer" direction="row" align="center" justify="space-between">
+          <Button bStyle="none" direction="row" onClick={() => onModalClick(false)}>
+            <span>&#8592;</span>Вернуться к покупкам
+          </Button>
+          <Layout>
+            <Layout direction="row" extraClass="basket_amount_price">
+              Итого: <ShowCardPrice selectedBooks={selectedBooks} />
             </Layout>
+            <Button>Оформить</Button>
           </Layout>
         </Layout>
-      ) : (
-        <Description color="dark" size="l">
-          Корзина пуста
-        </Description>
-      )}
-    </React.Fragment>
+      </Layout>
+    );
+  }
+  return (
+    <Description color="dark" size="l">
+      Корзина пуста
+    </Description>
   );
 };
 
