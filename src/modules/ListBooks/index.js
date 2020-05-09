@@ -4,7 +4,7 @@ import Book from '../../widgets/Book';
 import { Layout } from '../../ui/Layout';
 import { getImage } from '../../global/image';
 
-function ListBooks({ books, num }) {
+const ListBooks = ({ books, num }) => {
   return (
     <Layout wrap="wrap" direction="row" extraClass="listBooks" justify="space-between">
       {/* eslint-disable-next-line array-callback-return */}
@@ -26,7 +26,7 @@ function ListBooks({ books, num }) {
       })}
     </Layout>
   );
-}
+};
 
 ListBooks.propTypes = {
   num: PropTypes.number,

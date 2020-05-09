@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout } from '../../ui/Layout';
 
-function SetRating({ rating }) {
+const SetRating = ({ rating }) => {
   let ratings = [];
   if (rating !== null && rating <= 5) {
     for (let i = 0; i < rating; i++) {
@@ -16,7 +16,7 @@ function SetRating({ rating }) {
     ratings.push(<label key={ratings.length} />);
   }
   return ratings;
-}
+};
 
 const Rating = ({ rating }) => {
   return (

@@ -20,30 +20,24 @@ const News = ({ loader, news, openNewsContent, errorText }) => {
   const openNews = (post) => {
     openNewsContent(post);
   };
+  if (errorText) {
+    return <ErrorText errorText={errorText} />;
+  }
+  if (loader) return <Loader />;
   return (
     <Layout extraClass="container listBooks">
-      {errorText ? (
-        <ErrorText errorText={errorText} />
-      ) : (
-        <div>
-          {loader ? (
-            <Loader />
-          ) : (
-            <Layout direction="row" wrap="wrap" justify="space-evenly">
-              {news.data.map((post) => (
-                <Layout key={post.id} extraClass="news-item">
-                  <Link to={`/news/${post.id}`} onClick={() => openNews(post)}>
-                    <Description color="dark" position="center" size="l">
-                      {post.title}
-                    </Description>
-                  </Link>
-                  <Description extraClass="news-content">{clipText(post.text, 150)}</Description>
-                </Layout>
-              ))}
-            </Layout>
-          )}
-        </div>
-      )}
+      <Layout direction="row" wrap="wrap" justify="space-evenly">
+        {news.data.map((post) => (
+          <Layout key={post.id} extraClass="news-item">
+            <Link to={`/news/${post.id}`} onClick={() => openNews(post)}>
+              <Description color="dark" position="center" size="l">
+                {post.title}
+              </Description>
+            </Link>
+            <Description extraClass="news-content">{clipText(post.text, 150)}</Description>
+          </Layout>
+        ))}
+      </Layout>
     </Layout>
   );
 };

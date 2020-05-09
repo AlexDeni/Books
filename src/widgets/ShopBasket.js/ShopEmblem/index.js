@@ -5,7 +5,7 @@ import { Layout } from '../../../ui/Layout';
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function ShopEmblem({ count, onShopClick, color, size, colorCount }) {
+const ShopEmblem = ({ count, onShopClick, color, size, colorCount }) => {
   return (
     <Layout extraClass="shop_emblem" align="center">
       <FontAwesomeIcon size={size} color={color} onClick={() => onShopClick(true)} icon={faShoppingBasket} />
@@ -14,7 +14,7 @@ function ShopEmblem({ count, onShopClick, color, size, colorCount }) {
       </Description>
     </Layout>
   );
-}
+};
 
 function mapStateToProps(state) {
   return {

@@ -23,11 +23,13 @@ class App extends Component {
       isHomeOpen: false,
       isShopOpen: false,
     };
+    this.onHomeClick = this.onHomeClick.bind(this);
+    this.onShopClick = this.onShopClick.bind(this);
   }
-  onHomeClick = (isHomeOpen) => {
+  onHomeClick(isHomeOpen) {
     this.setState({ isHomeOpen });
   }
-  onShopClick = (isShopOpen) => {
+  onShopClick(isShopOpen) {
     this.setState({ isShopOpen });
   }
 

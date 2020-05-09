@@ -9,13 +9,13 @@ import './style.scss';
 import { Layout } from '../../ui/Layout';
 import { Description } from '../../ui/Description';
 
-function getButtonText(authType) {
+const getButtonText = (authType) => {
   const textBtn = ['Войти', 'Зарегистрироваться'];
   if (authType === 'signUp') {
     return textBtn.reverse();
   }
   return textBtn;
-}
+};
 
 export default function FormikForm({ authType, formTitle }) {
   let history = useHistory();

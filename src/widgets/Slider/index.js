@@ -13,6 +13,7 @@ class Slider extends Component {
       slideShow: false,
     };
     this.makeSlide = this.makeSlide.bind(this);
+    this.setImageDot = this.setImageDot.bind(this);
   }
   makePrevSlide({ allImg, currentNum }) {
     if (currentNum > 0) {
@@ -42,7 +43,7 @@ class Slider extends Component {
       this.makeNextSlide({ allImg, currentNum });
     }
   }
-  setImageDot = value => {
+  setImageDot(value) {
     this.setState({ currentImage: value });
   }
   componentDidMount() {

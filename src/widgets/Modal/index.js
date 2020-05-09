@@ -6,7 +6,7 @@ import { Description } from '../../ui/Description';
 import { Button } from '../../ui/Button';
 import cx from 'classnames';
 
-function Modal({ children, title, isModalOpen, onModalClick, size, extraClass }) {
+const Modal = ({ children, title, isModalOpen, onModalClick, size, extraClass }) => {
   if (!isModalOpen) {
     return null;
   }
@@ -28,7 +28,7 @@ function Modal({ children, title, isModalOpen, onModalClick, size, extraClass })
       </div>
     </Layout>
   );
-}
+};
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,

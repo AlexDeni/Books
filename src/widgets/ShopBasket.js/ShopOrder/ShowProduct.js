@@ -73,10 +73,10 @@ const ShowProduct = ({ selectedBooks, removeBook, addBook, removeBooks, openBook
   );
 };
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return {
     openBookProperties: bindActionCreators(actionBookProperties, dispatch),
   };
-}
+};
 
 export default connect(null, mapDispatchToProps)(ShowProduct);

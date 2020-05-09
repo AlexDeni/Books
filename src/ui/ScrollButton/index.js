@@ -1,47 +1,40 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
 
-class ScrollButton extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isVisible: false,
-    };
-  }
-  componentDidMount() {
+const ScrollButton = ({ scrollPoint }) => {
+  const [isVisible, setVisible] = useState(false);
+  useEffect(() => {
     document.addEventListener('scroll', () => {
-      this.toScroll();
+      toScroll();
     });
-  }
-  toScroll() {
-    if (window.pageYOffset > this.props.scrollPoint) {
-      this.setState({ isVisible: true });
+  });
+  const toScroll = () => {
+    if (window.pageYOffset > scrollPoint) {
+      setVisible(true);
     } else {
-      this.setState({ isVisible: false });
+      setVisible(false);
     }
-  }
-  scrollToTop() {
+  };
+  const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
-  }
-  render() {
-    const { isVisible } = this.state;
-    return (
-      <React.Fragment>
-        {isVisible ? (
-          <span className="scrollToTop" onClick={this.scrollToTop}>
-            &#187;
-          </span>
-        ) : (
-          ''
-        )}
-      </React.Fragment>
-    );
-  }
-}
+  };
+
+  return (
+    <React.Fragment>
+      {isVisible ? (
+        <span className="scrollToTop" onClick={scrollToTop}>
+          &#187;
+        </span>
+      ) : (
+        ''
+      )}
+    </React.Fragment>
+  );
+};
 
 ScrollButton.propTypes = {
   scrollPoint: PropTypes.number,

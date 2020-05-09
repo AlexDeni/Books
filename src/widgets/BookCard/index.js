@@ -10,7 +10,7 @@ import { Description } from '../../ui/Description';
 import { Price } from '../../ui/Price';
 import { Title } from '../../ui/Title';
 
-function BookProperties({ id, books, addInShopCart, idChoose }) {
+const BookProperties = ({ id, books, addInShopCart, idChoose }) => {
   let bookInfo = books.find((item) => item.id === id);
   const addInShop = (e) => {
     e.preventDefault();
@@ -22,9 +22,10 @@ function BookProperties({ id, books, addInShopCart, idChoose }) {
       result = true;
     }
   }
-  return (
-    <Layout extraClass="container book-info listBooks">
-      {bookInfo ? (
+
+  if (bookInfo) {
+    return (
+      <Layout extraClass="container book-info listBooks">
         <Layout wrap="wrap" direction="row">
           <Layout>
             <img src={bookInfo.image} alt={bookInfo.title} />
@@ -65,12 +66,15 @@ function BookProperties({ id, books, addInShopCart, idChoose }) {
             </Layout>
           </Layout>
         </Layout>
-      ) : (
-        <Description size="l">Sorry, but the book was not found</Description>
-      )}
+      </Layout>
+    );
+  }
+  return (
+    <Layout extraClass="container listBooks">
+      <Description size="l">Sorry, but the book was not found</Description>
     </Layout>
   );
-}
+};
 
 function mapStateToProps(state) {
   return {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '../../ui/Button';
 
-function FilterSearch({ books, updateBooks }) {
+const FilterSearch = ({ books, updateBooks }) => {
   const [search, setSearch] = useState('');
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -11,7 +11,6 @@ function FilterSearch({ books, updateBooks }) {
     updateBooks(results);
     setSearch('');
   };
-
   return (
     <React.Fragment>
       <input value={search} onChange={handleChange} placeholder="Введите название..." className="setSearch" />
@@ -22,6 +21,6 @@ function FilterSearch({ books, updateBooks }) {
       </Button>
     </React.Fragment>
   );
-}
+};
 
 export { FilterSearch };

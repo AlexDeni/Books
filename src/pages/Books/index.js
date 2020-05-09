@@ -13,6 +13,8 @@ class AllBooks extends Component {
       filterStatus: false,
       setResult: '',
     };
+    this.handleSearchClick = this.handleSearchClick.bind(this);
+    this.setRatingBooks = this.setRatingBooks.bind(this);
   }
   handleSearchClick(value) {
     this.setState({
@@ -26,30 +28,30 @@ class AllBooks extends Component {
     });
   }
   render() {
-    const { books, loader } = this.props;
+    const { books, loader, error } = this.props;
+    const { filterStatus, setResult } = this.state;
     if (!books) {
       return null;
     }
     let results = books;
-    if (this.state.filterStatus) {
-      results = this.state.setResult;
+    if (filterStatus) {
+      results = setResult;
+    }
+    if (loader) {
+      return <Loader />;
     }
     return (
       <Layout extraClass="container">
-        {loader ? (
-          <Loader />
-        ) : (
-          <Layout extraClass="listBooks">
-            <Filter
-              books={books}
-              updateBooks={this.handleSearchClick}
-              setBooks={results}
-              setRatingBooks={this.setRatingBooks}
-            />
-            <ErrorText errorText={this.props.error} />
-            <ListBooks books={results} />
-          </Layout>
-        )}
+        <Layout extraClass="listBooks">
+          <Filter
+            books={books}
+            setBooks={results}
+            updateBooks={this.handleSearchClick}
+            setRatingBooks={this.setRatingBooks}
+          />
+          <ErrorText errorText={error} />
+          <ListBooks books={results} />
+        </Layout>
       </Layout>
     );
   }

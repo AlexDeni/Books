@@ -9,7 +9,7 @@ const eur = 27.5;
 //Валюта
 const currency = 'UA';
 
-function getCurrencySymbol(currency) {
+const getCurrencySymbol = (currency) => {
   switch (currency) {
     case 'UA':
       return <span className="price_indent">грн</span>;
@@ -20,9 +20,9 @@ function getCurrencySymbol(currency) {
     default:
       return <span className="price_indent">грн</span>;
   }
-}
+};
 
-function getCurrencyPrice(currency, price) {
+const getCurrencyPrice = (currency, price) => {
   switch (currency) {
     case 'UA':
       return Math.floor(price);
@@ -33,15 +33,15 @@ function getCurrencyPrice(currency, price) {
     default:
       return Math.floor(price);
   }
-}
+};
 
-function Price({ color, price, size, position, extraClass, weight }) {
+const Price = ({ color, price, size, position, extraClass, weight }) => {
   return (
     <Description weight={weight} extraClass={extraClass} color={color} size={size} position={position}>
       {getCurrencyPrice(currency, price)}
       {getCurrencySymbol(currency)}
     </Description>
   );
-}
+};
 
 export { Price };

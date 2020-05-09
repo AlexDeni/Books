@@ -12,14 +12,14 @@ import PropTypes from 'prop-types';
  * @param extraClass - className
  */
 
-function Button({ children, value, bStyle, size, type, disabled, onClick, extraClass }) {
+const Button = ({ children, value, bStyle, size, type, disabled, onClick, extraClass }) => {
   const className = cx('btn', `btn__bStyle_${bStyle}`, `btn__size_${size}`, extraClass);
   return (
     <button value={value} className={className} type={type} disabled={disabled} onClick={onClick}>
       {children}
     </button>
   );
-}
+};
 
 Button.propTypes = {
   children: PropTypes.any,

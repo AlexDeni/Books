@@ -37,7 +37,7 @@ const slidesInfo = [
   },
 ];
 
-function Home({ books }) {
+const Home = ({ books }) => {
   return (
     <React.Fragment>
       <Slider slidesInfo={slidesInfo} size="allWidth" displayDot slideShow />
@@ -49,12 +49,12 @@ function Home({ books }) {
       </Layout>
     </React.Fragment>
   );
-}
+};
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     books: state.getBooks.books,
   };
-}
+};
 
 export default connect(mapStateToProps)(Home);

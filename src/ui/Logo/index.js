@@ -4,10 +4,11 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import './style.scss';
 
-function Logo({ size }) {
+const Logo = ({ size }) => {
   let logoSize = cx('logo', `logo__size_${size}`);
   return <img className={logoSize} src={logo} alt="logo" />;
-}
+};
+
 Logo.propTypes = {
   size: PropTypes.oneOf(['s', 'm', 'l']),
 };

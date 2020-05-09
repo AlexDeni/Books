@@ -10,7 +10,7 @@ import cx from 'classnames';
  * @param extraClass - className
  */
 
-function Description({ children, size, color, extraClass, position, weight }) {
+const Description = ({ children, size, color, extraClass, position, weight }) => {
   let classes = cx(
     'description',
     `description__size_${size}`,
@@ -20,7 +20,8 @@ function Description({ children, size, color, extraClass, position, weight }) {
     extraClass
   );
   return <p className={classes}>{children}</p>;
-}
+};
+
 Description.propTypes = {
   children: PropTypes.node,
   size: PropTypes.oneOf(['s', 'm', 'l']),

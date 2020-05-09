@@ -11,7 +11,7 @@ import cx from 'classnames';
  * @param extraClass - className
  */
 
-function Layout({ children, direction, justify, align, wrap, extraClass }) {
+const Layout = ({ children, direction, justify, align, wrap, extraClass }) => {
   let classes = cx(
     'layout',
     `layout__orientation_${direction}`,
@@ -21,7 +21,8 @@ function Layout({ children, direction, justify, align, wrap, extraClass }) {
     extraClass
   );
   return <div className={classes}>{children}</div>;
-}
+};
+
 Layout.propTypes = {
   children: PropTypes.node,
   direction: PropTypes.oneOf(['row', 'column']),

@@ -9,7 +9,7 @@ import { Description } from '../../../ui/Description';
 import { Button } from '../../../ui/Button';
 import './../style.scss';
 
-function ShopOrder({ id, books, count, removeShopCart, addShopCart, onModalClick }) {
+const ShopOrder = ({ id, books, count, removeShopCart, addShopCart, onModalClick }) => {
   const removeBook = (e) => {
     let i = id.indexOf(Number(e.target.value));
     if (i >= 0) {
@@ -61,20 +61,20 @@ function ShopOrder({ id, books, count, removeShopCart, addShopCart, onModalClick
       )}
     </React.Fragment>
   );
-}
+};
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     id: state.orderBooks.id,
     books: state.getBooks.books,
     count: state.orderBooks.count,
   };
-}
-function mapDispatchToProps(dispatch) {
+};
+const mapDispatchToProps = (dispatch) => {
   return {
     removeShopCart: bindActionCreators(actionRemoveBook, dispatch),
     addShopCart: bindActionCreators(actionAddBook, dispatch),
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShopOrder);
