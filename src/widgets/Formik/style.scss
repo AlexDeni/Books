@@ -8,20 +8,23 @@
   .inputForm {
     text-align: center;
     input {
-      padding: 4px 11px;
+      margin-top: 10px;
+      padding: 6px 11px;
       font-size: 14px;
       line-height: 1.5715;
       background-color: #fff;
       background-image: none;
       border: 1px solid #d9d9d9;
-      border-radius: 2px;
+      border-radius: 3px;
       transition: all 0.3s;
       width: 91%;
       max-width: 250px;
     }
-
     .form-message {
       color: $red-color;
     }
+  }
+  .btn_form{
+    margin-top: 20px;
   }
 }

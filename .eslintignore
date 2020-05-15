@@ -1,2 +1,4 @@
 serviceWorker.js
 App.test.js
+/jest
+/node_modules

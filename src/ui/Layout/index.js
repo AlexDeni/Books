@@ -12,24 +12,24 @@ import cx from 'classnames';
  */
 
 const Layout = ({ children, direction, justify, align, wrap, extraClass }) => {
-  let classes = cx(
-    'layout',
-    `layout__orientation_${direction}`,
-    `layout__justify_${justify}`,
-    `layout__align_${align}`,
-    `layout__wrap_${wrap}`,
-    extraClass
-  );
-  return <div className={classes}>{children}</div>;
+    let classes = cx(
+        'layout',
+        `layout__orientation_${direction}`,
+        `layout__justify_${justify}`,
+        `layout__align_${align}`,
+        `layout__wrap_${wrap}`,
+        extraClass
+    );
+    return <div className={classes}>{children}</div>;
 };
 
 Layout.propTypes = {
-  children: PropTypes.node,
-  direction: PropTypes.oneOf(['row', 'column']),
-  justify: PropTypes.oneOf(['flex-start', 'center', 'flex-end', 'space-around', 'space-evenly', 'space-between']),
-  align: PropTypes.oneOf(['flex-start', 'center', 'baseline', 'flex-end']),
-  extraClass: PropTypes.string,
-  wrap: PropTypes.string,
+    children: PropTypes.node,
+    direction: PropTypes.oneOf(['row', 'column']),
+    justify: PropTypes.oneOf(['flex-start', 'center', 'flex-end', 'space-around', 'space-evenly', 'space-between']),
+    align: PropTypes.oneOf(['flex-start', 'center', 'baseline', 'flex-end']),
+    extraClass: PropTypes.string,
+    wrap: PropTypes.string,
 };
 Layout.defaultProps = {};
 
