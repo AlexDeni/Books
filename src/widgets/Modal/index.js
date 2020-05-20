@@ -1,9 +1,7 @@
 import React from 'react';
 import './style.scss';
 import PropTypes from 'prop-types';
-import { Layout } from '../../ui/Layout';
-import { Description } from '../../ui/Description';
-import { Button } from '../../ui/Button';
+import { Layout, Button, Description } from '../../ui';
 import cx from 'classnames';
 
 const Modal = ({ children, title, isModalOpen, onModalClick, size, extraClass }) => {

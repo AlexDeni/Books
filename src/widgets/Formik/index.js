@@ -4,10 +4,8 @@ import Error from './error';
 import config from './config';
 import { SignInSchema, SignUpSchema } from './validationSchema';
 import { useHistory } from 'react-router-dom';
-import { Button } from '../../ui/Button';
 import './style.scss';
-import { Layout } from '../../ui/Layout';
-import { Description } from '../../ui/Description';
+import { Layout, Button, Description } from '../../ui';
 
 function getButtonText(authType) {
     const textBtn = ['Войти', 'Зарегистрироваться'];

@@ -1,14 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Layout } from '../../ui/Layout';
 import { bindActionCreators } from 'redux';
+import { Layout, Button, Description, Price, Title } from '../../ui';
 import { actionSetCart } from '../../store/ShoppingCart/actionCart';
-import { Button } from '../../ui/Button';
 import './style.scss';
-import { Description } from '../../ui/Description';
-import { Price } from '../../ui/Price';
-import { Title } from '../../ui/Title';
 
 const BookProperties = ({ id, books, addInShopCart, idChoose }) => {
     let bookInfo = books.find((item) => item.id === id);

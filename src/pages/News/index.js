@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Layout } from '../../ui/Layout';
-import { Description } from '../../ui/Description';
+import { Layout, Description } from '../../ui';
 import { actionOpenNews } from '../../store/News/actionNews';
 import { Loader } from '../../widgets/LoaderError';
 import './style.scss';

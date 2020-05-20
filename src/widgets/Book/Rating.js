@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from '../../ui/Layout';
+import { Layout } from '../../ui';
 
 function SetRating({ rating }) {
     let ratings = [];

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Layout } from '../../ui/Layout';
-import { ListBooks } from '../../modules/ListBooks';
-import { Loader } from '../../widgets/LoaderError';
-import { Filter } from '../../widgets/Filters';
+import { Layout } from '../../ui';
 import ErrorText from '../../widgets/LoaderError/Error';
+import { Filter, ListBooks, Loader } from '../../widgets';
 
 class AllBooks extends Component {
     state = {

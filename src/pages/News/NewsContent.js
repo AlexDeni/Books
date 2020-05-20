@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Layout } from '../../ui/Layout';
-import { Description } from '../../ui/Description';
+import { Layout, Description } from '../../ui';
 
 const NewsContent = ({ news }) => {
     return (

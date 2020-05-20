@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Description } from '../../../ui/Description';
-import { Button } from '../../../ui/Button';
+import { Description, Button, Price, Layout } from '../../../ui';
 import { bindActionCreators } from 'redux';
 import { actionBookProperties } from '../../../store/Books/actionBooks';
 import { connect } from 'react-redux';
-import { Price } from '../../../ui/Price';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { Layout } from '../../../ui/Layout';
 
 const ShowProduct = ({ selectedBooks, removeBook, addBook, removeBooks, openBookProperties, onModalClick }) => {
     let idTitle = {};

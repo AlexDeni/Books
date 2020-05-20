@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './slider.scss';
-import { Layout } from '../../ui/Layout';
+import { Layout } from '../../ui';
 
 const Dot = ({ active, updateDots, number }) => (
     <span

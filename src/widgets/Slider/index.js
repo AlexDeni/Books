@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './slider.scss';
 import { SlideImg } from './SlideImg';
-import { Layout } from '../../ui/Layout';
+import { Layout, Description } from '../../ui';
 import { Dots } from './Dots';
-import { Description } from '../../ui/Description';
 
 class Slider extends Component {
     state = {

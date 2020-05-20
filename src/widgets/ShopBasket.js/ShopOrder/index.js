@@ -3,10 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionRemoveBook, actionAddBook } from '../../../store/ShoppingCart/actionCart';
 import ShowProduct from './ShowProduct';
-import { Layout } from '../../../ui/Layout';
+import { Layout, Description, Button } from '../../../ui';
 import { ShowCardPrice } from './ShowCardPrice';
-import { Description } from '../../../ui/Description';
-import { Button } from '../../../ui/Button';
 import './../style.scss';
 
 const ShopOrder = ({ id, books, count, removeShopCart, addShopCart, onModalClick }) => {

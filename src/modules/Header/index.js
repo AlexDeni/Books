@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Layout } from '../../ui/Layout';
-import { Logo } from '../../ui/Logo';
+import { Layout, Logo, Description } from '../../ui';
 import ShopEmblem from '../../widgets/ShopBasket.js/ShopEmblem';
 import {
     faHome,
@@ -13,7 +12,6 @@ import {
     faPhoneAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Description } from '../../ui/Description';
 
 const Header = ({ onHomeClick, onShopClick }) => {
     const [statusMenu, setStatus] = useState(false);

@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Layout } from '../../ui/Layout';
-import { ListBooks } from '../../modules/ListBooks';
-import { Slider } from '../../widgets/Slider';
-import { Title } from '../../ui/Title';
+import { Layout, Title } from '../../ui';
+import { ListBooks, Slider } from '../../widgets';
 import './style.scss';
 import slide2 from '../../static/slide2.jpg';
 import slide3 from '../../static/slide3.jpg';

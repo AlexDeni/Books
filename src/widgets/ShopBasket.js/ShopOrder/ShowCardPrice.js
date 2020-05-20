@@ -1,5 +1,5 @@
 import React from 'react';
-import { Price } from '../../../ui/Price';
+import { Price } from '../../../ui';
 
 export function ShowCardPrice({ selectedBooks }) {
     let showPrice = selectedBooks.reduce(function (bookPrice, num) {

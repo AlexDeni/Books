@@ -3,11 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
-import { Layout } from '../../ui/Layout';
-import { Button } from '../../ui/Button';
-import { Description } from '../../ui/Description';
+import { Layout, Button, Description, Price } from '../../ui';
 import { Rating } from './Rating';
-import { Price } from '../../ui/Price';
 import { actionSetCart } from '../../store/ShoppingCart/actionCart';
 import { actionBookProperties } from '../../store/Books/actionBooks';
 

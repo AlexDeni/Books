@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Description } from '../../../ui/Description';
-import { Layout } from '../../../ui/Layout';
+import { Description, Layout } from '../../../ui';
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
