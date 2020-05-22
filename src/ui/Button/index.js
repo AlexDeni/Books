@@ -12,30 +12,50 @@ import PropTypes from 'prop-types';
  * @param extraClass - className
  */
 
-const Button = ({ children, value, bStyle, size, type, disabled, onClick, extraClass }) => {
-    const className = cx('btn', `btn__bStyle_${bStyle}`, `btn__size_${size}`, extraClass);
-    return (
-        <button value={value} className={className} type={type} disabled={disabled} onClick={onClick}>
-            {children}
-        </button>
-    );
+const Button = ({
+	children,
+	value,
+	bStyle,
+	size,
+	type,
+	disabled,
+	onClick,
+	extraClass,
+}) => {
+	const className = cx(
+		'btn',
+		`btn__bStyle_${bStyle}`,
+		`btn__size_${size}`,
+		extraClass
+	);
+	return (
+		<button
+			value={value}
+			className={className}
+			type={type}
+			disabled={disabled}
+			onClick={onClick}
+		>
+			{children}
+		</button>
+	);
 };
 
 Button.propTypes = {
-    children: PropTypes.any,
-    type: PropTypes.oneOf(['button', 'submit']),
-    onClick: PropTypes.func,
-    bStyle: PropTypes.oneOf(['default', 'main', 'none', 'remove']),
-    size: PropTypes.oneOf(['s', 'm', 'l', 'all']),
-    disabled: PropTypes.bool,
-    value: PropTypes.any,
+	children: PropTypes.any,
+	type: PropTypes.oneOf(['button', 'submit']),
+	onClick: PropTypes.func,
+	bStyle: PropTypes.oneOf(['default', 'main', 'none', 'remove']),
+	size: PropTypes.oneOf(['s', 'm', 'l', 'all']),
+	disabled: PropTypes.bool,
+	value: PropTypes.any,
 };
 
 Button.defaultProps = {
-    bStyle: 'default',
-    size: 'm',
-    type: 'button',
-    disabled: false,
+	bStyle: 'default',
+	size: 'm',
+	type: 'button',
+	disabled: false,
 };
 
 export { Button };

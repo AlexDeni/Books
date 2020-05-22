@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alexdeni.github.io/Books/",
+  "homepage": "https://AlexDeni.github.io/Books/",
   "dependencies": {
     "@babel/core": "7.7.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
@@ -82,7 +82,8 @@
     "test": "node scripts/test.js",
     "lint": "eslint ./src",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages -b master -d build",
+    "prettier": "prettier --single-quote --use-tabs --trailing-comma es5 --write \"src/**/*.js\""
   },
   "eslintConfig": {
     "extends": "react-app"

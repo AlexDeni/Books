@@ -10,32 +10,39 @@ import cx from 'classnames';
  * @param extraClass - className
  */
 
-const Description = ({ children, size, color, extraClass, position, weight }) => {
-    let classes = cx(
-        'description',
-        `description__size_${size}`,
-        `description__color_${color}`,
-        `description__weight_${weight}`,
-        `description__position_${position}`,
-        extraClass
-    );
-    return <p className={classes}>{children}</p>;
+const Description = ({
+	children,
+	size,
+	color,
+	extraClass,
+	position,
+	weight,
+}) => {
+	let classes = cx(
+		'description',
+		`description__size_${size}`,
+		`description__color_${color}`,
+		`description__weight_${weight}`,
+		`description__position_${position}`,
+		extraClass
+	);
+	return <p className={classes}>{children}</p>;
 };
 
 Description.propTypes = {
-    children: PropTypes.node,
-    size: PropTypes.oneOf(['s', 'm', 'l']),
-    color: PropTypes.oneOf(['default', 'grey', 'white', 'dark', 'yellow']),
-    position: PropTypes.oneOf(['left', 'center', 'right']),
-    weight: PropTypes.oneOf(['500', '600', '900']),
-    extraClass: PropTypes.string,
+	children: PropTypes.node,
+	size: PropTypes.oneOf(['s', 'm', 'l']),
+	color: PropTypes.oneOf(['default', 'grey', 'white', 'dark', 'yellow']),
+	position: PropTypes.oneOf(['left', 'center', 'right']),
+	weight: PropTypes.oneOf(['500', '600', '900']),
+	extraClass: PropTypes.string,
 };
 Description.defaultProps = {
-    size: 'm',
-    color: 'default',
-    className: '',
-    position: 'left',
-    weight: '500',
+	size: 'm',
+	color: 'default',
+	className: '',
+	position: 'left',
+	weight: '500',
 };
 
 export { Description };
