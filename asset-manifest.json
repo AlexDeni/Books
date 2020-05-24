@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Books/static/css/main.bcb3c3fb.chunk.css",
+    "main.css": "/Books/static/css/main.928b2f94.chunk.css",
     "main.js": "/Books/static/js/main.3d551713.chunk.js",
     "main.js.map": "/Books/static/js/main.3d551713.chunk.js.map",
     "runtime-main.js": "/Books/static/js/runtime-main.29aebfe8.js",
@@ -8,9 +8,9 @@
     "static/js/2.23e6ad82.chunk.js": "/Books/static/js/2.23e6ad82.chunk.js",
     "static/js/2.23e6ad82.chunk.js.map": "/Books/static/js/2.23e6ad82.chunk.js.map",
     "index.html": "/Books/index.html",
-    "precache-manifest.729bd8a5411fc885a220c4ae8283f159.js": "/Books/precache-manifest.729bd8a5411fc885a220c4ae8283f159.js",
+    "precache-manifest.8a7b0ba7da6a2a9fa39d6f439720b3c0.js": "/Books/precache-manifest.8a7b0ba7da6a2a9fa39d6f439720b3c0.js",
     "service-worker.js": "/Books/service-worker.js",
-    "static/css/main.bcb3c3fb.chunk.css.map": "/Books/static/css/main.bcb3c3fb.chunk.css.map",
+    "static/css/main.928b2f94.chunk.css.map": "/Books/static/css/main.928b2f94.chunk.css.map",
     "static/js/2.23e6ad82.chunk.js.LICENSE": "/Books/static/js/2.23e6ad82.chunk.js.LICENSE",
     "static/media/logo.png": "/Books/static/media/logo.39305e8b.png",
     "static/media/App.scss": "/Books/static/media/montserratbold.ff2adb60.ttf",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.29aebfe8.js",
     "static/js/2.23e6ad82.chunk.js",
-    "static/css/main.bcb3c3fb.chunk.css",
+    "static/css/main.928b2f94.chunk.css",
     "static/js/main.3d551713.chunk.js"
   ]
 }
