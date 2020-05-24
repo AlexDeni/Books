@@ -1,5 +1,7 @@
-## Available Scripts
+based on React Create App Node v 8.10.0 Created by AlexDeni
 
-In the project directory, you can run:
+## Run
+`npm install`
+`npm start`
 
-### `npm start`
+DEMO: [here](https://alexdeni.github.io/Books/#/Books/)
