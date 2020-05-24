@@ -1,4 +1,4 @@
-based on React Create App Node v 8.10.0 Created by AlexDeni
+based on React Create App Node v 12.14.0 Created by AlexDeni
 
 ## Run
 `npm install`
