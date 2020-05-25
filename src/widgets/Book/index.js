@@ -25,6 +25,8 @@ const Book = ({
 	const openBook = () => {
 		openBookProperties(id);
 	};
+	// сложно тут, выноси в функцию отдельно
+	// Сложная функция. попробуй упростить, тяжело понимать
 	let result = false;
 	for (let i in idChoose) {
 		if (idChoose[i] === id) {

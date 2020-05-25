@@ -7,32 +7,42 @@ import { Filter, ListBooks, Loader } from '../../widgets';
 class AllBooks extends Component {
 	state = {
 		filterStatus: false,
+		// set Result - не понятно названа переменная
 		setResult: '',
 	};
+
+	// Не забывай отступы
 	handleSearchClick = (value) => {
 		this.setState({
 			setResult: value,
 			filterStatus: true,
 		});
 	};
+
+	//Отпуступ
 	setRatingBooks = (value) => {
 		this.setState({
 			setResult: value,
 		});
 	};
+
+	//Отпуступ
 	render() {
 		const { books, loader, error } = this.props;
 		const { filterStatus, setResult } = this.state;
 		if (!books) {
 			return null;
 		}
+		// Вот тут что-то наговнякано - вынеси в функцию getData
 		let results = books;
 		if (filterStatus) {
 			results = setResult;
 		}
+		// По сюда
 		if (loader) {
 			return <Loader />;
 		}
+
 		return (
 			<Layout extraClass="container">
 				<Layout extraClass="listBooks">

@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { GET_ALL_NEWS, OPEN_NEWS_PROPERTIES, ERROR_GET_NEWS } from './types';
+
 const API_NEWS_URL = 'https://mysterious-reef-29460.herokuapp.com/api/v1/news';
+// Выноси в globals
+// Вообще в хелперах желательно сделай файл API - там опиши все API которые у тебя в проекте используются и импортируй
+// их там где делаешь запрос
 
 export const actionGetNews = () => {
 	return (dispatch) => {

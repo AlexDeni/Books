@@ -8,20 +8,26 @@ import './style.scss';
 import { Link } from 'react-router-dom';
 import ErrorText from '../../widgets/LoaderError/Error';
 
+//Вынеси функцию в хелпер, плюс сделай через function (то что возвращает не DOM и не React.Component) - function
 const clipText = (text, count) => {
 	text = text.trim();
+	// Не забывай про фигурные скобки в if - без них тяжело читать
 	if (text.length < count) return text;
 	text = text.slice(0, count);
 	return text.trim() + '...';
 };
 
 const News = ({ loader, news, openNewsContent, errorText }) => {
+	//Отступы
 	const openNews = (post) => {
 		openNewsContent(post);
 	};
+
+	//Отступы (крч везде отступы, писать не буду)
 	if (errorText) {
 		return <ErrorText errorText={errorText} />;
 	}
+	// Фигурные скобки в if
 	if (loader) return <Loader />;
 	return (
 		<Layout extraClass="container listBooks">

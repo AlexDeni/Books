@@ -2,8 +2,8 @@ import { GET_ALL_BOOKS, OPEN_BOOK_PROPERTIES, ERROR_GET_BOOK } from './types';
 
 const initialState = {
 	books: [],
-	id: [],
-	loader: true,
+	id: [], //не понятно что за id, если у тебя будет много редьюсеров - запутаешься - делай activeBookId или че-то такое
+	loader: true, // loader - переименуй лучше в isLoading
 	error: '',
 };
 

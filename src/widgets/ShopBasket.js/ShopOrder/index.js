@@ -19,6 +19,8 @@ const ShopOrder = ({
 	onModalClick,
 }) => {
 	const removeBook = (e) => {
+		// ой шото сложно. ты должен в редакс экшн передлать типа removeBook(id) - в нем уже берешь массив который там лежит
+		// находишь индекс элемента по id и делаешь splice
 		let i = id.indexOf(Number(e.target.value));
 		if (i >= 0) {
 			id.splice(i, 1);
@@ -26,6 +28,7 @@ const ShopOrder = ({
 		removeShopCart(id);
 	};
 	const addBook = (e) => {
+		//То же самое - делаешь это в редакс экшн. Передаешь данные которые туда надо засунуть
 		id.push(Number(e.target.value));
 		addShopCart(id);
 	};
@@ -33,10 +36,13 @@ const ShopOrder = ({
 		let removedPart = id.filter((number) => number !== Number(book.item.id.id));
 		removeShopCart(removedPart);
 	};
+	// selectedBooks - выноси в редакс - а то у тебя данные и там и там хранятся
 	let selectedBooks = [];
 	for (let i in id) {
 		selectedBooks.push(books.find((items) => items.id === id[i]));
 	}
+
+	// Шо за count, почему оно тут, надо короче переписать логику тут
 	if (count > 0) {
 		return (
 			<Layout extraClass="shop_basket_section">
@@ -71,6 +77,8 @@ const ShopOrder = ({
 			</Layout>
 		);
 	}
+
+	// Должно быть типа if(!books.length) {
 	return (
 		<Description color="dark" size="l">
 			Корзина пуста

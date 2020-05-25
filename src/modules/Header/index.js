@@ -29,6 +29,8 @@ const Header = ({ onHomeClick, onShopClick }) => {
 					onClick={changeStatusMenu}
 				/>
 			</label>
+
+			{/*Не используй тернарные выражение в рендере, выноси в отдельный компонент на верх и там через if*/}
 			{statusMenu ? (
 				<nav className="hidden-menu">
 					<FontAwesomeIcon
@@ -36,6 +38,7 @@ const Header = ({ onHomeClick, onShopClick }) => {
 						icon={faTimes}
 						onClick={changeStatusMenu}
 					/>
+					{/*У тебя много дублирований - создай себе конфиг и через мап просто подставляй сюда данные*/}
 					<NavLink exact onClick={changeStatusMenu} to="/">
 						<FontAwesomeIcon color="white" icon={faHome} />
 						Главная
@@ -48,6 +51,7 @@ const Header = ({ onHomeClick, onShopClick }) => {
 						<FontAwesomeIcon color="white" icon={faNewspaper} />
 						Новости
 					</NavLink>
+					{/*По сюда промапь конфиг*/}
 					<Layout extraClass="header_phone">
 						<Description color="dark" size="m">
 							<FontAwesomeIcon size="1x" color="#f57904" icon={faPhoneAlt} />{' '}
@@ -84,6 +88,7 @@ const Header = ({ onHomeClick, onShopClick }) => {
 				align="center"
 			>
 				<NavLink to="/">
+					{/* Не надо делать {' '} - делай стилями отступы, это не валидно*/}
 					<Logo />{' '}
 				</NavLink>
 				<nav className="nav_header">

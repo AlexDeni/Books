@@ -15,6 +15,7 @@ import Store from './store';
 let store = Store();
 store.dispatch(actionGetBooks());
 store.dispatch(actionGetNews());
+// А шо за диспатчи даже не в классе? componentDidMount жи есть
 
 class App extends Component {
 	state = {
@@ -47,6 +48,7 @@ class App extends Component {
 								/>
 							))}
 						</Switch>
+						{/* Модалки не так должны работать -  у тебя тут должен быть компонент который рендерит модалки. Ты должен модалки вызывать через редакс. Почитай как сделать модадки на реакте - тут плохо*/}
 						<Modal
 							title="Войти"
 							isModalOpen={isHomeOpen}

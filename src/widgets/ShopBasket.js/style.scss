@@ -93,12 +93,14 @@
 @media only screen and (max-width: 700px) {
   .basket_card_info {
     width: 160px !important;
+    // Ну да нуда, импортант, пошел я
     button {
       font-size: 17px;
     }
   }
   tbody td:not(:first-child) {
     min-width: 50px !important;
+    // Ну да нуда, импортант, пошел я
     text-align: center;
   }
 }

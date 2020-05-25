@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout } from '../../ui';
 
+// setRating - действие, а это рендер, измени и через const создавай
 function SetRating({ rating }) {
 	let ratings = [];
 	if (rating !== null && rating <= 5) {

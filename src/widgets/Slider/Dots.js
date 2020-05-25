@@ -19,6 +19,7 @@ const Dots = ({ quantityDots, updateDots, displayDot, currentImage }) => {
 		return (
 			<Layout direction="row" justify="center" extraClass="dots">
 				{quantityDots.map((slide, i) => (
+					// i - в качестве ключа плохо!
 					<Dot
 						key={i}
 						active={currentImage === i}

@@ -3,6 +3,11 @@ import { USD, EUR, currency } from '../global/currency';
 import './style.scss';
 
 export function getCurrencySymbol() {
+	// Можно уменьшить - в switch возвращай только то что внутри span, ты дублируешь одинаковый компонент постоянно
+	// Также можно написать
+	// case 'UA':
+	// default:
+	// return <span className="price_indent">грн</span>;
 	switch (currency) {
 		case 'UA':
 			return <span className="price_indent">грн</span>;

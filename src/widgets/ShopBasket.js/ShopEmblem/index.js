@@ -4,6 +4,7 @@ import { Description, Layout } from '../../../ui';
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+//ShopBasket.js - название папки :D
 const ShopEmblem = ({ count, onShopClick, color, size, colorCount }) => {
 	return (
 		<Layout extraClass="shop_emblem" align="center">

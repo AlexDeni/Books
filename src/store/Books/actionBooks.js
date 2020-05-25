@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { GET_ALL_BOOKS, OPEN_BOOK_PROPERTIES, ERROR_GET_BOOK } from './types';
 
+
+//actionBooks.js - просто называй actions в каждом редьюсере - так принято
+
+//action слово не надо писать, убери везде
 export const actionGetBooks = () => {
 	return (dispatch) => {
 		axios

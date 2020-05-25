@@ -6,3 +6,5 @@ const EUR = 29;
 const currency = 'UA';
 
 export { USD, EUR, currency };
+
+// Все комментарии должны быть на eng.

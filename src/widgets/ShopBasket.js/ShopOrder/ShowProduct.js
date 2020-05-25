@@ -16,7 +16,10 @@ const ShowProduct = ({
 	onModalClick,
 }) => {
 	let idTitle = {};
+	// шо заа idTitle - шо оно такое?
+	// map a - шо такое "а"? - и вообще, сложно, перепиши чтобы понятнее стало
 	selectedBooks.map((a) => (idTitle[a.title] = idTitle[a.title] + 1 || 1));
+	// бизнес логика - наговнячено - упрощай и выноси в отдельную функцию на верх
 	let sumSelectedBooks = Object.keys(idTitle).map(function (id) {
 		return {
 			id: selectedBooks.find((item) => item.title === id),
@@ -25,6 +28,8 @@ const ShowProduct = ({
 				idTitle[id] * selectedBooks.find((item) => item.title === id).price,
 		};
 	});
+
+	// onModalClick(false) -как то странно - либо экшн переименуй - не понятно что в нем происходит
 	const openBookInfo = (e) => {
 		openBookProperties(Number(e.target.value));
 		onModalClick(false);
@@ -41,6 +46,7 @@ const ShowProduct = ({
 				</tr>
 			</thead>
 			<tbody>
+				{/*За индексы в качестве ключей чпокнут*/}
 				{sumSelectedBooks.map((item, i) => (
 					<tr key={i} className="basket_carts">
 						<td>
@@ -64,6 +70,7 @@ const ShowProduct = ({
 								<Button
 									size="l"
 									bStyle="none"
+									{/*Шо за item.id.id - почему из тут 2?*/}
 									value={item.id.id}
 									onClick={removeBook}
 								>
