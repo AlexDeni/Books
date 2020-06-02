@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { GET_ALL_NEWS, OPEN_NEWS_PROPERTIES, ERROR_GET_NEWS } from './types';
-const API_NEWS_URL = 'https://mysterious-reef-29460.herokuapp.com/api/v1/news';
+import {API_NEWS_URL} from '../../helpers/api'
 
-export const actionGetNews = () => {
+export const getNews = () => {
 	return (dispatch) => {
 		axios
 			.get(API_NEWS_URL)
@@ -23,7 +23,7 @@ export const actionGetNews = () => {
 	};
 };
 
-export const actionOpenNews = (id) => {
+export const openNews = (id) => {
 	return {
 		type: OPEN_NEWS_PROPERTIES,
 		payload: id,

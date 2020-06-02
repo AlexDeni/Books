@@ -1,37 +1,43 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import routes from './routes';
 import { Provider } from 'react-redux';
 import { Modal } from './widgets/Modal';
 import './App.scss';
 import { Header } from './modules/Header';
-import { actionGetBooks } from './store/Books/actionBooks';
-import { actionGetNews } from './store/News/actionNews';
+import { getBooks } from './store/Books/action';
+import { getNews } from './store/News/action';
 import FormikForm from './widgets/Formik/index';
 import { ScrollButton } from './ui/ScrollButton';
 import ShopOrder from './widgets/ShopBasket.js/ShopOrder';
 import Store from './store';
 
 let store = Store();
-store.dispatch(actionGetBooks());
-store.dispatch(actionGetNews());
 
 class App extends Component {
 	state = {
 		isHomeOpen: false,
 		isShopOpen: false,
 	};
+
+	componentDidMount() {
+		store.dispatch(getBooks());
+		store.dispatch(getNews());
+	}
+
 	onHomeClick = (isHomeOpen) => {
 		this.setState({ isHomeOpen });
 	};
+
 	onShopClick = (isShopOpen) => {
 		this.setState({ isShopOpen });
 	};
+
 	render() {
 		const { isHomeOpen, isShopOpen } = this.state;
 		return (
 			<Provider store={store}>
-				<BrowserRouter basename={process.env.PUBLIC_URL}>
+				<HashRouter basename={process.env.PUBLIC_URL}>
 					<Header
 						onHomeClick={this.onHomeClick}
 						onShopClick={this.onShopClick}
@@ -48,7 +54,7 @@ class App extends Component {
 							))}
 						</Switch>
 						<Modal
-							title="Войти"
+							title="Войтиn"
 							isModalOpen={isHomeOpen}
 							onModalClick={this.onHomeClick}
 						>
@@ -64,7 +70,7 @@ class App extends Component {
 						</Modal>
 					</section>
 					<ScrollButton scrollPoint={250} />
-				</BrowserRouter>
+				</HashRouter>
 			</Provider>
 		);
 	}

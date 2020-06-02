@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
-	actionRemoveBook,
-	actionAddBook,
-} from '../../../store/ShoppingCart/actionCart';
+	removeBook,
+	addBook,
+} from '../../../store/ShoppingCart/action';
 import ShowProduct from './ShowProduct';
 import { Layout, Description, Button } from '../../../ui';
 import { ShowCardPrice } from './ShowCardPrice';
@@ -87,8 +87,8 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
 	return {
-		removeShopCart: bindActionCreators(actionRemoveBook, dispatch),
-		addShopCart: bindActionCreators(actionAddBook, dispatch),
+		removeShopCart: bindActionCreators(removeBook, dispatch),
+		addShopCart: bindActionCreators(addBook, dispatch),
 	};
 };
 

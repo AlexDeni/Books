@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Layout, Button, Description, Price, Title } from '../../ui';
-import { actionSetCart } from '../../store/ShoppingCart/actionCart';
+import { setCart } from '../../store/ShoppingCart/action';
 import './style.scss';
 
 const BookProperties = ({ id, books, addInShopCart, idChoose }) => {
@@ -87,7 +87,7 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
 	return {
-		addInShopCart: bindActionCreators(actionSetCart, dispatch),
+		addInShopCart: bindActionCreators(setCart, dispatch),
 	};
 }
 

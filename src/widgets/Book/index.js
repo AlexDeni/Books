@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { Layout, Button, Description, Price } from '../../ui';
 import { Rating } from './Rating';
-import { actionSetCart } from '../../store/ShoppingCart/actionCart';
-import { actionBookProperties } from '../../store/Books/actionBooks';
+import { setCart } from '../../store/ShoppingCart/action';
+import { bookProperties } from '../../store/Books/action';
 
 const Book = ({
 	title,
@@ -31,6 +31,7 @@ const Book = ({
 			result = true;
 		}
 	}
+
 	return (
 		<Layout extraClass="book">
 			<img src={image} alt={image} className="listImage" />
@@ -78,8 +79,8 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
 	return {
-		addInShopCart: bindActionCreators(actionSetCart, dispatch),
-		openBookProperties: bindActionCreators(actionBookProperties, dispatch),
+		addInShopCart: bindActionCreators(setCart, dispatch),
+		openBookProperties: bindActionCreators(bookProperties, dispatch),
 	};
 }
 

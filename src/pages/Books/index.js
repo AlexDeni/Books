@@ -7,19 +7,22 @@ import { Filter, ListBooks, Loader } from '../../widgets';
 class AllBooks extends Component {
 	state = {
 		filterStatus: false,
-		setResult: '',
+		filterResult: '',
 	};
+
 	handleSearchClick = (value) => {
 		this.setState({
-			setResult: value,
+			filterResult: value,
 			filterStatus: true,
 		});
 	};
+
 	setRatingBooks = (value) => {
 		this.setState({
-			setResult: value,
+			filterResult: value,
 		});
 	};
+
 	render() {
 		const { books, loader, error } = this.props;
 		const { filterStatus, setResult } = this.state;

@@ -34,3 +34,12 @@ export function checkImage({ image, withoutImage }) {
 	}
 	return withoutImage;
 }
+
+export function clipText (text, count) {
+	text = text.trim();
+	if (text.length < count) {
+		return text;
+	}
+	text = text.slice(0, count);
+	return text.trim() + '...';
+}

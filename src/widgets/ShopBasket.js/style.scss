@@ -76,7 +76,6 @@
   }
   .basket_card_info {
     width: 250px;
-    text-align: left !important;
     button {
       margin-bottom: 10px;
     }
@@ -92,13 +91,13 @@
 
 @media only screen and (max-width: 700px) {
   .basket_card_info {
-    width: 160px !important;
+    width: 160px;
     button {
       font-size: 17px;
     }
   }
   tbody td:not(:first-child) {
-    min-width: 50px !important;
+    min-width: 50px;
     text-align: center;
   }
 }

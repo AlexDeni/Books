@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Description, Button, Price, Layout } from '../../../ui';
 import { bindActionCreators } from 'redux';
-import { actionBookProperties } from '../../../store/Books/actionBooks';
+import { bookProperties } from '../../../store/Books/action';
 import { connect } from 'react-redux';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -57,7 +57,7 @@ const ShowProduct = ({
 									{item.id.title}
 								</Button>
 							</Link>
-							<Price price={item.id.price} />
+							<Price position='center' price={item.id.price} />
 						</td>
 						<td className="basket_cart_count">
 							<Layout direction="row" justify="center" align="center">
@@ -99,7 +99,7 @@ const ShowProduct = ({
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		openBookProperties: bindActionCreators(actionBookProperties, dispatch),
+		openBookProperties: bindActionCreators(bookProperties, dispatch),
 	};
 };
 

@@ -2,27 +2,27 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Layout, Description } from '../../ui';
-import { actionOpenNews } from '../../store/News/actionNews';
+import { openNews } from '../../store/News/action';
 import { Loader } from '../../widgets/LoaderError';
 import './style.scss';
 import { Link } from 'react-router-dom';
 import ErrorText from '../../widgets/LoaderError/Error';
-
-const clipText = (text, count) => {
-	text = text.trim();
-	if (text.length < count) return text;
-	text = text.slice(0, count);
-	return text.trim() + '...';
-};
+import { clipText } from '../../helpers'
 
 const News = ({ loader, news, openNewsContent, errorText }) => {
+
 	const openNews = (post) => {
-		openNewsContent(post);
-	};
-	if (errorText) {
-		return <ErrorText errorText={errorText} />;
+		openNewsContent(post)
 	}
-	if (loader) return <Loader />;
+
+	if (errorText) {
+		return <ErrorText errorText={errorText} />
+	}
+
+	if (loader) {
+		return <Loader />
+	}
+
 	return (
 		<Layout extraClass="container listBooks">
 			<Layout direction="row" wrap="wrap" justify="space-evenly">
@@ -50,9 +50,10 @@ function mapStateToProps(state) {
 		errorText: state.getNews.error,
 	};
 }
+
 function mapDispatchToProps(dispatch) {
 	return {
-		openNewsContent: bindActionCreators(actionOpenNews, dispatch),
+		openNewsContent: bindActionCreators(openNews, dispatch),
 	};
 }
 

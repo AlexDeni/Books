@@ -1,7 +1,7 @@
-import axios from 'axios';
+ import axios from 'axios';
 import { GET_ALL_BOOKS, OPEN_BOOK_PROPERTIES, ERROR_GET_BOOK } from './types';
 
-export const actionGetBooks = () => {
+export const getBooks = () => {
 	return (dispatch) => {
 		axios
 			.get('./books.json')
@@ -22,7 +22,7 @@ export const actionGetBooks = () => {
 	};
 };
 
-export const actionBookProperties = (id) => {
+export const bookProperties = (id) => {
 	return {
 		type: OPEN_BOOK_PROPERTIES,
 		payload: id,

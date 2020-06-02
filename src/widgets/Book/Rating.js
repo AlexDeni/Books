@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout } from '../../ui';
 
-function SetRating({ rating }) {
+const ShowRating = ({ rating }) => {
 	let ratings = [];
 	if (rating !== null && rating <= 5) {
 		for (let i = 0; i < rating; i++) {
@@ -22,7 +22,7 @@ const Rating = ({ rating }) => {
 	return (
 		<React.Fragment>
 			<Layout extraClass="rating-area" direction="row" justify="center">
-				<SetRating rating={rating} />
+				<ShowRating rating={rating} />
 			</Layout>
 		</React.Fragment>
 	);

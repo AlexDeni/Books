@@ -1,8 +1,8 @@
-//Курс долара
+//Dollar rate
 const USD = 27;
-//Курс евро
+//Euro rate
 const EUR = 29;
-//Валюта
+//Currency
 const currency = 'UA';
 
 export { USD, EUR, currency };

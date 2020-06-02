@@ -84,10 +84,10 @@ const Header = ({ onHomeClick, onShopClick }) => {
 				align="center"
 			>
 				<NavLink to="/">
-					<Logo />{' '}
+					<Logo />
 				</NavLink>
 				<nav className="nav_header">
-					<NavLink to="/all">Все Книгии</NavLink>
+					<NavLink to="/all">Все Книги</NavLink>
 					<NavLink to="/news">Новости</NavLink>
 				</nav>
 				<Layout extraClass="header_phone">
