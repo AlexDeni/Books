@@ -43,10 +43,10 @@ const ShowProduct = ({
 			</tr>
 			</thead>
 			<tbody>
-			{sumSelectedBooks.map((item, i) => (
-				<tr key={i} className="basket_carts">
+			{sumSelectedBooks.map(item => (
+				<tr key={item.indexBook.id} className="basket_carts">
 					<td>
-						<img alt={i} src={item.indexBook.image} />
+						<img alt={item.indexBook.id} src={item.indexBook.image} />
 					</td>
 					<td className="basket_card_info">
 						<Link to={`/all/${item.indexBook.id}`}>

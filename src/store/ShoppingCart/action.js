@@ -7,14 +7,19 @@ export const setCart = (id) => {
 	};
 };
 
-export const removeBook = (id) => {
+export const removeBook = (id, targetId) => {
+	let i = id.indexOf(targetId);
+	if (i >= 0) {
+		id.splice(i, 1);
+	}
 	return {
 		type: REMOVE_SHOP_CART,
 		payload: id,
 	};
 };
 
-export const addBook = (id) => {
+export const addBook = (id, targetId) => {
+	id.push(targetId);
 	return {
 		type: ADD_SHOP_CART,
 		payload: id,

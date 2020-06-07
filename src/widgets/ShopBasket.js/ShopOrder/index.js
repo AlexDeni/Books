@@ -19,20 +19,17 @@ const ShopOrder = ({
 	onModalClick,
 }) => {
 	const removeBook = (e) => {
-		let i = id.indexOf(Number(e.target.value));
-		if (i >= 0) {
-			id.splice(i, 1);
-		}
-		removeShopCart(id);
+	    let targetId = Number(e.target.value)
+		removeShopCart(id, targetId);
 	};
 
 	const addBook = (e) => {
-		id.push(Number(e.target.value));
-		addShopCart(id);
+        let targetId = Number(e.target.value)
+		addShopCart(id, targetId);
 	};
 
 	const removeBooks = (book) => {
-		let removedPart = id.filter((number) => number !== Number(book.item.id.id));
+		let removedPart = id.filter((number) => number !== Number(book.item.indexBook.id));
 		removeShopCart(removedPart);
 	};
 
@@ -76,11 +73,12 @@ const ShopOrder = ({
 		);
 	}
 
-	return (
-		<Description color="dark" size="l">
-			Корзина пуста
-		</Description>
-	);
+		return (
+			<Description color="dark" size="l">
+				Корзина пуста
+			</Description>
+		);
+
 };
 
 const mapStateToProps = (state) => {
