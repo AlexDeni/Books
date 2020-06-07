@@ -21,7 +21,7 @@ const ShowProduct = ({
 
 	let sumSelectedBooks = Object.keys(indexBasketTitle ).map(function (id) {
 		return {
-			id: selectedBooks.find((item) => item.title === id),
+			indexBook: selectedBooks.find((item) => item.title === id),
 			sum: indexBasketTitle [id],
 			price:
 				indexBasketTitle [id] * selectedBooks.find((item) => item.title === id).price,
@@ -37,8 +37,7 @@ const ShowProduct = ({
 		<table className="cart_item">
 			<thead>
 			<tr>
-				<td />
-				<td />
+				<td /><td />
 				<td className="basket_tit">Количество</td>
 				<td className="basket_card">Стоимость</td>
 			</tr>
@@ -47,27 +46,27 @@ const ShowProduct = ({
 			{sumSelectedBooks.map((item, i) => (
 				<tr key={i} className="basket_carts">
 					<td>
-						<img alt={i} src={item.id.image} />
+						<img alt={i} src={item.indexBook.image} />
 					</td>
 					<td className="basket_card_info">
-						<Link to={`/all/${item.id.id}`}>
+						<Link to={`/all/${item.indexBook.id}`}>
 							<Button
 								size="l"
 								bStyle="none"
-								value={item.id.id}
+								value={item.indexBook.id}
 								onClick={openBookInfo}
 							>
-								{item.id.title}
+								{item.indexBook.title}
 							</Button>
 						</Link>
-						<Price position='center' price={item.id.price} />
+						<Price position='center' price={item.indexBook.price} />
 					</td>
 					<td className="basket_cart_count">
 						<Layout direction="row" justify="center" align="center">
 							<Button
 								size="l"
 								bStyle="none"
-								value={item.id.id}
+								value={item.indexBook.id}
 								onClick={removeBook}
 							>
 								&#8211;
@@ -76,7 +75,7 @@ const ShowProduct = ({
 							<Button
 								size="l"
 								bStyle="none"
-								value={item.id.id}
+								value={item.indexBook.id}
 								onClick={addBook}
 							>
 								+
