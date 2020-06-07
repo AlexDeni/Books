@@ -15,7 +15,9 @@ const Modal = ({
 	if (!isModalOpen) {
 		return null;
 	}
+
 	const className = cx('modal_body', `modal_body__size_${size}`, extraClass);
+
 	return (
 		<Layout justify="center" align="center">
 			<div className="modal">

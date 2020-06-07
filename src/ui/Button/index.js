@@ -28,6 +28,7 @@ const Button = ({
 		`btn__size_${size}`,
 		extraClass
 	);
+
 	return (
 		<button
 			value={value}

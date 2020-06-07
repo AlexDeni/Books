@@ -1,0 +1,26 @@
+{
+  "mobileMenu": [
+    {
+      "icon": "faHome",
+      "key": "1",
+      "name": "Главная",
+      "color": "white",
+      "path": "/",
+      "exact": true
+    },
+    {
+      "key": "2",
+      "name": "Все Книги",
+      "color": "white",
+      "icon": "faBookOpen",
+      "path": "/all"
+    },
+    {
+      "icon": "faNewspaper",
+      "key": "3",
+      "name": "Новости",
+      "color": "white",
+      "path": "/news"
+    }
+  ]
+}

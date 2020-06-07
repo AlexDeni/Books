@@ -12,6 +12,7 @@ const Logo = ({ size }) => {
 Logo.propTypes = {
 	size: PropTypes.oneOf(['s', 'm', 'l']),
 };
+
 Logo.defaultProps = {
 	size: 'm',
 };

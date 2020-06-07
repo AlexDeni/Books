@@ -34,6 +34,7 @@ const Dots = ({ quantityDots, updateDots, displayDot, currentImage }) => {
 Dots.propTypes = {
 	displayDot: PropTypes.bool,
 };
+
 Dots.defaultProps = {
 	displayDot: false,
 };

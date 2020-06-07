@@ -1,17 +1,15 @@
 import React from 'react';
 import { USD, EUR, currency } from '../global/currency';
-import './style.scss';
 
 export function getCurrencySymbol() {
 	switch (currency) {
 		case 'UA':
-			return <span className="price_indent">грн</span>;
-		case 'USD':
-			return <span className="price_indent">&#36;</span>;
-		case 'EUR':
-			return <span className="price_indent">&#8364;</span>;
 		default:
-			return <span className="price_indent">грн</span>;
+			return 'грн';
+		case 'USD':
+			return '$';
+		case 'EUR':
+			return '€';
 	}
 }
 

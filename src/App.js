@@ -66,7 +66,7 @@ class App extends Component {
 							isModalOpen={isShopOpen}
 							onModalClick={this.onShopClick}
 						>
-							<ShopOrder onModalClick={this.onShopClick} />
+						<ShopOrder onModalClick={this.onShopClick} />
 						</Modal>
 					</section>
 					<ScrollButton scrollPoint={250} />

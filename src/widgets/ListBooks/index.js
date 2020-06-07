@@ -37,6 +37,7 @@ ListBooks.propTypes = {
 	num: PropTypes.number,
 	books: PropTypes.array,
 };
+
 ListBooks.defaultProps = {
 	num: 0,
 };

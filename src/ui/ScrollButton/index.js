@@ -4,11 +4,13 @@ import './style.scss';
 
 const ScrollButton = ({ scrollPoint }) => {
 	const [isVisible, setVisible] = useState(false);
+
 	useEffect(() => {
 		document.addEventListener('scroll', () => {
 			toScroll();
 		});
 	});
+
 	const toScroll = () => {
 		if (window.pageYOffset > scrollPoint) {
 			setVisible(true);
@@ -16,6 +18,7 @@ const ScrollButton = ({ scrollPoint }) => {
 			setVisible(false);
 		}
 	};
+
 	const scrollToTop = () => {
 		window.scrollTo({
 			top: 0,
@@ -23,22 +26,20 @@ const ScrollButton = ({ scrollPoint }) => {
 		});
 	};
 
-	return (
-		<React.Fragment>
-			{isVisible ? (
-				<span className="scrollToTop" onClick={scrollToTop}>
-					&#187;
-				</span>
-			) : (
-				''
-			)}
-		</React.Fragment>
-	);
+	if(isVisible){
+		return(
+			<span className="scrollToTop" onClick={scrollToTop}>
+				&#187;
+			</span>
+		)
+	}
+	else return ''
 };
 
 ScrollButton.propTypes = {
 	scrollPoint: PropTypes.number,
 };
+
 ScrollButton.defaultProps = {
 	scrollPoint: 300,
 };

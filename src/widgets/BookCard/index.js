@@ -7,11 +7,13 @@ import { setCart } from '../../store/ShoppingCart/action';
 import './style.scss';
 
 const BookProperties = ({ id, books, addInShopCart, idChoose }) => {
-	let bookInfo = books.find((item) => item.id === id);
+	let bookInfo = books.find((item) => item.activeBookId === id);
+
 	const addInShop = (e) => {
 		e.preventDefault();
 		addInShopCart(id);
 	};
+
 	let result = false;
 	for (let i in idChoose) {
 		if (idChoose[i] === id) {
@@ -71,6 +73,7 @@ const BookProperties = ({ id, books, addInShopCart, idChoose }) => {
 			</Layout>
 		);
 	}
+
 	return (
 		<Layout extraClass="container listBooks">
 			<Description size="l">Sorry, but the book was not found</Description>
@@ -81,10 +84,11 @@ const BookProperties = ({ id, books, addInShopCart, idChoose }) => {
 function mapStateToProps(state) {
 	return {
 		idChoose: state.orderBooks.id,
-		id: state.getBooks.id,
+		activeBookId: state.getBooks.activeBookId,
 		books: state.getBooks.books,
 	};
 }
+
 function mapDispatchToProps(dispatch) {
 	return {
 		addInShopCart: bindActionCreators(setCart, dispatch),

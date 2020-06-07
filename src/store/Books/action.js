@@ -9,22 +9,22 @@ export const getBooks = () => {
 				dispatch({
 					type: GET_ALL_BOOKS,
 					payload: books.data,
-					loader: false,
+					isLoading: false,
 				});
 			})
 			.catch((error) => {
 				dispatch({
 					type: ERROR_GET_BOOK,
 					payload: error.message,
-					loader: false,
+					isLoading: false,
 				});
 			});
 	};
 };
 
-export const bookProperties = (id) => {
+export const bookProperties = (activeBookId) => {
 	return {
 		type: OPEN_BOOK_PROPERTIES,
-		payload: id,
+		payload: activeBookId,
 	};
 };

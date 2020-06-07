@@ -17,12 +17,14 @@ function getButtonText(authType) {
 
 export default function FormikForm({ authType, formTitle, onModalClick }) {
 	let history = useHistory();
+
 	const handleGetType = (authType) => {
 		if (authType === 'signIn') {
 			history.push('/login');
 			onModalClick(false);
 		}
 	};
+
 	return (
 		<React.Fragment>
 			{config[authType].map((data, i) => (

@@ -6,6 +6,7 @@ const FilterSearch = ({ books, updateBooks }) => {
 	const handleChange = (e) => {
 		setSearch(e.target.value);
 	};
+
 	const handleSearchClick = () => {
 		const results = books.filter((books) =>
 			books.title.toLowerCase().includes(search)
@@ -13,6 +14,7 @@ const FilterSearch = ({ books, updateBooks }) => {
 		updateBooks(results);
 		setSearch('');
 	};
+
 	return (
 		<React.Fragment>
 			<input

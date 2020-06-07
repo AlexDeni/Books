@@ -11,6 +11,7 @@ const Title = ({ children, position, color, extraClass, tagName }) => {
 		`title__color_${color}`,
 		extraClass
 	);
+
 	return (
 		<Layout extraClass="block_t">
 			{React.createElement(tagName, { className }, children)}
@@ -25,6 +26,7 @@ Title.propTypes = {
 	color: PropTypes.oneOf(['default', 'blue']),
 	extraClass: PropTypes.string,
 };
+
 Title.defaultProps = {
 	position: 'left',
 	tagName: 'h2',

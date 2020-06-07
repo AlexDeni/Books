@@ -10,6 +10,7 @@ const SlideImg = ({ image, size, extraClass, index }) => {
 SlideImg.propTypes = {
 	size: PropTypes.oneOf(['s', 'm', 'l', 'allWidth']),
 };
+
 SlideImg.defaultProps = {
 	size: 'm',
 };

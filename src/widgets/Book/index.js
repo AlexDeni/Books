@@ -22,9 +22,11 @@ const Book = ({
 	const addInShop = () => {
 		addInShopCart(id);
 	};
+
 	const openBook = () => {
 		openBookProperties(id);
 	};
+
 	let result = false;
 	for (let i in idChoose) {
 		if (idChoose[i] === id) {
@@ -65,11 +67,13 @@ Book.propTypes = {
 	author: PropTypes.string,
 	rating: PropTypes.number,
 };
+
 Book.defaulttypes = {
 	author: 'Автор',
 	rating: 0,
 	price: 0,
 };
+
 function mapStateToProps(state) {
 	return {
 		idChoose: state.orderBooks.id,
@@ -77,6 +81,7 @@ function mapStateToProps(state) {
 		count: state.orderBooks.count,
 	};
 }
+
 function mapDispatchToProps(dispatch) {
 	return {
 		addInShopCart: bindActionCreators(setCart, dispatch),

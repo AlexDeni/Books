@@ -25,23 +25,27 @@ const ShopOrder = ({
 		}
 		removeShopCart(id);
 	};
+
 	const addBook = (e) => {
 		id.push(Number(e.target.value));
 		addShopCart(id);
 	};
+
 	const removeBooks = (book) => {
 		let removedPart = id.filter((number) => number !== Number(book.item.id.id));
 		removeShopCart(removedPart);
 	};
+
 	let selectedBooks = [];
 	for (let i in id) {
 		selectedBooks.push(books.find((items) => items.id === id[i]));
 	}
+
 	if (count > 0) {
 		return (
 			<Layout extraClass="shop_basket_section">
 				<ShowProduct
-					onModalClick={onModalClick}
+					modalWindow={onModalClick}
 					selectedBooks={selectedBooks}
 					removeBooks={removeBooks}
 					addBook={addBook}
@@ -71,6 +75,7 @@ const ShopOrder = ({
 			</Layout>
 		);
 	}
+
 	return (
 		<Description color="dark" size="l">
 			Корзина пуста
@@ -85,6 +90,7 @@ const mapStateToProps = (state) => {
 		count: state.orderBooks.count,
 	};
 };
+
 const mapDispatchToProps = (dispatch) => {
 	return {
 		removeShopCart: bindActionCreators(removeBook, dispatch),

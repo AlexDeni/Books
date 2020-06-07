@@ -9,14 +9,17 @@ class Slider extends Component {
 		currentImage: 0,
 		slideShow: false,
 	};
+
 	componentDidMount() {
 		if (this.props.slideShow) {
 			this.timerID = setInterval(() => this.updateImg(), 7000);
 		}
 	}
+
 	componentWillUnmount() {
 		clearInterval(this.timerID);
 	}
+
 	makePrevSlide = ({ allImg, currentNum }) => {
 		if (currentNum > 0) {
 			this.setState({ currentImage: currentNum - 1 });
@@ -25,6 +28,7 @@ class Slider extends Component {
 			this.setState({ currentImage: allImg });
 		}
 	};
+
 	makeNextSlide = ({ allImg, currentNum }) => {
 		if (allImg > currentNum) {
 			this.setState({ currentImage: currentNum + 1 });
@@ -33,6 +37,7 @@ class Slider extends Component {
 			this.setState({ currentImage: 0 });
 		}
 	};
+
 	makeSlide = (e) => {
 		e.preventDefault();
 		let allImg = this.props.slidesInfo.length - 1;
@@ -45,9 +50,11 @@ class Slider extends Component {
 			this.makeNextSlide({ allImg, currentNum });
 		}
 	};
+
 	setImageDot = (value) => {
 		this.setState({ currentImage: value });
 	};
+
 	updateImg = () => {
 		let allImg = this.props.slidesInfo.length - 1;
 		let currentNum = this.state.currentImage;
@@ -62,6 +69,7 @@ class Slider extends Component {
 			});
 		}
 	};
+
 	render() {
 		const { slidesInfo, size, displayDot } = this.props;
 		const { currentImage } = this.state;
@@ -85,4 +93,5 @@ class Slider extends Component {
 		);
 	}
 }
+
 export { Slider };
