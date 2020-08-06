@@ -36,14 +36,14 @@ const Book = ({
 
 	return (
 		<Layout extraClass="book">
-			<img src={image} alt={image} className="listImage" />
-			<div className="bookCard">
+			<img src={image} alt={image} className="book_image" />
+			<div className="book_card">
 				<Description size="l" position="center">
 					{title}
 				</Description>
 				<Rating rating={rating} />
 				<Description
-					extraClass="bookAuthor"
+					extraClass="book_author"
 					position="center"
 				>{`Автор: ${author}`}</Description>
 				<Price position="center" size="l" price={price} />

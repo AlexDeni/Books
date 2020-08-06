@@ -6,65 +6,66 @@ import { Layout, Button, Description, Price, Title } from '../../ui';
 import { setCart } from '../../store/ShoppingCart/action';
 import './style.scss';
 
-const BookProperties = ({ id, books, addInShopCart, idChoose }) => {
-	let bookInfo = books.find((item) => item.activeBookId === id);
-
+const BookProperties = ({ activeBookId, books, addInShopCart, idChoose }) => {
+	let bookInfo = books.find((item) => item.id === activeBookId);
 	const addInShop = (e) => {
 		e.preventDefault();
-		addInShopCart(id);
+		addInShopCart(activeBookId);
 	};
 
 	let result = false;
 	for (let i in idChoose) {
-		if (idChoose[i] === id) {
+		if (idChoose[i] === activeBookId) {
 			result = true;
 		}
 	}
 
 	if (bookInfo) {
 		return (
-			<Layout extraClass="container book-info listBooks">
-				<Layout wrap="wrap" direction="row">
-					<Layout>
+			<Layout extraClass="container listBooks">
+				<Layout extraClass="book_info" direction="row">
+					<Layout extraClass="book_info_img">
 						<img src={bookInfo.image} alt={bookInfo.title} />
-						<Link to="/all" className="property-goBack">
+						<Link to="/all" className="book_info_goBack">
 							<span>&#8592;</span>Back
 						</Link>
 					</Layout>
-					<Layout extraClass="book-extra-info">
+					<Layout extraClass="book_info_extra">
 						<Title tagName="h1" color="blue">
 							{bookInfo.title}
 						</Title>
 						<Price size="l" price={bookInfo.price} />
 						<Button
 							disabled={result}
-							extraClass="btn_order_info"
+							extraClass="book_info_btn_order"
 							onClick={addInShop}
 							bStyle="main"
 							size="m"
 						>
 							{result ? 'В корзине' : 'В корзину'}
 						</Button>
-						<Layout extraClass="book_info-item">
+						<Layout extraClass="book_info_item">
 							<Layout extraClass="title_line">
 								<Description size="l">Информация</Description>
 							</Layout>
-							<Layout direction="row">
-								<span>Автор</span>
-								<Description weight="600">{bookInfo.author}</Description>
-							</Layout>
-							<Layout direction="row">
-								<span>Рейтинг</span>
-								<Description weight="600">{bookInfo.rating}</Description>
+							<Layout extraClass="book_info_author" direction="row">
+								<Layout>
+									<span>Автор</span>
+									<span>Рейтинг</span>
+								</Layout>
+								<Layout>
+									<Description extraClass="" weight="600">{bookInfo.author}</Description>
+									<Description extraClass="" weight="600">{bookInfo.rating}</Description>
+								</Layout>
 							</Layout>
 						</Layout>
-						<Layout extraClass="book_info-item">
+						<Layout extraClass="book_info_item">
 							<Layout extraClass="title_line">
-								<Description size="l" className="additional-info">
+								<Description size="l" extraClass="additional-info">
 									Описание
 								</Description>
 							</Layout>
-							<Description extraClass="extra-info" size="m">
+							<Description extraClass="book_info_content" size="m">
 								{bookInfo.info}
 							</Description>
 						</Layout>

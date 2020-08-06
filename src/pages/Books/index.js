@@ -24,16 +24,17 @@ class AllBooks extends Component {
 	};
 
 	render() {
-		const { books, loader, error } = this.props;
-		const { filterStatus, setResult } = this.state;
+		const { books, isLoading, error } = this.props;
+		const { filterStatus, filterResult } = this.state;
 		if (!books) {
 			return null;
 		}
 		let results = books;
 		if (filterStatus) {
-			results = setResult;
+			results = filterResult;
 		}
-		if (loader) {
+
+		if (isLoading) {
 			return <Loader />;
 		}
 		return (
@@ -56,7 +57,7 @@ class AllBooks extends Component {
 function mapStateToProps(state) {
 	return {
 		books: state.getBooks.books,
-		loader: state.getBooks.loader,
+		isLoading: state.getBooks.isLoading,
 		error: state.getBooks.error,
 	};
 }

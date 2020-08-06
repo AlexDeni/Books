@@ -1,0 +1,37 @@
+//default font
+$fontFamily: "PT+Sans";
+
+//variables
+$minWidth: 320px;
+$mw: 880px;
+$md1: $mw+12;
+$md2: 767.98px;
+$md3: 479.98px;
+
+//Common parameters
+*{margin: 0; padding: 0; border: 0;}
+*:before, *:after{box-sizing: border-box}
+:focus, :active{outline: none}
+aside,nav,header,footer,section{display: block;}
+html,body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-width: $minWidth;
+  position: relative;
+}
+
+.container{
+  @media (max-width: $md1) {max-width: 750px;}
+  @media (max-width: $md2) {max-width: none; padding: 0 10px}
+}
+
+//mixin
+@mixin flexbox(){
+  display:flex;
+}
+
+@mixin anim($delay, $duration){
+  transition-duration: $duration;
+  transition-delay: $delay;
+}

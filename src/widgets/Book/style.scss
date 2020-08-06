@@ -1,4 +1,5 @@
-@import "../../global/style";
+@import "../../global/color";
+@import "../../global/variables";
 
 .listBooks {
   margin: 30px 0;
@@ -9,14 +10,28 @@
     &:hover {
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
     }
-    .listImage {
+    @media (max-width: $md1) {
+      width: 250px;
+    }
+    @media (max-width: $md3) {
+      width: 230px;
+    }
+    .book_image {
       height: 270px;
       width: 210px;
       margin: 5px auto 0;
+      @media (max-width: $md1) {
+        height: 240px;
+        width: 180px;
+      }
+      @media (max-width: $md3) {
+        height: 200px;
+        width: 150px;
+      }
     }
-    .bookCard {
+    .book_card {
       padding: 10px;
-      .bookAuthor {
+      .book_author {
         margin: 6px 0;
         font-style: italic;
       }

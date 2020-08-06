@@ -1,11 +1,16 @@
-@import "../../global/style";
+@import "../../global/color";
+@import "../../global/variables";
 
 header{
-  min-height: 60px;
+  min-height: 38px;
   padding: 5px 0;
   box-shadow: 0 3px 9px 0 rgba(0,0,0,.1);
+  .logo_link{
+    line-height: 0;
+  }
   .nav_header {
     display: flex;
+    line-height: 17px;
     a {
       text-decoration: none;
       color: $dark-blue;
@@ -37,87 +42,94 @@ header{
   }
 }
 
-.hidden-menu {
+.open_menu, .close_menu{
   position: fixed;
-  width: 180px;
-  padding: 45px 0;
-  background-color: $dark-blue;
-  height: 100%;
   top: 0;
-  z-index: 200;
+  z-index: 99;
   display: flex;
-  flex-direction: column;
-  box-shadow: 34px -30px 25px -20px rgba(0, 0, 0, 0.6);
-  p{text-align: center}
-  *{
-    color: white;
-    cursor: pointer;
-    &:hover{
-      color: $yellow-color;
-    }
+  width: 260px;
+  height: 100%;
+  padding: 45px 0;
+  transform: translateX(-100%);
+  transition: .5s ease;
+  box-sizing: border-box;
+  background-color: $white;
+  text-align: center;
+  a{
+    display: none;
   }
-  .active, .active *{
-    color: $yellow-color;
-  }
-  a {
-    font-size: 18px;
-    margin-bottom: 15px;
-    padding: 0 0 15px 20px;
-    border-bottom: 1px solid;
-    text-transform: uppercase;
-      &:hover {
-        *{color: $yellow-color;
-        }
-      }
-    svg{
-      margin-right: 10px;
-    }
-  }
-  .hidden-menu_btn {
-    text-align: center;
-    margin-top: 10px;
-    .fa-user-alt{
-      margin-bottom: 15px;
-    }
-    .shop_emblem:hover *{
-      color: $yellow-color;
-    }
-    p{
-      left: 107px;
-      top: 11px;
-    }
-  }
-}
-.fa-bars{
-  display: none;
 }
 
-@media only screen and (max-width: 750px) {
+@media (max-width: $md2) {
   .header{
     display: none;
   }
   header{
-    min-height: 0;
-    padding: 0;
-    border: 0;
-  }
-  .fa-bars{
-    display: block;
-    font-size: 23px;
     position: fixed;
-    cursor: pointer;
-    top: 0;
-    margin: 8px;
-    z-index: 10;
-    &:hover{
-      color: $dark-blue;
+    width: 100%;
+    z-index: 80;
+    background-color: #ffffffcf;
+  }
+  section{
+    padding-top: 48px;
+  }
+  .open_menu{
+    transform: translateX(0);
+    transition: 1s ease;
+    flex-direction: column;
+    a{
+      display: block;
+      padding: 10px 40px;
+      margin: 0 20px;
+      font-size: 20px;
+      color: $light-blue;
+      text-transform: uppercase;
+      border-bottom: .7px solid $light-grey;
+      &:hover {
+        color: $yellow-color;
+        cursor: pointer;
+      }
     }
   }
-  .fa-times{
-    font-size: 30px;
-    position: absolute;
-    right: 10px;
-    top: 4px;
+  #header_menu_icon{
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 100;
+    span{
+      top: 8px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: #000;
+      &:first-child{top: 0;}
+      &:last-child{top: auto; bottom: 0;}
+    }
+    &.active span{
+      &:nth-of-type(1) {
+        transform: rotate(45deg) translate(4px, 7px);
+      }
+      &:nth-of-type(2) {
+        display: none;
+      }
+      &:nth-of-type(3) {
+        transform: rotate(-45deg) translate(4px, -7px);
+      }
+    }
+    &:hover span{
+      transition: .2s linear;
+      &:nth-of-type(1), &:nth-of-type(3) {
+        width: 35px;
+      }
+      &:nth-of-type(2) {
+        width: 40px;
+      }
+    }
   }
 }
 

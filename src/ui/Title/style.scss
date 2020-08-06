@@ -1,4 +1,5 @@
-@import "../../global/style";
+@import "../../global/color";
+@import "../../global/variables";
 
 .block_t {
   h1 {
@@ -6,6 +7,14 @@
   }
   h2 {
     font-size: 24px;
+  }
+  @media (max-width: $md3) {
+    h1 {
+      font-size: 20px;
+    }
+    h2 {
+      font-size: 16px;
+    }
   }
 
   .title {

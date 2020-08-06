@@ -74,11 +74,11 @@ class Slider extends Component {
 		const { slidesInfo, size, displayDot } = this.props;
 		const { currentImage } = this.state;
 		return (
-			<Layout extraClass="slide" justify="center" direction="row">
-				<span className="arrows" data-direct="prev" onClick={this.makeSlide} />
+			<Layout extraClass="slide" justify="center" align="center" direction="row">
+				<span className="slide_arrows" data-direct="prev" onClick={this.makeSlide} />
 				<SlideImg image={slidesInfo} size={size} index={currentImage} />
-				<span className="arrows" data-direct="next" onClick={this.makeSlide} />
-				<Layout extraClass="slide_text">
+				<span className="slide_arrows" data-direct="next" onClick={this.makeSlide} />
+				<Layout extraClass="slide_content">
 					<Description size="l" color="white" position="center">
 						{slidesInfo[currentImage].content}
 					</Description>
