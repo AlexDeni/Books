@@ -8,15 +8,14 @@ class Slider extends Component {
 	state = {
 		currentImage: 0,
 		slideShow: false,
+		timerSlideShow: 0
 	};
 
 	componentDidMount() {
 		if (this.props.slideShow) {
 			this.timerID = setInterval(() => this.updateImg(), 7000);
-		}
-	}
 
-	componentWillUnmount() {
+		}
 		clearInterval(this.timerID);
 	}
 
