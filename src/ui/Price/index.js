@@ -12,7 +12,9 @@ const Price = ({ color, price, size, position, extraClass, weight }) => {
 			position={position}
 		>
 			{getCurrencyPrice(price)}
+			<span>&nbsp;&nbsp;</span>
 			{getCurrencySymbol()}
+			fdgfdgdfgdg
 		</Description>
 	);
 };

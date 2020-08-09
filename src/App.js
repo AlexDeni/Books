@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import routes from './routes';
 import { Provider } from 'react-redux';
 import { Modal } from './widgets/Modal';
@@ -37,7 +37,7 @@ class App extends Component {
 		const { isHomeOpen, isShopOpen } = this.state;
 		return (
 			<Provider store={store}>
-				<BrowserRouter basename={process.env.PUBLIC_URL}>
+				<HashRouter basename={`${process.env.PUBLIC_URL}/`}>
 					<Header
 						onHomeClick={this.onHomeClick}
 						onShopClick={this.onShopClick}
@@ -70,7 +70,7 @@ class App extends Component {
 						</Modal>
 					</section>
 					<ScrollButton scrollPoint={250} />
-				</BrowserRouter>
+				</HashRouter>
 			</Provider>
 		);
 	}
