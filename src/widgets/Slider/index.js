@@ -14,8 +14,10 @@ class Slider extends Component {
 	componentDidMount() {
 		if (this.props.slideShow) {
 			this.timerID = setInterval(() => this.updateImg(), 7000);
-
 		}
+	}
+
+	componentWillUnmount() {
 		clearInterval(this.timerID);
 	}
 
@@ -70,6 +72,7 @@ class Slider extends Component {
 	};
 
 	render() {
+		console.log(this.timerID)
 		const { slidesInfo, size, displayDot } = this.props;
 		const { currentImage } = this.state;
 		return (
